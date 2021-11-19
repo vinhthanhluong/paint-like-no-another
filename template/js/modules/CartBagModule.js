@@ -13,17 +13,17 @@ export default function CartBagModule() {
     //popup-small
     if ($('.header-cart')) {
 
-        const $cart = $('.header-cart');
-        $(document).mouseup(function (e) { 
-            // nếu click vàp mục tiêu k phải là vùng chứa và cũng k phải là con của vùng chứa
-            if (!$cart.is(e.target) &&  $cart.has(e.target).length === 0) {
-                $cart.removeClass('active');
-            }
-        });
+        // const $cart = $('.header-cart');
+        // $(document).mouseup(function (e) { 
+        //     // nếu click vàp mục tiêu k phải là vùng chứa và cũng k phải là con của vùng chứa
+        //     if (!$cart.is(e.target) &&  $cart.has(e.target).length === 0) {
+        //         $cart.removeClass('active');
+        //     }
+        // });
 
-        $('.cart-btn').on('click', function () {
-           $cart.toggleClass('active');
-        });
+        // $('.cart-btn').on('click', function () {
+        //    $cart.toggleClass('active');
+        // });
     }
 
 }

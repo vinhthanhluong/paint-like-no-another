@@ -19,14 +19,7 @@
         <div id="page-loading">
             <img src="img/logo-header.png" alt="logo-header.png" />
         </div>
-        <header class="header">
-            <div class="header-top">
-                <div class="container">
-                    <div class="header-top-inner">
-
-                    </div>
-                </div>
-            </div>
+        <header class="header header-home">
             <div class="header-bottom">
                 <div class="container">
                     <div class="header-bottom-inner">
@@ -44,13 +37,13 @@
                                 </div>
                                 <ul class="header-menu-nav">
                                     <li class="current-menu">
-                                        <a href="#">Job</a>
+                                        <a href="#">Về chúng tôi</a>
                                     </li>
                                     <li>
-                                        <a href="#">Hire</a>
+                                        <a href="#">Thương hiệu</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Resource</a>
+                                        <a href="#">Dự án</a>
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="#">test sub menu 1</a>
@@ -95,10 +88,10 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#">Blog</a>
+                                        <a href="#">Dự án</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">About us</a>
+                                        <a href="#">Liên hệ</a>
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="#">test sub menu</a>
@@ -117,9 +110,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#">Contact us</a>
-                                    </li>
+
                                 </ul>
                                 <div class="header-menu-socail">
                                     <a href="#" class="menu-socail socail-face">
@@ -135,129 +126,79 @@
                             </div>
                             <div class="overplay"></div>
                         </div>
-                        <div class="header-search">
-                            <!-- <form action="#" class="search-form">
-                                <input type="text" class="f-control" placeholder="Tìm kiếm sản phẩm">
-                                <button class="f-submit" type="submit">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                            </form> -->
-                            <div class="search-desktop">
-                                <div class="search-title">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-                                <form action="#" class="search-form">
-                                    <input type="text" class="f-control" placeholder="Tìm kiếm sản phẩm">
-                                    <button class="f-submit" type="submit">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="header-search-icon">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="header-lang">
-                            <div class="box-lang item-menu ">
-                                <select class="vodiapicker">
-                                    <option value="VN" class="test" data-thumbnail="img/VN.svg">VN
-                                    </option>
-                                    <option value="EN" data-thumbnail="img/VN.svg">EN
-                                    </option>
-                                </select>
 
-                                <div class="lang-select">
-                                    <button class="btn-select" value=""></button>
-                                    <div class="lang-content">
-                                        <ul id="a"></ul>
+                        <div class="header-act">
+                            <div class="header-lang">
+                                <div class="box-lang  ">
+                                    <select class="vodiapicker">
+                                        <option value="VN" class="test" data-thumbnail="">VN
+                                        </option>
+                                        <option value="EN" data-thumbnail="">EN
+                                        </option>
+                                    </select>
+
+                                    <div class="lang-select">
+                                        <button class="btn-select" value="">
+                                        </button>
+                                        <div class="lang-content">
+                                            <ul id="a"></ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="header-cart">
-                            <!-- cart-popup-big -->
-                            <!-- <div class="cart-btn">
-                                <p>Bag</p>
-                                <div class="qty-cart">1</div>
-                            </div> -->
-                            <!-- cart-popup-small -->
-                            <div class="cart-btn">
-                                <img src="./img/icon-cart.png" alt="icon-cart.png">
+                            <div class="header-search">
+                                <div class="search-desktop">
+                                    <div class="search-title">
+                                        <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+                                        <img src="./img/svg/icon-search.svg" alt="icon-search.svg">
+                                    </div>
+                                    <form action="#" class="search-form">
+                                        <input type="text" class="f-control" placeholder="Tìm kiếm sản phẩm">
+                                        <button class="f-submit" type="submit">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="header-search-icon">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
                             </div>
-                            <div class="cart-content">
-                                <ul class="cart-list">
-                                    <li class="cart-item">
-                                        <div class="cart-close">
-                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="cart-img">
-                                            <a href="#">
-                                                <img src="./img/cart1.png" alt="cart1.png">
+                            <div class="header-user">
+                                <div class="user-title">
+                                    <img src="./img/svg/icon-user.svg" alt="icon-user.svg">
+                                </div>
+                                <div class="user-content">
+                                    <ul class="user-list">
+                                        <li class="user-item">
+                                            <a href="#" class="user-link">
+                                                Đăng nhập
                                             </a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h3 class="cart-title tt-16 title t-uppercase">
-                                                <a href="#">
-                                                    CRÊPE PRINTED
-                                                </a>
-                                            </h3>
-                                            <p class="cart-price">
-                                                100,000đ
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="cart-close">
-                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="cart-img">
-                                            <a href="#">
-                                                <img src="./img/cart1.png" alt="cart1.png">
+                                        </li>
+                                        <li class="user-item">
+                                            <a href="#" class="user-link">
+                                                Đăng ký
                                             </a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h3 class="cart-title tt-16 title t-uppercase">
-                                                CRÊPE PRINTED
-                                            </h3>
-                                            <p class="cart-price">
-                                                100,000đ
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="cart-item">
-                                        <div class="cart-close">
-                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="cart-img">
-                                            <a href="#">
-                                                <img src="./img/cart1.png" alt="cart1.png">
-                                            </a>
-                                        </div>
-                                        <div class="cart-info">
-                                            <h3 class="cart-title tt-16 title t-uppercase">
-                                                CRÊPE PRINTED
-                                            </h3>
-                                            <p class="cart-price">
-                                                100,000đ
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="cart-total">
-                                    <p class="total-t">Tổng tiền</p>
-                                    <p class="total-n tt-18">
-                                        300,000đ
-                                    </p>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header-heart">
+                                <div class="heart-title">
+                                    <img src="./img/svg/icon-heart.svg" alt="icon-heart.svg">
                                 </div>
 
-                                <div class="cart-pay">
-                                    <a href="#" class="btn btn-black btn-link title f-bold">Thanh toán</a>
-                                    <a href="#" class="btn btn-white btn-link title f-bold">Xem giỏ hàng</a>
-                                </div>
                             </div>
-                        </div>
-                        <div class="hamburger-btn">
-                            <div class="bar"></div>
+                            <div class="header-cart">
+                                <a href="#" class="cart-btn">
+                                    <img src="./img/svg/icon-bag.svg" alt="icon-bag.svg">
+                                    <div class="qty-cart">2</div>
+                                </a>
+                            </div>
+                           
+                            <div class="hamburger-btn">
+                                <div class="bar"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

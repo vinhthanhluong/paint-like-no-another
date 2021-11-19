@@ -25,11 +25,13 @@
         color: rgba($color: $b-cl, $alpha: 0.4);
         font-size: 16px;
         cursor: pointer;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: $w-cl;
+        border-radius: 100%;
     }
 
     .search-form{
@@ -50,6 +52,8 @@
         line-height: 20px;
         height: auto;
         padding: 8px 38px 8px 15px;
+        border-radius: 5px;
+
         
     }
     .f-submit{
