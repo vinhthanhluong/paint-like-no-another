@@ -32,6 +32,17 @@
         justify-content: center;
         background-color: $w-cl;
         border-radius: 100%;
+        &:hover{
+            background-color: $main-cl;
+            img{
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        img{
+            transition: all .3s ease;
+            
+        }
     }
 
     .search-form{

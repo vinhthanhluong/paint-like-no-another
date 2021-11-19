@@ -698,6 +698,10 @@ sup {
   color: #163F5E;
 }
 
+.f-medium {
+  font-weight: 500;
+}
+
 .header {
   position: relative;
   width: 100%;
@@ -760,6 +764,7 @@ sup {
   border-right: 2px solid #fff;
   margin-right: 16px;
   padding-right: 16px;
+  transition: all 0.3s ease;
 }
 .header-search-icon {
   display: none;
@@ -2063,6 +2068,15 @@ sup {
   background-color: #fff;
   border-radius: 100%;
 }
+.search-desktop .search-title:hover {
+  background-color: #163F5E;
+}
+.search-desktop .search-title:hover img {
+  filter: brightness(0) invert(1);
+}
+.search-desktop .search-title img {
+  transition: all 0.3s ease;
+}
 .search-desktop .search-form {
   position: absolute;
   top: 40px;
@@ -2323,7 +2337,7 @@ sup {
   animation: waveLoading 3s ease-out infinite backwards;
 }
 
-.cart-popup {
+.heart-popup {
   position: fixed;
   top: 0;
   right: -100%;
@@ -2332,7 +2346,7 @@ sup {
   z-index: 9999;
   transition: 0.3s ease;
 }
-.cart-popup .bg-cart {
+.heart-popup .bg-cart {
   width: 100%;
   height: 100%;
   z-index: 999;
@@ -2345,7 +2359,7 @@ sup {
   z-index: 998;
   transition: all 0.3s ease;
 }
-.cart-popup .box-cart {
+.heart-popup .box-cart {
   position: absolute;
   height: 100%;
   background: #fff;
@@ -2355,123 +2369,74 @@ sup {
   width: 100%;
   max-width: 375px;
 }
-.cart-popup .hd-box-cart {
+.heart-popup .head-boxcart {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 24px 16px 24px 24px;
+  border-bottom: 1px solid #000000;
 }
-.cart-popup .hd-box-cart .title-name {
-  font-size: 18px;
-  font-weight: normal;
+.heart-popup .head-boxcart .title-name {
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
 }
-.cart-popup .hd-box-cart .btn-close {
+@media screen and (max-width: 991px) {
+  .heart-popup .head-boxcart .title-name {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .heart-popup .head-boxcart .title-name {
+    font-size: 20px;
+  }
+}
+.heart-popup .head-boxcart .title-name img {
+  padding-right: 16px;
+}
+.heart-popup .head-boxcart .btn-close {
   outline: none;
   font-weight: bold;
   border: 0;
   background: transparent;
   cursor: pointer;
 }
-.cart-popup .container-boxcart {
+.heart-popup .container-boxcart {
   max-height: 500px;
   overflow: auto;
 }
-.cart-popup .container-boxcart .product-list {
-  padding: 15px;
-  padding-top: 0;
+.heart-popup .container-boxcart::-webkit-scrollbar {
+  width: 3px;
 }
-.cart-popup .container-boxcart .product-list .product-bag {
-  display: flex;
-  padding: 15px 0;
-  align-items: center;
+.heart-popup .container-boxcart::-webkit-scrollbar-thumb {
+  background: #163F5E;
+  border-radius: 990px;
 }
-.cart-popup .container-boxcart .product-list .product-bag:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+.heart-popup .container-boxcart::-webkit-scrollbar-track {
+  background: transparent;
 }
-.cart-popup .container-boxcart .product-list .product-bag .product-bag-img {
-  width: 100px;
-  background-color: rgba(128, 128, 128, 0.5);
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-bag-img img {
-  width: 100%;
-  object-fit: cover;
-  mix-blend-mode: darken;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data {
-  width: calc(100% - 100px);
-  text-align: left;
-  padding-left: 15px;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data .name-product-cart {
-  display: block;
-  font-size: 16px;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data .product-size {
-  font-size: 12px;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data .product-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data .product-row .cart-qty {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data .product-row .cart-qty .cart-qty-plus,
-.cart-popup .container-boxcart .product-list .product-bag .product-data .product-row .cart-qty .cart-qty-minus {
-  padding: 5px;
-  cursor: pointer;
-  border: 0;
-  background: #fff;
-  font-size: 16px;
-  width: 15px;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data .product-row .cart-qty .qty {
-  text-align: center;
-  width: 30px;
-  padding: 5px;
-  margin: 0 5px;
-  border: 0;
-}
-.cart-popup .container-boxcart .product-list .product-bag .product-data .product-row .product-price {
-  margin-left: 20px;
-}
-.cart-popup .container-boxcart::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px #fff;
-  background-color: #fff;
-}
-.cart-popup .container-boxcart::-webkit-scrollbar {
-  width: 6px;
-  background-color: rgba(128, 128, 128, 0.5);
-}
-.cart-popup .container-boxcart::-webkit-scrollbar-thumb {
-  background-color: #000000;
-}
-.cart-popup .footer-boxcart {
+.heart-popup .footer-boxcart {
   padding: 15px;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
-.cart-popup .footer-boxcart .box-sum-cart {
+.heart-popup .footer-boxcart .box-sum-cart {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
   font-size: 18px;
 }
-.cart-popup .footer-boxcart .box-sum-cart .cart-sum {
+.heart-popup .footer-boxcart .box-sum-cart .cart-sum {
   font-weight: bold;
 }
-.cart-popup .footer-boxcart .cart-link {
+.heart-popup .footer-boxcart .cart-link {
   font-weight: bold;
   color: #fff;
   display: flex;
   justify-content: space-between;
 }
-.cart-popup .footer-boxcart .cart-link .btn-checkout,
-.cart-popup .footer-boxcart .cart-link .btn-yourcart {
+.heart-popup .footer-boxcart .cart-link .btn-checkout,
+.heart-popup .footer-boxcart .cart-link .btn-yourcart {
   background: #000000;
   padding: 10px 20px;
   display: inline-block;
@@ -2480,8 +2445,8 @@ sup {
   font-weight: normal;
   border: 1px #000000 solid;
 }
-.cart-popup .footer-boxcart .cart-link .btn-checkout:hover,
-.cart-popup .footer-boxcart .cart-link .btn-yourcart:hover {
+.heart-popup .footer-boxcart .cart-link .btn-checkout:hover,
+.heart-popup .footer-boxcart .cart-link .btn-yourcart:hover {
   background: #fff;
   color: #000000;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.16);

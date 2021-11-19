@@ -86,6 +86,8 @@
     border-right: 2px solid $w-cl;
     margin-right: 16px;
     padding-right: 16px;
+    transition: all .3s ease;
+   
     &-icon {
         display: none;
         width: 44px;
@@ -96,6 +98,7 @@
         border-radius: 6px;
         font-size: 16px;
         color: $main-cl;
+       
 
         @include max-media($bk-768) {
             display: block;
