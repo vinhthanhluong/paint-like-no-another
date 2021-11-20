@@ -53,19 +53,15 @@
         transition: all .3s ease;
         @include hidden;
         animation: fade-out-bottom 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-        // @include max-media($bk-576){
-        //     display: none;
-        // }
+        box-shadow: 0px 0px 16px rgba($color: $b-cl, $alpha: 0.18);
     }
 
     .f-control{
-        border-radius: 0;
         line-height: 20px;
         height: auto;
         padding: 8px 38px 8px 15px;
         border-radius: 5px;
-
-        
+        border: none;
     }
     .f-submit{
         width: 38px;
@@ -176,4 +172,35 @@
         display: flex;
     }
 
+}
+
+.header-search-mobi{
+    margin: 0 10px 20px;
+    // margin-bottom: 20px;
+    position: relative;
+    display: none;
+    @include max-media($bk-d-1200){
+        display: block;
+    }
+    .f-control{
+        // border-radius: 0px;
+        transition: all .3s ease;
+        padding: 10px 50px 10px 15px;
+        height: 40px;
+        &:hover{
+            border-color: $main-cl;
+        }
+    }
+
+    .f-submit{
+        width: 40px;
+        height: 40px;
+        // background-color: wheat;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+    }
+
+    
 }
