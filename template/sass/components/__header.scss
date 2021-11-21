@@ -126,7 +126,13 @@
     }
 }
 
-.header-lang {
+.lang-mobi{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.header-lang , .box-lang {
     margin-right: 10px;
 
     .vodiapicker {
@@ -149,13 +155,18 @@
             background-position: right 10px center;
             background-repeat: no-repeat;
             cursor: pointer;
+            @include max-media($bk-d-1200){
+                border-radius: 0 0 10px 10px;
+                border: 1px solid $border-cl;
+            }
+          
         }
 
         .lang-content {
             background-color: $w-cl;
             color: $b-cl;
             position: absolute;
-            top: 10px;
+            top: 5px;
             left: 0;
             transform: translateY(50%);
             width: 100%;
