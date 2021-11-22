@@ -21,23 +21,52 @@
     }
 
     &.header-home {
-        background-color: wheat;
+        background-color: transparent;
         color: $w-cl;
-        border-bottom: 1px soilid rgba($color: $w-cl, $alpha: .1);
-
+        border-bottom: 1px solid rgba($color: $w-cl, $alpha: .1);
+        position: fixed;
         @include max-media($bk-d-1200) {
             color: $b-cl;
         }
 
         &.--fix {
+            background-color: $w-cl;
+            color: $b-cl;
+            border: none;
+            box-shadow: 0px 8px 32px rgba($color: $b-cl, $alpha: 0.1);
             .header-logo {
                 max-width: 102px;
+                img{
+                    filter: brightness(0) invert(0);
+                }
             }
 
             .header-menu-nav {
                 &>li {
                     &>a {
                         padding: 26px 25px;
+
+                        &::before{
+                            bottom: 0;
+                            height: 2px;
+                        }
+
+                        &:hover{
+                            color: $main-cl;
+                            &::before{
+                                background-color: $main-cl !important;
+                            }
+                        }
+                    }
+                }
+
+                .current-menu{
+                    & > a{
+                        color: $main-cl;
+                        &::before{
+                            background-color: $main-cl;
+                            height: 2px;
+                        }
                     }
                 }
             }
@@ -54,6 +83,10 @@
                 &>a {
                     color: $w-cl;
 
+                    &::before{
+                        background-color: $w-cl;
+                    }
+
                     @include max-media($bk-d-1200) {
                         color: $main-cl;
                     }
@@ -63,8 +96,14 @@
 
             &>li {
                 &>a {
+                    &::before{
+                        bottom: -1px;
+                    }
                     &:hover {
                         color: $w-cl;
+                        &::before{
+                            background-color: $w-cl;
+                        }
 
                         @include max-media($bk-d-1200) {
                             color: $main-cl;
@@ -469,7 +508,7 @@
                 &::before {
                     content: "";
                     position: absolute;
-                    bottom: -1px;
+                    bottom: 0;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 0;

@@ -43,9 +43,27 @@ export default function FileActiveModule() {
         }
     }
 
-    $('.banners-inner').on('click', function () {
+    $('.banners-wrapper').on('click', function () {
         $(this).find('.video-title').addClass('active');
+        $(this).find('.banner-wrap-form').addClass('active');
     });
+
+    // if ($('.banners').length) {
+    //     const formBanner ;
+        
+    // }
+
+    if ($('.box-chat').length) {
+        $($('.social-chat')).on('click', function () {
+            $('.box-chat').addClass('active');
+        });
+
+        $('.chat-close').on('click', function () {
+            $('.box-chat').removeClass('active');
+            
+        });
+        
+    }
 
     
 

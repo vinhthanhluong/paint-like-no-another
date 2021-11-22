@@ -1,4 +1,5 @@
 .banners {
+	overflow: hidden;
 	.swiper-wrapper {
 		margin: 0;
 	}
@@ -22,7 +23,7 @@
 		bottom: 0;
 	}
 
-	
+	position: relative;
 
 	.container-full{
 		padding: 0;
@@ -30,6 +31,12 @@
 
 	.banners-inner{
 		position: relative;
+		max-height: 890px;
+		.video{
+			max-height: 890px;
+			width: 100%;
+			object-fit: cover
+		}
 
 		&.playing{
 			.video-box{
@@ -87,22 +94,73 @@
 			pointer-events: none;
 			transition: 1s ease;
 			z-index: 1;
+			// transform: translate(-50% , -50%) scale(-1 , -1);
+			// width: 80px;
+			// height: 80px;
+			width: 90px;
+			height: 90px;
+			width: 100px;
+			height: 100px;
 			.letter{
 				text-transform: uppercase;
 				line-height: 1.1;
 				font-weight: 700;
+				font-size: 12px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				padding-bottom: 80px;
+				// padding-top: 55px;
+				padding-bottom: 45px;
 				position: absolute;
 				transform-origin: bottom center;
+				// transform-origin: top center;
 				top: 0;
 				left: 0;
 				right: 0;
 				bottom: 0;
+				bottom: 80px;
 				transition: 0.5s ease;
 				// animation: letterBlink 5s linear infinite;
+				color: red;
+			}
+		}
+	}
+	
+	.banner-wrap-form{
+		position: absolute;
+		bottom: 112px;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		transition: all .3s ease;
+		&.active{
+			bottom: -1000px;
+		}
+	}
+
+	.banner-form{
+		
+		.column{
+			width: calc(100% / 3);
+		}
+
+		.f-control{
+			border: none;
+			border-bottom: 1px solid rgba($color: $w-cl, $alpha: .5);
+			padding: 0 0 8px 0;
+			background-color: transparent;
+			border-radius: 0;
+			@include fz-16;
+			color: $w-cl;
+			transition: all .3s ease;
+			&:hover , &:focus{
+				border-color: $w-cl;
+			}
+
+			&::placeholder{
+				font-weight: 600;
+				text-transform: uppercase;
+				color: rgba($color: $w-cl, $alpha: .5);
 			}
 		}
 	}

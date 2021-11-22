@@ -2,8 +2,157 @@
     color: $main-cl;
 }
 
-.f-medium{
+.f-medium {
     font-weight: 500;
 }
 
+.f-semibold {
+    font-weight: 600;
+}
 
+.fixed-social {
+    position: fixed;
+    right: 40px;
+    bottom: 88px;
+    z-index: 99;
+
+    .social-item {
+        @include flex-mid;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        box-shadow: 0px 0px 8px rgba($color: $b-cl, $alpha: .16);
+        background-color: $w-cl;
+        margin-left: auto;
+        cursor: pointer;
+        &:not(:first-child) {
+            margin-top: 8px;
+        }
+    }
+
+    .social-chat{
+        position: relative;
+    }
+    
+    .box-chat{
+        transition: all .3s ease;
+        margin-top: -40px;
+        display: none;
+        &.active{
+            display: block;
+        }
+    }
+}
+
+.box-chat {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    background-color: $w-cl;
+    box-shadow: 0 10px 12px rgba($color: $b-cl, $alpha: .12);
+    font-size: 12px;
+    width: 290px;
+    z-index: 1;
+    position: relative;
+
+    .chat-head {
+        background-color: $main-cl;
+        color: $w-cl;
+        text-align: center;
+        padding: 4px 0 5px;
+        position: relative;
+
+        .chat-title {
+            line-height: 1.2;
+        }
+
+        .chat-close {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 23px;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 8px;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 1px;
+                background-color: $w-cl;
+            }
+        }
+    }
+
+    .chat-content {
+        padding: 16px;
+
+        .chat-group {
+            &:nth-child(2) {
+                margin-top: 16px;
+            }
+        }
+
+        .label {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+
+            span {
+                color: #E41A28;
+            }
+        }
+
+        .f-control {
+            margin-top: 8px;
+            background-color: #EFEFEF;
+            border-radius: 2px;
+            height: 24px;
+            padding: 4px 8px;
+            transition: all .3s ease;
+            border: 1px solid transparent;
+
+            &:hover,
+            &:focus {
+                border-color: $main-cl;
+            }
+
+            &::placeholder {
+                color: $g-7C7C-cl;
+                font-style: italic;
+            }
+        }
+
+        textarea.f-control {
+            height: 72px;
+            resize: none;
+        }
+    }
+
+    .chat-footer {
+        border-top: 1px solid rgba($color: $b-cl, $alpha: .12);
+        padding: 16px;
+
+        .btn-chat {
+            background-color: $main-cl;
+            border-radius: 2px;
+            color: $w-cl;
+            height: 27px;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            text-transform: none;
+
+            img {
+                margin-left: 10px;
+            }
+
+        }
+    }
+
+}
