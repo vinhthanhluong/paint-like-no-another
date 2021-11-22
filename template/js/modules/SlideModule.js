@@ -169,10 +169,10 @@ export default function SlideModule() {
                 slidesPerView: 'auto',
                 autoHeight: true,
                 // mousewheel: true,
-                // allowTouchMove: false,
-                // autoplay: {
-                //     delay: 4000,
-                // },
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 5000,
+                },
 
                 pagination: {
                     el: SliderPagination,
@@ -194,8 +194,11 @@ export default function SlideModule() {
                 //         allowTouchMove: false,
                 //     }
                 // }
-            })
+            });
         }
+
+
+
         catch (err) {
             console.log(err)
         }
@@ -268,11 +271,11 @@ export default function SlideModule() {
                 speed: 1000,
                 loop: false,
                 spaceBetween: 0,
-                slidesPerView: 5,
+                // slidesPerView: 5,
                 // autoplay: {
                 //     delay: 4000,
                 // },
-                allowTouchMove: false,
+                // allowTouchMove: false,
                 grid: {
                     rows: 2,
                     fill: 'row',
@@ -288,16 +291,20 @@ export default function SlideModule() {
                 },
 
                 breakpoints: {
-                    // 320: {
-                    //     spaceBetween: 50
-                    // },
-                    // 480: {
-                    //     spaceBetween: 30
-                    // },
-                    // 576: {
-                    //     spaceBetween: 0,
+                    320: {
+                        slidesPerView: 2,
+                    },
+                    576: {
+                        slidesPerView: 3,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                    },
+                    1200: {
+                        allowTouchMove: false,
+                        slidesPerView: 5,
 
-                    // }
+                    }
                 }
                 // observeParents:true,
                 // observeSlideChildren: true,
