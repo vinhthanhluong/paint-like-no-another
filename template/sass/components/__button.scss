@@ -111,6 +111,12 @@
     overflow: hidden;
     @include trans(.6s);
     @include hidden();
+    @include max-media($bk-d-992){
+        right: 20px;
+    }
+    @include max-media($bk-576){
+        right: 10px;
+    }
 
     &.--active {
         @include visible();

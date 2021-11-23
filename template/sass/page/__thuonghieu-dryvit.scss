@@ -1,14 +1,33 @@
 .story {
     padding: 88px 0;
     background-color: $g-F5F5-cl;
+    overflow: hidden;
+
+    @include max-media($bk-d-1200) {
+        padding: 60px 0;
+    }
+
+    @include max-media($bk-d-992) {
+        padding: 40px 0;
+    }
 
     .paint-head {
         margin-bottom: 32px;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 20px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 10px;
+        }
     }
 
-    .paint-label{
+    .paint-label {
         color: $main-cl;
-        &::after , &::before{
+
+        &::after,
+        &::before {
             background-color: $main-cl !important;
         }
     }
@@ -19,6 +38,18 @@
         margin: 0 auto 48px;
         line-height: 1.7;
 
+        @include max-media($bk-d-1200) {
+            margin-bottom: 30px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 20px;
+        }
+
+        @include max-media($bk-d-768) {
+            margin-bottom: 15px;
+        }
+
         &.mb-0 {
             margin-bottom: 0 !important;
         }
@@ -26,6 +57,25 @@
 
     .story-img {
         margin-bottom: 48px;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 30px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 20px;
+        }
+
+        @include max-media($bk-d-768) {
+            margin-bottom: 15px;
+        }
+
+        img {
+            @include max-media($bk-d-768) {
+                min-height: 170px;
+            }
+        }
+
     }
 }
 
@@ -33,6 +83,15 @@
     background-color: $b-D1D1-cl;
     color: $w-cl;
     padding: 96px 0;
+    overflow: hidden;
+
+    @include max-media($bk-d-1200) {
+        padding: 60px 0;
+    }
+
+    @include max-media($bk-d-992) {
+        padding: 40px 0;
+    }
 
     .columns {
         justify-content: space-between;
@@ -41,20 +100,41 @@
     .column {
         &.pro-tx {
             width: calc(100% / 12 * 5 + 30px);
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+            }
         }
 
         &.pro-ig {
             width: calc(100% / 12 * 6);
+
+            @include max-media($bk-d-1200) {
+                width: calc(100%/ 12 * 7 - 30px);
+            }
+
+            @include max-media($bk-d-768) {
+                width: 100%;
+            }
         }
     }
 
     .paint-head {
         margin-bottom: 32px;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 20px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 10px;
+        }
     }
 
-    .paint-label{
+    .paint-label {
         color: #BFBFBF;
-        &::before{
+
+        &::before {
             background-color: #BFBFBF;
         }
     }
@@ -65,6 +145,14 @@
 
     .project-slide {
         width: 747px;
+
+        @include max-media($bk-d-1900) {
+            width: 100%;
+        }
+
+        @include max-media($bk-d-768) {
+            margin-top: 10px;
+        }
     }
 
     .swiper-act {
@@ -72,13 +160,31 @@
         height: 27px;
         position: relative;
         margin-top: 37px;
+
+        @include max-media($bk-d-1200) {
+            margin-top: 20px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-top: 10px;
+        }
+
+        @include max-media($bk-d-768) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     .swiper-pagination {
         padding-bottom: 7px;
         @include fz-16;
-        .swiper-pagination-total{
+
+        .swiper-pagination-total {
             color: $g-7C7C-cl;
+        }
+
+        @include max-media($bk-d-768) {
+            display: none;
         }
 
     }
@@ -93,6 +199,10 @@
         opacity: 1 !important;
         background-color: $g-7C7C-cl;
 
+        @include max-media($bk-d-768) {
+            height: 2px;
+        }
+
         &-drag {
             background-color: $w-cl;
         }
@@ -102,10 +212,28 @@
 
 .textured {
     padding: 96px 0;
+    overflow: hidden;
+
+    @include max-media($bk-d-1200) {
+        padding: 60px 0;
+    }
+
+    @include max-media($bk-d-992) {
+        padding: 40px 0;
+    }
 
     .paint-head {
         max-width: 770px;
         margin: 0 auto 48px;
+
+        @include max-media($bk-d-1200) {
+            margin-bottom: 30px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 20px;
+        }
+
     }
 
     .paint-label {
@@ -119,22 +247,62 @@
 
     .paint-title {
         color: $b-D1D1-cl;
+
+        br {
+            @include max-media($bk-576) {
+                display: none;
+            }
+        }
+
+
     }
 
     .textured-desc {
         margin-top: 32px;
         max-width: 770px;
         text-align: center;
+        line-height: 1.7;
+
+        @include max-media($bk-d-1200) {
+            margin-top: 20px;
+        }
+
+        @include max-media($bk-d-992) {
+            margin-top: 10px;
+        }
+    }
+
+    .textured-img{
+        img{
+            min-height: 170px;
+        }
     }
 }
 
 .specialty-finsh-wall {
     background-color: $g-F5F5-cl;
     padding: 96px 0;
+    overflow: hidden;
+    @include max-media($bk-d-1200){
+        padding: 60px 0;
+    }
+    @include max-media($bk-d-992){
+        padding: 40px 0;
+    }
 
     .paint-head {
         max-width: 770px;
         margin: 0 auto 48px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 20px;
+        }
+        @include max-media($bk-d-768){
+            margin-bottom: 15px;
+        }
+        
     }
 
     .paint-label {
@@ -148,25 +316,49 @@
 
     .columns {
         justify-content: space-between;
+        @include max-media($bk-d-1900){
+            align-items: center;
+        }
     }
 
     .column {
         &.wall-tx {
             width: calc(100% / 12 * 5 + 30px);
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.wall-ig {
             width: calc(100% / 12 * 6);
+            @include max-media($bk-d-1200){
+                width: calc(100% / 12 * 7 - 30px);
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
 
     .wall-inner {
         margin-bottom: 24px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 20px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 10px;
+        }
 
         .wall-slide-t {
             margin-bottom: 24px;
             line-height: 1.3;
+            @include max-media($bk-d-1200){
+                margin-bottom: 15px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 10px;
+            }
         }
 
         .wall-slide-desc {
@@ -191,7 +383,9 @@
         border-top: 1px solid rgba($color: $b-cl, $alpha: .4);
         height: 100%;
         cursor: pointer;
-
+        @include max-media($bk-d-1200){
+            padding: 10px 0
+        }
         .wall-b-tt {
             @include fz-16;
             font-weight: 600;
@@ -209,6 +403,12 @@
 
         .swiper {
             max-height: 336px;
+            @include max-media($bk-d-1200){
+                max-height: 280px;
+            }
+            @include max-media($bk-d-992){
+                max-height: 220px;
+            }
         }
 
         .swiper-slide {
@@ -232,28 +432,43 @@
         }
     }
 
-    .thumb-big{
+    .thumb-big {
         width: 747px;
+        @include max-media($bk-d-1900){
+            width: 100%;
+        }
     }
 
-    .swiper-act{
+    .swiper-act {
         width: 71px;
         height: 27px;
         margin-top: 37px;
         position: relative;
+        @include max-media($bk-d-1200){
+            margin-top: 15px;
+        }
+        @include max-media($bk-d-992){
+            margin-top: 10px;
+        }
+        @include max-media($bk-d-768){
+            width: 100%;
+            height: auto;
+        }
     }
 
-    .swiper-pagination{
+    .swiper-pagination {
         color: $main-cl;
         @include fz-16;
         padding-bottom: 7px;
-
-        .swiper-pagination-total{
+        @include max-media($bk-d-768){
+            display: none;
+        }
+        .swiper-pagination-total {
             color: #C1C1C1;
         }
     }
 
-    .swiper-scrollbar{
+    .swiper-scrollbar {
         position: absolute;
         left: 0%;
         bottom: 0px;
@@ -262,7 +477,11 @@
         width: 100%;
         background-color: #C1C1C1;
         opacity: 1 !important;
-        &-drag{
+        @include max-media($bk-d-768){
+            height: 2px;
+        }
+
+        &-drag {
             background-color: $main-cl;
         }
     }

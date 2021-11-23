@@ -16,11 +16,28 @@
 
 .paint-head {
     margin-bottom: 48px;
+    @include max-media($bk-d-1200){
+        margin-bottom: 30px;
+    }
+    @include max-media($bk-d-992){
+        margin-bottom: 20px;
+    }
+    @include max-media($bk-d-768){
+        margin-bottom: 15px;
+    }
 
     .paint-label {
         margin-bottom: 24px;
         line-height: 1.1;
-
+        @include max-media($bk-d-1200){
+            margin-bottom: 15px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 10px;
+        }
+        @include max-media($bk-d-768){
+            margin-bottom: 5px;
+        }
         &::before {
             content: '';
             width: 24px;
@@ -54,6 +71,12 @@
     right: 40px;
     bottom: 88px;
     z-index: 99;
+    @include max-media($bk-d-992){
+        right: 20px;
+    }
+    @include max-media($bk-576){
+        right: 10px;
+    }
 
     .social-item {
         @include flex-mid;

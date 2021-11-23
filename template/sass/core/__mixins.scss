@@ -115,17 +115,23 @@
 //font size
 @mixin fz-150 {
     font-size: 150px;
+    @include max-media($bk-d-1900) {
+        font-size: 110px;
+    }
 
     @include max-media($bk-d-1200) {
-        font-size: 100px;
+        font-size: 90px;
     }
 
     @include max-media($bk-d-992) {
-        font-size: 80px;
+        font-size: 70px;
     }
 
     @include max-media($bk-768) {
-        font-size: 60px;
+        font-size: 50px;
+    }
+    @include max-media($bk-576) {
+        font-size: 30px;
     }
 }
 @mixin fz-72 {
