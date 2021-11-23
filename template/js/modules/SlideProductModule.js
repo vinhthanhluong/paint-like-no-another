@@ -10,33 +10,45 @@ export default function SlideProductModule() {
             try {
                 const thumbsmall = new Swiper('#thumbs-small', {
                     speed: 1000,
-                    loop: true,
-                    spaceBetween: 10,
-                    slidesPerView: 4,
+                    // loop: true,
+                    // spaceBetween: 10,
+                    slidesPerView: 6,
                     freeMode: true,
                     watchSlidesVisibility: true,
                     watchSlidesProgress: true,
-                    breakpoints: {
-                        320: {
-                            spaceBetween: 10,
-                            slidesPerView: 3,
-                        },
+                    direction: "vertical",
+                    // breakpoints: {
+                    //     320: {
+                    //         spaceBetween: 10,
+                    //         slidesPerView: 3,
+                    //     },
 
-                        768: {
-                            spaceBetween: 10,
-                            slidesPerView: 4,
+                    //     768: {
+                    //         spaceBetween: 10,
+                    //         slidesPerView: 4,
 
-                        }
-                    }
+                    //     }
+                    // }
                 });
 
                 const thumbbig = new Swiper('#thumbs-big', {
                     speed: 1000,
-                    loop: true,
+                    // loop: true,
                     slidesPerView: 1,
                     spaceBetween: 10,
+                    autoplay: {
+                        delay: 4000,
+                    },
                     thumbs: {
                         swiper: thumbsmall,
+                    },
+                    pagination: {
+                        el: SliderPagination,
+                        type: "fraction",
+                    },
+                    scrollbar: {
+                        el: ".swiper-scrollbar",
+                        hide: true,
                     },
                 });
                 //  click slide

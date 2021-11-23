@@ -64,7 +64,7 @@ export default function SlideModule() {
 
         const notslide = el.querySelector('.notslide');
         if (notslide) {
-            var notSlide = true;
+            var notSlide = false;
         } else {
             var notSlide = true;
         }
@@ -150,6 +150,7 @@ export default function SlideModule() {
                     swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
                 }
             }
+            window.addEventListener('scroll', muteVideoWhenOverScroll);
         }
         catch (err) {
             console.log(err)
@@ -215,6 +216,9 @@ export default function SlideModule() {
                 speed: 1000,
                 loop: false,
                 slidesPerView: 'auto',
+                 autoplay: {
+                    delay: 4000,
+                },
 
                 pagination: {
                     el: SliderPagination,

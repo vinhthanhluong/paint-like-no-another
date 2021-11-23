@@ -96,6 +96,7 @@
 
             &>li {
                 &>a {
+                    padding: 50px 25px;
                     &::before{
                         bottom: -1px;
                     }
@@ -159,7 +160,10 @@
     margin-right: 16px;
     padding-right: 16px;
     transition: all .3s ease;
-
+    .search-desktop{
+        border-radius: 100%;
+        box-shadow: 0px 0px 5px rgba($color: $b-cl, $alpha: 0.16);
+    }
     @include max-media($bk-d-1200) {
         display: none;
     }
@@ -258,7 +262,8 @@
 .header-cart {
     position: relative;
     margin-right: 10px;
-
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px rgba($color: $b-cl, $alpha: 0.16); 
     .cart-btn {
         cursor: pointer;
         position: relative;
@@ -399,6 +404,8 @@
 
 .header-heart {
     margin-right: 10px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px rgba($color: $b-cl, $alpha: 0.16);
 
     .heart-title {
         width: 30px;
@@ -485,7 +492,7 @@
     // li {
     a {
         position: relative;
-        padding: 50px 25px;
+        padding: 30px 25px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -521,7 +528,8 @@
                     color: $main-cl;
 
                     &::before {
-                        width: 100%;
+                        width: calc(100% - 50px);
+                        height: 2px;
                     }
                 }
             }
@@ -539,7 +547,8 @@
             color: $main-cl;
 
             &::before {
-                width: 100%;
+                width: calc(100% - 50px);
+                height: 2px;
             }
         }
 

@@ -17,14 +17,23 @@
 .--w-cl {
 	color: $t-w-cl;
 }
+.tt-150 {
+	@include fz-150;
+}
 .tt-72 {
 	@include fz-72;
 }
 .tt-65 {
 	@include fz-65;
 }
+.tt-64 {
+	@include fz-64;
+}
 .tt-60 {
 	@include fz-60;
+}
+.tt-56 {
+	@include fz-56;
 }
 .tt-50 {
 	@include fz-50;

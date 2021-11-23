@@ -113,6 +113,21 @@
 
 
 //font size
+@mixin fz-150 {
+    font-size: 150px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 100px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 80px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 60px;
+    }
+}
 @mixin fz-72 {
     font-size: 72px;
 
@@ -144,6 +159,22 @@
     }
 }
 
+@mixin fz-64 {
+    font-size: 64px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 60px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 50px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 40px;
+    }
+}
+
 @mixin fz-60 {
     font-size: 60px;
 
@@ -157,6 +188,22 @@
 
     @include max-media($bk-768) {
         font-size: 40px;
+    }
+}
+
+@mixin fz-56 {
+    font-size: 56px;
+
+    @include max-media($bk-d-1200) {
+        font-size: 44px;
+    }
+
+    @include max-media($bk-d-992) {
+        font-size: 36px;
+    }
+
+    @include max-media($bk-768) {
+        font-size: 32px;
     }
 }
 

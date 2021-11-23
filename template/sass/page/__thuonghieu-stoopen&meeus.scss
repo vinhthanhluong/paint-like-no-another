@@ -1,0 +1,146 @@
+.why-stoopen-meeus{
+    padding: 88px 0;
+    background-color: $g-F5F5-cl;
+    overflow: hidden;
+    position: relative;
+    .meeus-af{
+        font-weight: bold;
+        @include fz-150;
+        position: absolute;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        color: rgba($color: $w-cl, $alpha: .6);
+    }
+
+    .meeus-wrapper{
+        z-index: 1;
+        position: relative;
+    }
+
+    .paint-label{
+        color: $main-cl;
+        &::after , &::before{
+            background-color: $main-cl !important;
+        }
+    }
+    .paint-title{
+        color: $b-D1D1-cl;
+    }
+
+    .meeus-img{
+        margin-bottom: 40px;
+    }
+
+    .meeus-desc{
+        line-height: 1.7;
+        max-width: 802px;
+        margin: 0 auto;
+    }
+}
+
+.stoopen-meeus{
+    padding: 56px 0 96px;
+
+    .meeus-af{
+        @include fz-150;
+        font-weight: bold;
+        color: rgba($color:  $g-F5F5-cl, $alpha: .6);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        line-height: 1.2;
+        padding-bottom: 42px;
+    }
+
+    .meeus-wrap{
+
+        &:not(:first-child){
+            padding-top: 112px;
+        }
+
+        &.reverse-meeus{
+
+            .meeus-cols{
+                margin-top: 0;
+                margin-bottom: 80px;
+            }
+            .meeus-col{
+                &.meeus-ig{
+                    margin-left: auto;
+                }
+
+                &.meeus-tx{
+                    left: 0;
+                    right:  auto;
+                    top: auto;
+                    bottom: -80px;
+                }
+            }
+
+            .meeus-text{
+                padding-left: 0;
+                padding-right: 115px;
+            }
+
+            .meeus-tt{
+                text-align: right;
+            }
+
+
+        }
+    }
+
+    .meeus-cols{
+        position: relative;
+        margin-top: 80px;
+    }
+
+    .meeus-col{
+        &.meeus-ig{
+            width: calc(100% / 12 * 7 - 13px);
+            z-index: 1;
+            position: relative;
+        }
+
+        &.meeus-tx{
+            width: calc(100% / 12 * 6 + 30px);
+            background-color: $b-D1D1-cl;
+            color: $w-cl;
+            padding: 52px 30px;
+            position: absolute;
+            top: -80px;
+            right: 0;
+        }
+    }
+
+    .meeus-text{
+        padding-left: 115px;
+    }
+
+    .meeus-tt{
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+        line-height: 1;
+    }
+
+    .meeus-say{
+        margin-bottom: 16px;
+        line-height: 1.5;
+        @include line-clamp(3);
+    }
+
+    .meeus-desc{
+        line-height: 1.5;
+        margin-bottom: 24px;
+        @include line-clamp(3);
+    }
+
+    .meeus-link{
+        transition: all .3s ease;
+        text-decoration: underline;
+        &:hover{
+            letter-spacing: 2px;
+        }
+    }
+}
