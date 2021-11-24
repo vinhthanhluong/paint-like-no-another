@@ -29,6 +29,7 @@
     .paint-label {
         margin-bottom: 24px;
         line-height: 1.1;
+        letter-spacing: 3px;
         @include max-media($bk-d-1200){
             margin-bottom: 15px;
         }
@@ -294,6 +295,103 @@
                 @include pos-mid;
                 margin-left: 2px;
                 color: $main-cl;
+            }
+        }
+
+    }
+}
+
+
+.inspi-inner {
+    &:hover {
+        .inspi-more {
+            img {
+                transform: translate(0, -50%);
+                @include visible;
+            }
+
+            .inspi-line{
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+
+        .inspi-img{
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .inspi-img {
+        overflow: hidden;
+        img{
+            transition: all .3s ease;
+        }
+    }
+
+    .inspi-content {
+        padding-top: 16px;
+    }
+
+    .inspi-tt {
+        line-height: 1.7;
+        margin-bottom: 8px;
+        color: $b-D1D1-cl;
+    }
+
+    .inspi-desc {
+        line-height: 1.5;
+        color: $b-D1D1-cl;
+        margin-bottom: 16px;
+    }
+
+    .inspi-more {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 16px;
+        transition: all .3s ease;
+
+        .more-text {
+            display: inline-block;
+            position: relative;
+            padding-right: 34px;
+            text-decoration: underline;
+            @include fz-16;
+            font-weight: 600;
+            color: $main-cl;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: -1;
+            transform: translate(-100%, -50%);
+            transition: all .3s ease;
+            @include hidden;
+        }
+
+        .inspi-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgba($color: $b-cl, $alpha: .2);
+            transition: all .3s ease;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: 0;
+                background-color: $main-cl;
+                height: 1px;
+                width: 0;
+                transition: all .3s ease;
             }
         }
 

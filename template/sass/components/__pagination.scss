@@ -1,6 +1,9 @@
 .pagination {
-	margin-top: 30px;
+	margin-top: 48px;
 	text-align: center;
+	@include max-media($bk-d-1200){
+		margin-top: 30px;
+	}
 	li {
 		display: inline-block;
 		vertical-align: middle;
@@ -8,12 +11,15 @@
 			width: 40px;
 			height: 40px;
 			border-radius: 100%;
-			border: 1px solid $border-cl;
-			//color: $t-b-cl;
-			font-weight: bold;
+			border: 1px solid $main-cl;
+			background-color: $w-cl;
+			@include fz-16;
+			color: $b-D1D1-cl;
 			transition: all .3 ease;
-			@include lh(24, 14);
+			line-height: 1.5;
+			font-weight: 600;
 			@include flex-mid;
+			margin: 0 4px;
 			&.current {
 				background-color: $main-cl;
 				color: $t-w-cl;
@@ -30,11 +36,18 @@
 			width: 40px;
 			height: 40px;
 			@include flex-mid;
-			font-size: 16px;
+			// font-size: 24px;
+			@include fz-24;
 			transition: all .3 ease;
-			&:hover {
-				background-color: $main-cl;
-				color: $t-w-cl;
+			border-radius: 100%;
+			color: #D9D9D9;
+			// &:hover {
+			// 	background-color: $main-cl;
+			// 	color: $t-w-cl;
+			// }
+
+			&.arrow-next{
+				color: $main-cl;
 			}
 		}
 	}

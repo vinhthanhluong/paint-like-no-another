@@ -70,22 +70,36 @@ export default function FileActiveModule() {
         const videoWhenOverScroll = () => {
             const video = document.querySelector('.bx-video');
             const heightVideo = video.offsetTop;
-    
+
             console.log(heightVideo);
-    
+
             console.log(window.scrollY);
-    
+
             if (window.scrollY <= heightVideo) {
                 video.querySelectorAll('.bx-video video').forEach((x) => x.pause());
             }
         }
 
         window.addEventListener('scroll', videoWhenOverScroll);
-        
-
-
-
     }
+
+    // if ($('.line-eff').length) {
+    //     // $('.line-eff').on('hover', function () {
+    //     //     $(this).addClass('avtice');
+    //     // },
+    //     //     function () {
+    //     //         alert('asdasd');
+    //     //     }
+    //     // );
+
+    //     $(".line-eff").hover(function () {
+    //         $(this).addClass('line-active');
+    //     },
+    //     function () {
+    //         $(this).removeClass('line-active');
+    //     });
+
+    // }
 
 
 

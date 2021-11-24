@@ -48,11 +48,11 @@
 
     }
 
-    .contact-desc {
+    .about-desc {
         line-height: 1.7;
     }
 
-    .contact-list {
+    .about-list {
         padding-top: 53px;
         display: flex;
         align-items: center;
@@ -64,13 +64,13 @@
         }
     }
 
-    .contact-item {
+    .about-item {
         width: calc(100% / 3);
         width: max-content;
         padding: 7.5px;
         text-align: center;
 
-        .contact-num {
+        .about-num {
             margin-bottom: 8px;
             line-height: 1.1;
             position: relative;
@@ -86,7 +86,7 @@
         }
     }
 
-    .contact-img {
+    .about-img {
         margin-top: 56px;
 
         @include max-media($bk-d-1200) {
@@ -95,7 +95,7 @@
 
     }
 
-    .contact-text {
+    .about-text {
         margin-top: 112px;
         max-width: 257px;
 
@@ -124,7 +124,7 @@
         }
     }
 
-    .contact-ig {
+    .about-ig {
         position: relative;
         width: max-content;
         margin-bottom: 157px;
@@ -166,7 +166,7 @@
         }
     }
 
-    .contact-g {
+    .about-g {
         img {
             width: 100%;
             height: 100%;
@@ -175,7 +175,7 @@
         }
     }
 
-    .contact-cont {
+    .about-cont {
         position: absolute;
         top: 9px;
         left: 9px;
@@ -188,12 +188,12 @@
 
     }
 
-    .contact-t {
+    .about-t {
         max-width: 220px;
         padding: 20px 0 0 20px;
     }
 
-    .contact-bt {
+    .about-bt {
         color: $g-7C7C-cl;
         line-height: 1.1;
         position: absolute;
