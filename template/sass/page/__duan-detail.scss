@@ -1,15 +1,36 @@
 .project-detail {
     padding: 88px 0 120px;
     overflow: hidden;
+    @include max-media($bk-d-1200){
+        padding: 60px 0;
+    }
+    @include max-media($bk-d-992){
+        padding: 40px 0;
+    }
+
+    .container{
+        padding: 0;
+    }
 
     .project-head {
         margin-bottom: 72px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 40px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-768){
+            margin-bottom: 20px;
+        }
 
         .project-title {
             padding-bottom: 16px;
             position: relative;
             line-height: 1.2;
-
+            @include max-media($bk-d-1200){
+                padding-bottom: 10px;
+            }
             &::before {
                 content: '';
                 position: absolute;
@@ -23,6 +44,15 @@
 
         .project-logo {
             margin-top: 32px;
+            @include max-media($bk-d-1200){
+                margin-top: 25px;
+            }
+            @include max-media($bk-d-992){
+                margin-top: 20px;
+            }
+            @include max-media($bk-768){
+                margin-top: 10px;
+            }
 
             img {
                 margin-left: auto;
@@ -33,6 +63,18 @@
 
     .project-b-img {
         margin-bottom: 80px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 40px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-768){
+            margin-bottom: 20px;
+        }
+        img{
+            min-height: 200px;
+        }
     }
 
     .columns {
@@ -42,10 +84,16 @@
     .column {
         &.pro-tx {
             width: calc(100% / 12 * 7 + 30px);
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.pro-if {
             width: calc(100% / 12 * 4);
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
@@ -69,11 +117,23 @@
             text-transform: uppercase;
             margin-top: 0;
             margin-bottom: 32px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 15px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 5px;
+            }
         }
 
         .mona-box {
             &:not(:first-child) {
                 margin-top: 56px;
+                @include max-media($bk-d-1200){
+                    margin-top: 30px;
+                }
+                @include max-media($bk-d-992){
+                    margin-top: 20px;
+                }
             }
         }
     }
@@ -88,11 +148,18 @@
             border-top: 1px solid rgba($color: $b-cl, $alpha: .12);
             margin-top: 16px;
             padding-top: 16px;
+            @include max-media($bk-d-992){
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
         }
 
         .project-tt {
             margin-bottom: 8px;
             color: $g-7C7C-cl;
+            @include max-media($bk-d-1200){
+                margin-bottom: 5px;
+            }
         }
     }
 
@@ -125,14 +192,35 @@
     .project-slide {
         margin-top: 80px;
         width: 1545px;
+        @include max-media($bk-d-1200){
+            margin-top: 40px;
+        }
+        @include max-media($bk-d-992){
+            margin-top: 30px;
+        }
+        @include max-media($bk-768){
+            margin-top: 20px;
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
 
         .swiper {
             margin: 0 -15px;
+            @include max-media($bk-d-992){
+                margin: 0 -7.5px;
+            }
         }
 
         .swiper-slide {
             width: auto;
             padding: 0 15px;
+            @include max-media($bk-d-992){
+                padding: 0 7.5px;
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
         }
 
         .swiper-pagination {
@@ -179,30 +267,75 @@
                 transition: all .3s ease;
                 @include hidden;
             }
+
+            img{
+                width: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
         }
     }
 }
 
 .other-project {
     padding-bottom: 96px;
+    @include max-media($bk-d-1200){
+        padding-bottom: 60px;
+    }
+    @include max-media($bk-d-992){
+        padding-bottom: 40px;
+    }
 
     .project-title {
         line-height: 1.2;
         margin-bottom: 48px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 20px;
+        }
     }
 
 
     .swiper {
         margin: 0 -15px;
+        @include max-media($bk-d-1200){
+            padding-bottom: 30px;
+        }
+        @include max-media($bk-d-992){
+            margin: 0 -7.5px;
+        }
     }
 
     .swiper-slide {
         width: calc(100% / 4);
         padding: 0 15px;
+        @include max-media($bk-d-1200){
+            width: calc(100% / 3);
+        }
+        @include max-media($bk-d-992){
+            width: calc(100% / 2);
+            padding: 0 7.5px;
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
     }
 
     .swiper-pagination {
         display: none;
+        @include max-media($bk-d-1200){
+            display: block;
+        }
+
+        .swiper-pagination-bullet{
+            border-radius: 99px;
+            transition: all .3s ease;
+            &-active{
+                width: 40px;
+            }
+        }
     }
 
     .project-inner {

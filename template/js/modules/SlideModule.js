@@ -62,24 +62,32 @@ export default function SlideModule() {
         const prevBtn = el.querySelector('.swiper-button-prev');
         const nextBtn = el.querySelector('.swiper-button-next');
 
-        const notslide = el.querySelector('.notslide');
-        if (notslide) {
-            var notSlide = false;
+        const heightAuto = el.querySelector('.heightauto');
+        if (heightAuto) {
+            var heightChange = true;
         } else {
-            var notSlide = true;
+            var heightChange = false;
         }
+
+        const notSlide = el.querySelector('.notslide');
+        if (notSlide) {
+            var slideTouchMove = false;
+        } else {
+            var slideTouchMove = true;
+        }
+
         try {
             new Swiper(slider, {
                 speed: 1200,
                 slidesPerView: 'auto',
-                autoHeight: false,
+                autoHeight: heightChange,
                 observer: true,
                 observeParents: true,
                 observeSlideChildren: true,
                 // autoplay: {
                 //     delay: 4000,
                 // },
-                allowTouchMove: notSlide,
+                allowTouchMove: slideTouchMove,
                 pagination: {
                     el: pagination,
                     clickable: true,

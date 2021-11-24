@@ -5,6 +5,7 @@
     background-color: $w-cl;
     transition: all .3s ease-in;
     box-shadow: 0 8px 32px rgba($color: $b-cl, $alpha: 0.1);
+
     &.--fix {
         position: fixed;
         top: 0;
@@ -27,6 +28,7 @@
         color: $w-cl;
         border-bottom: 1px solid rgba($color: $w-cl, $alpha: .1);
         position: fixed;
+
         @include max-media($bk-d-1200) {
             color: $b-cl;
         }
@@ -36,9 +38,11 @@
             color: $b-cl;
             border: none;
             box-shadow: 0px 8px 32px rgba($color: $b-cl, $alpha: 0.1);
+
             .header-logo {
                 max-width: 102px;
-                img{
+
+                img {
                     filter: brightness(0) invert(0);
                 }
             }
@@ -48,29 +52,38 @@
                     &>a {
                         padding: 26px 25px;
 
-                        &::before{
+                        &::before {
                             bottom: 0;
                             height: 2px;
                         }
 
-                        &:hover{
+                        &:hover {
                             color: $main-cl;
-                            &::before{
+
+                            &::before {
                                 background-color: $main-cl !important;
                             }
                         }
                     }
                 }
 
-                .current-menu{
-                    & > a{
+                .current-menu {
+                    &>a {
                         color: $main-cl;
-                        &::before{
+
+                        &::before {
                             background-color: $main-cl;
                             height: 2px;
                         }
                     }
                 }
+            }
+        }
+
+        .header-bottom {
+            @include max-media($bk-d-1200) {
+                padding: 0 15px 0 0;
+
             }
         }
 
@@ -85,7 +98,7 @@
                 &>a {
                     color: $w-cl;
 
-                    &::before{
+                    &::before {
                         background-color: $w-cl;
                     }
 
@@ -99,12 +112,15 @@
             &>li {
                 &>a {
                     padding: 50px 25px;
-                    &::before{
+
+                    &::before {
                         bottom: -1px;
                     }
+
                     &:hover {
                         color: $w-cl;
-                        &::before{
+
+                        &::before {
                             background-color: $w-cl;
                         }
 
@@ -129,6 +145,10 @@
 
     @include max-media($bk-d-1440) {
         padding-right: 15px;
+    }
+
+    @include max-media($bk-d-1200) {
+        padding: 10px 15px 10px 0;
     }
 
     &-inner {
@@ -162,22 +182,25 @@
     margin-right: 16px;
     padding-right: 16px;
     transition: all .3s ease;
-    .search-desktop{
+
+    .search-desktop {
         border-radius: 100%;
         box-shadow: 0px 0px 5px rgba($color: $b-cl, $alpha: 0.16);
     }
+
     @include max-media($bk-d-1200) {
         display: none;
     }
 }
 
-.lang-mobi{
+.lang-mobi {
     position: absolute;
     top: 0;
     right: 0;
 }
 
-.header-lang , .box-lang {
+.header-lang,
+.box-lang {
     margin-right: 10px;
 
     .vodiapicker {
@@ -200,11 +223,12 @@
             background-position: right 10px center;
             background-repeat: no-repeat;
             cursor: pointer;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 border-radius: 0 0 10px 10px;
                 border: 1px solid $border-cl;
             }
-          
+
         }
 
         .lang-content {
@@ -265,7 +289,8 @@
     position: relative;
     margin-right: 10px;
     border-radius: 100%;
-    box-shadow: 0px 0px 5px rgba($color: $b-cl, $alpha: 0.16); 
+    box-shadow: 0px 0px 5px rgba($color: $b-cl, $alpha: 0.16);
+
     .cart-btn {
         cursor: pointer;
         position: relative;

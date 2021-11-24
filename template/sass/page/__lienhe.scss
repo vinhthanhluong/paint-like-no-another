@@ -1,44 +1,112 @@
-.contact{
+.contact {
     padding-top: 304px;
-    .column{
-        width: 50%;
+    overflow: hidden;
+    position: relative;
+
+    @include max-media($bk-d-1200) {
+        padding-top: 250px;
+    }
+    @include max-media($bk-d-768){
+        padding-top: 200px;
     }
 
-    .contact-inner{
+    .contact-map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .column {
+        width: 50%;
+        @include max-media($bk-d-768){
+            width: 100%;
+            height: 100%;
+        }
+        &:nth-child(2) {
+            @include max-media($bk-d-768) {
+                // position: absolute;
+                // bottom: 0;
+                // right: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    .contact-inner {
         padding: 56px 32px;
         border-radius: 5px 5px 0 0;
         box-shadow: 0px 0px 10px rgba($color: $b-cl, $alpha: .24);
+        background-color: $w-cl;
+        height: 100%;
 
-        .contact-title{
+        @include max-media($bk-d-1200) {
+            padding: 40px 25px;
+        }
+
+        @include max-media($bk-d-992) {
+            padding: 30px 20px;
+        }
+
+        .contact-title {
             margin-bottom: 40px;
             line-height: 1.2;
-        }
 
-        .contact-tt{
-            margin-bottom: 16px;
-        }
-        
-        .contact-item{
-            &:not(:first-child){
-                margin-top: 24px;
+            @include max-media($bk-d-1200) {
+                margin-bottom: 30px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin-bottom: 20px;
+                text-align: center;
             }
         }
-        .contact-link{
+
+        .contact-tt {
+            margin-bottom: 16px;
+
+            @include max-media($bk-d-992) {
+                margin-bottom: 10px;
+            }
+        }
+
+        .contact-item {
+            &:not(:first-child) {
+                margin-top: 24px;
+
+                @include max-media($bk-d-1200) {
+                    margin-top: 20px;
+                }
+
+                @include max-media($bk-d-992) {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .contact-link {
             @include fz-16;
             line-height: 1.5;
             transition: all .3s ease;
-            &:hover{
+
+            &:hover {
                 color: $main-cl;
             }
         }
 
-        .contact-social{
+        .contact-social {
             margin-top: 24px;
             display: flex;
             align-items: center;
         }
 
-        .social-item{
+        .social-item {
             width: 24px;
             height: 24px;
             border-radius: 100%;
@@ -48,14 +116,15 @@
             transition: all .3s ease;
             color: $b-D1D1-cl;
             background-color: $w-cl;
-            &:hover{
+
+            &:hover {
                 transform: translateY(-5px);
                 color: $w-cl;
                 background-color: $main-cl;
             }
 
 
-            &:not(:first-child){
+            &:not(:first-child) {
                 margin-left: 16px;
             }
 
@@ -63,13 +132,31 @@
 
     }
 
-    .contact-form{
+    .contact-form {
         height: 100%;
         position: relative;
-        .contact-tt-main{
+        @include max-media($bk-d-768){
+            position: static;
+        }
+
+        &.active {
+            .contact-tt-main {
+                transform: translateY(100%);
+                @include max-media($bk-d-768){
+                    transform: translateX(100%) translateY(-100%) rotate(-90deg);
+                }
+            }
+
+            .contact-main {
+                transform: translateY(0);
+               
+            }
+        }
+
+        .contact-tt-main {
             background-color: $main-cl;
             color: $w-cl;
-            width: 342px;
+            // width: 342px;
             border-radius: 5px 5px 0 0;
             padding: 23px 40px 24px;
             text-transform: uppercase;
@@ -82,24 +169,65 @@
             right: 0;
             line-height: 1.7;
             transition: all .3s ease;
-            display: none;
-            img{
+            transform: translateY(0);
+
+            @include max-media($bk-d-1200) {
+                padding: 20px 30px;
+            }
+
+            @include max-media($bk-d-992) {
+                padding: 15px 20px;
+            }
+
+            @include max-media($bk-d-768){
+                bottom: auto;
+                top: 0%;
+                right: -15px;
+                transform-origin:bottom right;
+                transform: translateX(0) translateY(-100%)  rotate(-90deg);
+                font-size: 0;
+                padding: 15px;
+            }
+
+            img {
                 margin-right: 10px;
                 filter: brightness(0)invert(1);
                 transform: rotate(90deg);
+                transition: all .3s ease;
+                @include max-media($bk-d-768){
+                    margin-right: 0;
+                }
+            }
+
+            &:hover {
+                img {
+                    transform: rotate(-90deg);
+                }
             }
 
         }
 
-        .contact-main{
+        .contact-main {
             background-color: $main-cl;
             color: $w-cl;
             border-radius: 5px 5px 0 0;
             height: 100%;
             padding: 21px 32px 0;
+            transition: all .3s ease;
+            transform: translateY(100%);
+
+            @include max-media($bk-d-1200) {
+                padding: 20px 25px;
+            }
+            @include max-media($bk-d-768){
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+            }
         }
 
-        .contact-close{
+        .contact-close {
             margin-bottom: 40px;
             text-align: right;
             font-size: 13px;
@@ -107,7 +235,16 @@
             font-weight: 600;
             cursor: pointer;
             line-height: 1.8;
-            &::after{
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 30px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin-bottom: 20px;
+            }
+
+            &::after {
                 content: '';
                 width: 16px;
                 height: 1px;
@@ -118,27 +255,65 @@
             }
         }
 
-        .contact-group{
-            &:not(:first-child){
+        .contact-group {
+            &:not(:first-child) {
                 margin-top: 24px;
+
+                @include max-media($bk-d-1200) {
+                    margin-top: 20px;
+                }
+
+                @include max-media($bk-d-992) {
+                    margin-top: 15px;
+                }
             }
         }
 
-        .f-control{
+        .f-control {
             border-radius: 0;
             border: none;
             border-bottom: 1px solid rgba($color: $w-cl, $alpha: .4);
             padding: 0 0 8px 0;
-            height: auto;
+            height: 40px;
             background-color: transparent;
             color: $w-cl;
             transition: all .3s ease;
-            // resize: none;
-            &:hover , &:focus{
+            resize: none;
+            @include fz-16;
+
+            &:hover,
+            &:focus {
                 border-color: $w-cl;
             }
-            &::placeholder{
+
+            &::placeholder {
                 color: rgba($color: $w-cl, $alpha: .4);
+            }
+        }
+
+        .contact-submit {
+            margin-top: 40px;
+            text-align: center;
+
+            @include max-media($bk-d-1200) {
+                margin-top: 30px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin-top: 20px;
+            }
+
+            .f-submit {
+                width: auto;
+                color: $w-cl;
+                font-weight: 600;
+                text-decoration: underline;
+                cursor: pointer;
+                @include fz-16;
+
+                &:hover {
+                    letter-spacing: 2px;
+                }
             }
         }
     }

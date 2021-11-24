@@ -1,6 +1,15 @@
 .post-detail {
     padding: 88px 0 96px;
     overflow: hidden;
+
+    @include max-media($bk-d-1200) {
+        padding: 60px 0;
+    }
+
+    @include max-media($bk-d-992) {
+        padding: 40px 0;
+    }
+
     .mt-0 {
         margin-top: 0 !important;
     }
@@ -25,8 +34,28 @@
             display: flex;
             justify-content: space-between;
 
+            @include max-media($bk-d-1200) {
+                margin: 40px 0;
+            }
+
+            @include max-media($bk-d-992) {
+                margin: 30px 0;
+            }
+
+            @include max-media($bk-576) {
+                margin: 20px 0;
+            }
+
+            img {
+                min-height: 170px;
+            }
+
             .mona-ig {
                 width: calc(50% - 15px);
+
+                @include max-media($bk-d-992) {
+                    width: calc(50% - 7.5px);
+                }
             }
         }
 
@@ -34,6 +63,18 @@
             color: $g-7C7C-cl;
             font-weight: 500;
             margin-bottom: 24px;
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 15px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin-bottom: 5px;
+            }
+
+            @include max-media($bk-576) {
+                margin-bottom: 0;
+            }
         }
 
         .mona-box {
@@ -46,16 +87,40 @@
             margin-top: 0;
             margin-bottom: 40px;
             line-height: 1.2;
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 25px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin-bottom: 15px;
+            }
+
+            @include max-media($bk-576) {
+                margin-bottom: 10px;
+            }
         }
 
         .mona-t {
             margin: 32px 0;
+
+            @include max-media($bk-d-1200) {
+                margin: 20px 0;
+            }
+
+            @include max-media($bk-d-992) {
+                margin: 10px 0;
+            }
         }
 
         .mona-desc {
             color: #4F4F4F;
             @include fz-16;
             line-height: 1.7;
+
+            @include max-media($bk-d-992) {
+                margin: 10px 0;
+            }
         }
 
         .mona-note {
@@ -63,8 +128,29 @@
             border-left: 5px solid $main-cl;
             padding-left: 32px;
 
+            @include max-media($bk-d-1200) {
+                margin: 30px 0;
+                padding-left: 20px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin: 20px 0;
+            }
+
+            @include max-media($bk-576) {
+                padding-left: 15px;
+            }
+
             .mona-icon {
                 margin-bottom: 16px;
+
+                @include max-media($bk-d-1200) {
+                    margin-bottom: 10px;
+                }
+
+                @include max-media($bk-576) {
+                    margin-bottom: 5px;
+                }
             }
 
             .note-tt {
@@ -93,9 +179,21 @@
             @include fz-24;
             margin-top: 0;
             margin-bottom: 32px;
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 20px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin-bottom: 10px;
+            }
         }
 
         .mona-list {
+            @include max-media($bk-d-992) {
+                margin: 10px 0;
+            }
+
             li {
                 color: #4F4F4F;
                 list-style: disc;
@@ -114,11 +212,22 @@
             padding: 23px 0;
             margin-top: 52px;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
 
+            @include max-media($bk-d-1200) {
+                margin-top: 30px;
+            }
+
+            @include max-media($bk-d-992) {
+                margin-top: 20px;
+                padding: 15px 0;
+            }
+
             .tag-text {
                 display: flex;
+                flex-wrap: wrap;
                 align-items: center;
             }
 
@@ -174,6 +283,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all .3s ease;
+            width: 50%;
 
             &:hover {
                 .post-tt {
@@ -184,7 +294,15 @@
             .post-head {
                 margin-bottom: 16px;
                 display: flex;
-                align-items: center
+                align-items: center;
+
+                @include max-media($bk-d-992) {
+                    margin-bottom: 10px;
+                }
+
+                @include max-media($bk-576){
+                    margin-bottom: 5px;
+                }
             }
 
             .post-text {
@@ -198,13 +316,21 @@
         }
 
         .post-prev {
+            padding-left: 10px;
+            @include  max-media($bk-576){
+                padding-left: 5px;
+            }
             .post-text {
                 padding-left: 11px;
             }
         }
 
         .post-next {
+            padding-right: 10px;
             text-align: right;
+            @include max-media($bk-d-768){
+                padding-right: 5px;
+            }
 
             .post-head {
                 justify-content: flex-end;
@@ -222,40 +348,64 @@
 }
 
 .related-post {
-    padding:  0 0 96px;
-    @include max-media($bk-d-1200){
+    padding: 0 0 96px;
+
+    @include max-media($bk-d-1200) {
         padding-bottom: 60px;
     }
-    @include max-media($bk-d-768){
+
+    @include max-media($bk-d-768) {
         padding-bottom: 40px;
     }
+
     .post-title {
         margin-bottom: 40px;
+        line-height: 1.2;
+        @include max-media($bk-d-1200){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 20px;
+        }
     }
 
-    .post-slide{
+    .post-slide {
         overflow: hidden;
     }
 
-    .swiper{
+    .swiper {
         margin: 0 -15px;
         padding-bottom: 40px;
+        @include max-media($bk-d-992){
+            margin: 0 -7.5px;
+        }
     }
 
-    .swiper-pagination{
-        .swiper-pagination-bullet{
+    .swiper-pagination {
+        .swiper-pagination-bullet {
             border-radius: 99px;
             transition: all .3s ease;
-            &-active{
+
+            &-active {
                 width: 40px;
             }
         }
     }
 
-    .swiper-slide{
+    .swiper-slide {
         width: calc(100% / 3);
         padding: 0 15px;
+        @include max-media($bk-d-1200){
+            width: calc(100% /2);
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
+
+        @include max-media($bk-d-992){
+            padding: 0 7.5px;
+        }
     }
 
-    
+
 }

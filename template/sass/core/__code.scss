@@ -333,18 +333,35 @@
 
     .inspi-content {
         padding-top: 16px;
+        @include max-media($bk-d-992){
+            padding-top: 10px;
+        }
     }
 
     .inspi-tt {
-        line-height: 1.7;
+        line-height: 1.5;
         margin-bottom: 8px;
         color: $b-D1D1-cl;
+        @include line-clamp(1);
+        @include max-media($bk-d-992){
+            margin-bottom: 5px;
+        }
+        @include max-media($bk-576){
+            margin-bottom: 2px;
+        }
     }
 
     .inspi-desc {
         line-height: 1.5;
         color: $b-D1D1-cl;
         margin-bottom: 16px;
+        @include line-clamp(4);
+        @include max-media($bk-d-992){
+            margin-bottom: 10px;
+        }
+        @include max-media($bk-d-768){
+            @include  line-clamp(2);
+        }
     }
 
     .inspi-more {

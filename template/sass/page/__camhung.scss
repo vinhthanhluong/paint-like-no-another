@@ -20,6 +20,9 @@
 
     .column {
         width: calc(100% / 3);
+        @include max-media($bk-d-1200){
+            width: calc(100% / 2);
+        }
     }
 
     // .inspi-inner {

@@ -85,33 +85,55 @@
     }
 
     .project-inner {
-        transform: translateZ(-220px);
         transition: all .5s ease;
-        transform-style: preserve-3d;
-        // height: 504px;
         position: relative;
-        @include max-media($bk-d-1440){
-            transform: none;
-        }
+        background-color: $w-cl;
+
+
         &:hover {
-            transform: translateZ(-220px) rotateY(-90deg);
-            @include max-media($bk-d-1440){
-                transform: none;
+            .project-eff {
+                @include visible;
             }
 
-            .project-show{
-                @include max-media($bk-d-1440){
-                    transform: translateX(0);
+            .project-show {
+                transform: translateY(0);
+                @include visible
+            }
+
+            .project-line {
+
+                .line-top,
+                .line-bottom {
+                    width: 100%;
+                }
+
+                .line-right,
+                .line-left {
+                    height: 100%;
+                }
+
+                .line-top {
+                    transition-delay: 0s;
+                }
+
+                .line-right {
+                    transition-delay: .3s;
+                }
+
+                .line-bottom {
+                    transition-delay: .6s;
+
+                }
+
+                .line-left {
+                    transition-delay: .9s;
                 }
             }
         }
 
+
         .project-img {
-            transform: rotateY(0deg) translateZ(220px);
-            @include max-media($bk-d-1440){
-                transform: none;
-            }
-            img{
+            img {
                 width: 100%;
                 height: 100%;
                 max-width: 100%;
@@ -119,27 +141,80 @@
             }
         }
 
-        .project-show {
-            border: 5px solid $main-cl;
-            padding: 32px 0 32px 32px;
+        .project-eff {
             transition: all .3s ease;
-            transform: rotateY(90deg) translateZ(220px);
-            display: flex;
-            flex-direction: column;
+            @include hidden;
             background-color: $w-cl;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            @include max-media($bk-d-1900){
+        }
+
+        .project-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            .line {
+                position: absolute;
+                background-color: $main-cl;
+                transition: all .3s ease;
+            }
+
+            .line-top {
+                top: 0;
+                left: 0;
+                height: 5px;
+                width: 0;
+                transition-delay: .9s;
+            }
+
+            .line-right {
+                top: 0;
+                right: 0;
+                height: 0;
+                width: 5px;
+                transition-delay: .6s;
+            }
+
+            .line-bottom {
+                bottom: 0;
+                right: 0;
+                height: 5px;
+                width: 0;
+                transition-delay: .3s;
+            }
+
+            .line-left {
+                bottom: 0;
+                left: 0;
+                height: 0;
+                width: 5px;
+                transition-delay: 0s;
+            }
+        }
+
+        .project-show {
+            height: 100%;
+            padding: 32px 0 32px 32px;
+            transition: all .3s ease;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(10%);
+            @include hidden;
+            background-color: $w-cl;
+
+            @include max-media($bk-d-1900) {
                 padding: 20px;
             }
-            @include max-media($bk-d-1440){
-                transform: none;
-                transform: translateX(120%);
-            }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-1440) {}
+
+            @include max-media($bk-d-768) {
                 padding: 15px;
             }
         }
@@ -156,11 +231,13 @@
             padding-right: 32px;
             margin-left: auto;
             width: max-content;
-            @include  max-media($bk-d-1900){
+
+            @include max-media($bk-d-1900) {
                 width: 100%;
                 padding-right: 0;
             }
-            @include  max-media($bk-d-1440){
+
+            @include max-media($bk-d-1440) {
                 padding-top: 20px;
                 margin-bottom: 50px;
             }
@@ -176,7 +253,8 @@
             align-items: center;
             padding-right: 32px;
             margin-top: auto;
-            @include max-media($bk-d-1900){
+
+            @include max-media($bk-d-1900) {
                 padding-right: 0px;
             }
         }
@@ -190,13 +268,14 @@
             cursor: pointer;
             transition: all .3s ease;
             flex-shrink: 0;
-            @include max-media($bk-d-1440){
+
+            @include max-media($bk-d-1440) {
                 width: 50px;
                 height: 50px;
             }
 
-            img{
-                @include max-media($bk-d-1440){
+            img {
+                @include max-media($bk-d-1440) {
                     width: 35px;
                     height: 35px;
                 }
@@ -205,10 +284,137 @@
             &:hover {}
         }
 
-        .project-logo{
+        .project-logo {
             padding-left: 20px;
         }
     }
+
+    // .project-inner {
+    //     transform: translateZ(-220px);
+    //     transition: all .5s ease;
+    //     transform-style: preserve-3d;
+    //     // height: 504px;
+    //     position: relative;
+    //     @include max-media($bk-d-1440){
+    //         transform: none;
+    //     }
+    //     &:hover {
+    //         transform: translateZ(-220px) rotateY(-90deg);
+    //         @include max-media($bk-d-1440){
+    //             transform: none;
+    //         }
+
+    //         .project-show{
+    //             @include max-media($bk-d-1440){
+    //                 transform: translateX(0);
+    //             }
+    //         }
+    //     }
+
+    //     .project-img {
+    //         transform: rotateY(0deg) translateZ(220px);
+    //         @include max-media($bk-d-1440){
+    //             transform: none;
+    //         }
+    //         img{
+    //             width: 100%;
+    //             height: 100%;
+    //             max-width: 100%;
+    //             object-fit: cover;
+    //         }
+    //     }
+
+    //     .project-show {
+    //         border: 5px solid $main-cl;
+    //         padding: 32px 0 32px 32px;
+    //         transition: all .3s ease;
+    //         transform: rotateY(90deg) translateZ(220px);
+    //         display: flex;
+    //         flex-direction: column;
+    //         background-color: $w-cl;
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         width: 100%;
+    //         height: 100%;
+    //         @include max-media($bk-d-1900){
+    //             padding: 20px;
+    //         }
+    //         @include max-media($bk-d-1440){
+    //             transform: none;
+    //             transform: translateX(120%);
+    //         }
+    //         @include max-media($bk-d-768){
+    //             padding: 15px;
+    //         }
+    //     }
+
+    //     .project-tt {
+    //         line-height: 1.4;
+    //         padding-bottom: 8px;
+    //         position: relative;
+    //         border-bottom: 1px solid $b-cl;
+    //     }
+
+    //     .project-desc {
+    //         padding-top: 48px;
+    //         padding-right: 32px;
+    //         margin-left: auto;
+    //         width: max-content;
+    //         @include  max-media($bk-d-1900){
+    //             width: 100%;
+    //             padding-right: 0;
+    //         }
+    //         @include  max-media($bk-d-1440){
+    //             padding-top: 20px;
+    //             margin-bottom: 50px;
+    //         }
+
+    //         p {
+    //             margin: 5px 0;
+    //         }
+    //     }
+
+    //     .project-ft {
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         padding-right: 32px;
+    //         margin-top: auto;
+    //         @include max-media($bk-d-1900){
+    //             padding-right: 0px;
+    //         }
+    //     }
+
+    //     .project-more {
+    //         width: 64px;
+    //         height: 64px;
+    //         border-radius: 100%;
+    //         background-color: $main-cl;
+    //         @include flex-mid;
+    //         cursor: pointer;
+    //         transition: all .3s ease;
+    //         flex-shrink: 0;
+    //         @include max-media($bk-d-1440){
+    //             width: 50px;
+    //             height: 50px;
+    //         }
+
+    //         img{
+    //             @include max-media($bk-d-1440){
+    //                 width: 35px;
+    //                 height: 35px;
+    //             }
+    //         }
+
+    //         &:hover {}
+    //     }
+
+    //     .project-logo{
+    //         padding-left: 20px;
+    //     }
+    // }
+
     .project-link{
         @include flex-mid;
         width: 112px;

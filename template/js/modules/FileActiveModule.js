@@ -101,6 +101,16 @@ export default function FileActiveModule() {
 
     // }
 
+    if ($('.contact-form'.length)) {
+        $('.contact-tt-main').on('click', function () {
+            $('.contact-form').addClass('active');
+        });
+        $('.contact-close').on('click', function () {
+            $('.contact-form').removeClass('active');
+        });
+    }
+
+
 
 
 
