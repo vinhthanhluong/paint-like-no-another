@@ -4,14 +4,17 @@
     }
 
     .swiper-pagination-bullet {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         margin: 0 6px;
+        transition: all .3s ease;
+        border-radius: 99px;
     }
 
     .swiper-pagination-bullet-active {
         background-color: $main-cl;
         width: 8px;
         height: 8px;
+        width: 40px;
     }
 }

@@ -1,14 +1,32 @@
 .person-information {
     padding: 88px 0 96px;
     overflow: hidden;
+    @include max-media($bk-d-1200){
+        padding: 60px 0;
+    }
+    @include max-media($bk-d-992){
+        padding: 40px 0;
+    }
 
     .column {
         &.if-bar {
             width: calc(100% / 12 * 3);
+            @include max-media($bk-d-992){
+                width: calc(100% / 12 * 4);
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.if-inr {
             width: calc(100% / 12 * 9);
+            @include max-media($bk-d-992){
+                width: calc(100% / 12 * 8);
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
@@ -25,18 +43,33 @@
             right: 0;
             transform: translateY(-88px);
             background-color: rgba($color: $b-cl, $alpha: .12);
+            @include  max-media($bk-d-768){
+                display: none;
+            }
 
         }
     }
 
     .informat-title {
         margin-bottom: 40px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-992){
+            margin-bottom: 25px;
+        }
+        @include max-media($bk-d-768){
+            margin-bottom: 15px;
+        }
     }
 
     .informat-list {
         .informat-item {
             &:not(:first-child) {
                 margin-top: 16px;
+                @include max-media($bk-d-768){
+                    margin-top: 10px;
+                }
             }
         }
 
@@ -83,13 +116,28 @@
     //information preson
     .informat-inner {
         padding-left: 32px;
+        @include max-media($bk-d-1200){
+            padding-left: 15px;
+        }
+        @include max-media($bk-d-992){
+            padding-left: 0px;
+        }
 
         .infor-head {
             margin-bottom: 40px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 30px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 20px;
+            }
 
             .infor-title {
                 margin-bottom: 8px;
                 line-height: 1.4;
+                @include max-media($bk-d-992){
+                    margin-bottom: 5px;
+                }
             }
 
             .infor-email {
@@ -101,21 +149,46 @@
             display: flex;
             flex-wrap: wrap;
             margin: -20px -15px;
+            @include max-media($bk-d-1200){
+                margin: -15px;
+            }
+            @include max-media($bk-d-992){
+                margin: -7.5px;
+            }
         }
 
         .infor-gr {
             margin-top: 32px;
             padding-top: 32px;
             border-top: 1px solid rgba($color: $b-cl, $alpha: .16);
+            @include max-media($bk-d-992){
+                margin-top: 25px;
+                padding-top: 20px;
+            }
         }
 
         .infor-tt {
             margin-bottom: 24px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 20px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 15px;
+            }
         }
 
         .infor-f {
             padding: 20px 15px;
             width: 50%;
+            @include max-media($bk-d-1200){
+                padding: 15px;
+            }
+            @include max-media($bk-d-992){
+                padding: 7.5px;
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
         }
 
         .infor-w {
@@ -129,6 +202,10 @@
             height: 48px;
             width: 100%;
             transition: all .3s ease;
+            @include max-media($bk-d-768){
+                height: 44px;
+                padding: 10px 16px;
+            }
 
             &:hover,
             &:focus {
@@ -166,11 +243,19 @@
             background-color: $main-cl;
             color: $w-cl;
             border-radius: 50px;
-            width: 170px;
-            height: 50px;
-            padding: 16px 0px;
+            // width: 170px;
+            // height: 50px;
+            width: auto;
+            padding: 15px 32px;
             cursor: pointer;
             border: 1px solid $main-cl;
+            @include max-media($bk-d-1200){
+                margin-top: 35px;
+            }
+            @include max-media($bk-d-992){
+                margin-top: 30px;
+                padding: 10px 20px;
+            }
 
             &:hover {
                 box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
@@ -185,26 +270,55 @@
     //list heart
     .heart-inner {
         padding-left: 32px;
+        @include max-media($bk-d-1200){
+            padding-left: 15px;
+        }
+        @include max-media($bk-d-992){
+            padding-left: 0px;
+        }
 
         .heart-title {
             margin-bottom: 48px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 30px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 20px;
+            }
         }
 
         .heart-list {
             display: flex;
             flex-wrap: wrap;
             margin: -16px -10px;
+            @include max-media($bk-d-1200){
+                margin: -10px;
+            }
+            @include max-media($bk-d-992){
+                margin:-10px -5px;
+            }
         }
 
         .heart-item {
             padding: 16px 10px;
             width: calc(100% / 5);
+            @include max-media($bk-d-1200){
+                padding: 10px;
+                width: calc(100% / 4);
+            }
+            @include max-media($bk-d-992){
+                padding: 10px 5px;
+                width: calc(100% / 3);
+            }
+            @include  max-media($bk-576){
+                width: calc(100% / 2);
+            }
         }
 
         .heart-box {
             position: relative;
             display: inline-block;
-
+            width: 100%;
             &:hover {
                 .heart-close {
                     @include visible;
@@ -236,6 +350,9 @@
                 line-height: 1.5;
                 margin-top: 8px;
                 transition: all .3s ease;
+                @include max-media($bk-d-992){
+                    margin-top: 5px;
+                }
             }
 
         }
@@ -251,6 +368,10 @@
             transition: all .3s ease;
             display: inline-block;
             margin-top: 40px;
+            @include max-media($bk-d-992){
+                margin-top: 30px;
+                padding: 12px 20px;
+            }
 
             &:hover {
                 color: $main-cl;
@@ -262,15 +383,32 @@
 
     //order history
     .history-inner {
+        padding-left: 32px;
+        @include max-media($bk-d-1200){
+            padding-left: 15px;
+        }
+        @include max-media($bk-d-992){
+            padding-left: 0px;
+        }
         .history-head {
             margin-bottom: 32px;
             padding-bottom: 32px;
             border-bottom: 1px solid rgba($color: $b-cl, $alpha: .12);
+            @include  max-media($bk-d-1200){
+                margin-bottom: 25px;
+                padding-bottom: 20px;
+            }
         }
 
         .history-title {
             margin-bottom: 24px;
             line-height: 1.2;
+            @include max-media($bk-d-1200){
+                margin-bottom: 15px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 10px;
+            }
         }
 
         .history-desc {
@@ -285,7 +423,9 @@
 
         .history-search {
             margin-bottom: 32px;
-
+            @include max-media($bk-d-1200){
+                margin-bottom: 20px;
+            }
             .history-f {
                 position: relative;
             }
@@ -296,7 +436,7 @@
                 transition: all .3s ease;
                 border-radius: 5px;
                 height: 48px;
-                padding: 12px 50px;
+                padding: 12px 12px 12px 50px;
 
                 &:hover,
                 &:focus {
@@ -318,13 +458,19 @@
 
         }
 
-        .histopry-tt {
+        .history-tt {
             margin-bottom: 24px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 15px;
+            }
         }
 
         .history-item {
             &:not(:first-child) {
                 margin-top: 24px;
+                @include max-media($bk-d-1200){
+                    margin-top: 20px;
+                }
             }
         }
 
@@ -340,14 +486,24 @@
             padding: 24px 16px ;
             justify-content: space-between;
             border-bottom: 1px solid rgba($color: $b-cl, $alpha: .2);
+            @include max-media($bk-d-992){
+                padding: 15px 10px 0;
+                flex-direction: column;
+                // align-items: flex-start;
+            }
         }
 
         .history-tx{
             display: flex;
             align-items: center;
             width: calc(100% - 150px);
+            @include max-media($bk-d-992){
+                width: 100%;
+                align-items: flex-start;
+            }
 
             .history-img{
+                flex-shrink: 0;
                 img{
                     // width: 100%;
                     height: 100%;
@@ -358,6 +514,9 @@
 
             .history-text{
                 padding-left: 24px;
+                @include max-media($bk-d-992){
+                    padding-left: 8px;
+                }
             }
 
             .history-t{
@@ -378,6 +537,11 @@
         .history-pri{
             width: 150px;
             text-align: right;
+            @include max-media($bk-d-992){
+                width: auto;
+                width: 100%;
+                transform: translateY(-100%);
+            }
         }
 
         .history-ft{
@@ -385,6 +549,11 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px 16px;
+            @include max-media($bk-d-992){
+                padding: 13px 10px;
+                // flex-direction: column-reverse;
+                // align-items: flex-end;
+            }
         }
 
         .history-act{
@@ -401,6 +570,20 @@
             margin-right: 16px;
             text-transform: uppercase;
             transition:  all .3s ease;
+            @include max-media($bk-d-1200){
+                padding: 10px 20px 11px;
+            }
+            @include max-media($bk-d-992){
+                margin-right: 0;
+            }
+            @include max-media($bk-d-768){
+                padding: 8px 10px;
+            }
+            @include max-media($bk-576){
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+            
         }
 
         .history-contact{
@@ -413,9 +596,22 @@
             padding: 10px 32px;
             border-radius: 50px;
             transition: all .3s ease;
+            @include max-media($bk-d-1200){
+                padding: 10px 20px;
+            }
+            @include max-media($bk-d-992){
+                display: none;
+            }
             &:hover{
                 color: $w-cl;
                 background-color: $main-cl;
+            }
+        }
+
+        .history-total{
+            padding-left: 10px;
+            @include max-media($bk-d-576){
+                padding-left: 0px;
             }
         }
 
@@ -424,6 +620,10 @@
             align-items: center;
             span{
                 margin-left: 16px;
+                @include max-media($bk-576){
+                    margin-left: 5px;
+                    font-size: 16px;
+                }
             }
         }
     }

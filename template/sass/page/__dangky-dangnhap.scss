@@ -28,6 +28,27 @@
 
     .column {
         width: 50%;
+        @include max-media($bk-d-992){
+            width: 40%;
+        }
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
+
+        &:nth-child(1){
+            @include max-media($bk-d-768){
+                display: none;
+            }
+        }
+
+        &:nth-child(2){
+            @include max-media($bk-d-992){
+                width: 60%;
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
+        }
     }
 
     .act-logo {
@@ -40,12 +61,27 @@
         background-color: $w-cl;
         padding: 48px;
         border-radius: 8px;
+        @include max-media($bk-d-1200){
+            padding: 30px;
+        }
+        @include max-media($bk-d-992){
+            padding: 25px;
+        }
+        @include max-media($bk-576){
+            padding: 20px;
+        }
     }
 
     .act-title {
         margin-bottom: 16px;
         color: $b-D1D1-cl;
         line-height: 1.2;
+        @include max-media($bk-d-1200){
+            margin-bottom: 10px;
+        }
+        @include max-media($bk-576){
+            margin-bottom: 5px;
+        }
     }
 
     .act-p {
@@ -65,15 +101,24 @@
 
     .act-form {
         margin-top: 32px;
+        @include max-media($bk-d-1200){
+            margin-top: 20px;
+        }
 
         .act-group {
             &:not(:first-child) {
                 margin-top: 20px;
+                @include max-media($bk-d-1200){
+                    margin-top: 15px;
+                }
             }
 
             &.act-line {
                 border-top: 1px solid rgba($color: $b-cl, $alpha: .2);
                 padding-top: 20px;
+                @include max-media($bk-d-1200){
+                    margin-top: 20px;
+                }
 
                 .act-int {
                     margin-top: 16px;
@@ -83,9 +128,20 @@
 
             &.act-df{
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-between;
                 .act-f{
                     width: calc(50% - 10px);
+                    @include max-media($bk-d-1200){
+                        width: calc(50% - 5px);
+                    }
+                    @include max-media($bk-576){
+                        width: 100%;
+                    }
+
+                    &:nth-child(1){
+                        margin-bottom: 15px;
+                    }
                     
                 }
             }
@@ -134,6 +190,10 @@
             transition: all .3s ease;
             padding: 13px 16px 13px 16px;
             height: 50px;
+            @include max-media($bk-d-768){
+                height: 44px;
+                padding: 10px 16px;
+            }
 
             &:hover,
             &:focus {
@@ -245,6 +305,9 @@
             margin-top: 24px;
             display: flex;
             align-items: center;
+            @include max-media($bk-d-992){
+                margin-top: 15px;
+            }
             
             .act-btn{
                 width: 163px;
@@ -262,10 +325,16 @@
                 margin-left: 24px;
                 display: flex;
                 align-items: center;
+                @include max-media($bk-d-992){
+                    margin-left: 15px;
+                }
             }
 
             span{
                 margin-left: 24px;
+                @include max-media($bk-d-992){
+                    margin-left: 15px;
+                }
             }
 
             .social-item{

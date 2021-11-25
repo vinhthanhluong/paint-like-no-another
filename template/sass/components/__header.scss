@@ -33,6 +33,14 @@
             color: $b-cl;
         }
 
+        .header-search {
+            border-color: $w-cl;
+        }
+
+        .header-bottom-inner{
+            padding: 0;
+        }
+
         &.--fix {
             background-color: $w-cl;
             color: $b-cl;
@@ -46,6 +54,12 @@
                     filter: brightness(0) invert(0);
                 }
             }
+
+            .header-search {
+                border-color: #E0E0E0;
+            }
+
+
 
             .header-menu-nav {
                 &>li {
@@ -83,7 +97,6 @@
         .header-bottom {
             @include max-media($bk-d-1200) {
                 padding: 0 15px 0 0;
-
             }
         }
 
@@ -109,10 +122,23 @@
                 }
             }
 
+            a {
+                // padding: 50px 25px;
+                // @include max-media($bk-d-1200){
+                //     padding: 10px 20px;
+                // }
+            }
+
             &>li {
                 &>a {
                     padding: 50px 25px;
+                    @include  max-media($bk-d-1440){
+                        padding: 50px 15px;
+                    }
 
+                    @include max-media($bk-d-1200){
+                        padding: 10px 20px;
+                    }
                     &::before {
                         bottom: -1px;
                     }
@@ -152,6 +178,9 @@
     }
 
     &-inner {
+        @include min-media($bk-1200){
+            padding: 15px 0;
+        }
         // padding: 8px 0;
         display: flex;
         //justify-content: flex-start;
@@ -178,7 +207,7 @@
 }
 
 .header-search {
-    border-right: 2px solid $w-cl;
+    border-right: 1px solid #E0E0E0;
     margin-right: 16px;
     padding-right: 16px;
     transition: all .3s ease;
@@ -458,6 +487,9 @@
 }
 
 .header-menu {
+    @include min-media($bk-d-1200){
+        @include pos-mid;
+    }
 
     &-inner {
         .header-menu-logo {
@@ -527,6 +559,9 @@
         text-transform: uppercase;
         @include trans(.3s);
         //color: $t-b-cl;
+        @include max-media($bk-d-1440){
+            padding: 30px 15px;
+        }
 
         //font-size: 12px;
         @include max-media($bk-d-1200) {

@@ -1,4 +1,5 @@
 .product{
+    overflow: hidden;
     padding: 88px 0 96px;
     @include max-media($bk-d-1200){
         padding: 60px 0;
@@ -10,6 +11,15 @@
 
     .paint-head {
         margin-bottom: 56px;
+        @include max-media($bk-d-1440){
+            margin-bottom: 40px;
+        }
+        @include max-media($bk-d-1200){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-768){
+            margin-bottom: 20px;
+        }
 
         .paint-title{
             color: $b-D1D1-cl;
@@ -17,11 +27,24 @@
     }
 
     .product-tab{
+        .tab-link-mobi{
+            @include max-media($bk-d-768){
+                display: block;
+            }
+        }
+
         .tab-link{
             width: 100%;
             background-color: $g-F5F5-cl;
             border-radius: 5px;
             overflow: hidden;
+            @include max-media($bk-d-768){
+                border: none;
+                display: block;
+                background-color: #fff;
+                padding: 10px ;
+                background-color: rgba($color: $main-cl, $alpha: .1);
+            }
         }
 
         .tab-title{
@@ -30,6 +53,16 @@
             text-align: center;
             padding: 20px 10px;
             margin: 3px;
+            @include max-media($bk-d-1200){
+                padding: 15px 10px;
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+                text-align: left;
+                border-radius: 5px !important;
+                padding: 7px 10px;
+                margin: 0;
+            }
             &.active{
                 background-color: $main-cl;
                 color: $w-cl;
@@ -48,34 +81,59 @@
             @include fz-24;
             font-weight: 600;
             text-transform: uppercase;
+            @include max-media($bk-576){
+                text-transform: none;
+            }
         }
 
         .tab-content{
             margin-top: 48px;
+            @include max-media($bk-d-1200){
+                margin-top: 30px;
+            }
+
+            &-box{
+                overflow: hidden;
+            }
         }
     }
 
     .column{
         &.pro-sidebar{
             width: calc(100% / 12 * 3);
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.pro-tx{
             width: calc(100% /12 * 9);
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
     .product-sidebar{
         @include min-media($bk-1200){
-            position: fixed;
-            top: 100px;
-            left: 0;
+            // position: sticky;
+            // top: 100px;
+            // left: 0;
+        }
+        @include  max-media($bk-d-768){
+            border-bottom: 1px solid rgba($color: $b-cl, $alpha: .16);
+            padding-bottom: 15px;
+            margin-bottom: 10px;
         }
         .product-tt{
             border-bottom: 1px solid rgba($color: $b-cl, $alpha: .16);
             padding-bottom: 24px;
             margin-bottom: 16px;
             // line-height: 1.3;
+            @include max-media($bk-d-768){
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+            }
         }
 
         .fm-title{
@@ -106,6 +164,10 @@
                 margin-top: 16px;
                 padding-top: 16px;
                 border-top: 1px solid rgba($color: $b-cl, $alpha: .16);
+                @include max-media($bk-d-992){
+                    margin-top: 12px;
+                    padding-top: 12px;
+                }
             }
 
             &.active{
@@ -168,16 +230,28 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include max-media($bk-576){
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     }
 
     .product-hed{
         border-bottom: 1px solid rgba($color: $b-cl, $alpha: .16);
         padding-bottom: 11px;
+        @include max-media($bk-d-1200){
+            padding-bottom: 10px;
+        }
         .product-sl{
-            
+            @include max-media($bk-576){
+                margin-bottom: 5px;
+            }
         }
         .product-search{
+            @include max-media($bk-576){
+                width: 100%;
+            }
             .search-bf{
                 position: relative;
             }
@@ -188,6 +262,13 @@
                 width: 300px;
                 padding-right: 40px;
                 transition: all .3s ease;
+                @include max-media($bk-d-992){
+                    height: 38px;
+                    width: 240px;
+                }
+                @include max-media($bk-576){
+                    width: 100%;
+                }
                 &::placeholder{
                     color: $g-7C7C-cl;
                 }
@@ -214,6 +295,12 @@
 
     .product-list{
         margin-top: 32px;
+        @include max-media($bk-d-1200){
+            margin-top: 25px;
+        }
+        @include  max-media($bk-d-768){
+            margin-top: 20px;
+        }
     }
 
     .product-item{
@@ -221,25 +308,61 @@
             margin-top: 32px;
             padding-top: 32px;
             border-top: 1px solid rgba($color: $b-cl, $alpha: .16);
+            @include max-media($bk-d-1200){
+                margin-top: 25px;
+                padding-top: 25px;
+            }
+
+            @include max-media($bk-d-992){
+                margin-top: 20px;
+                padding-top: 20px;
+            }
         }
     }
 
     .product-box{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         .product-if{
             display: flex;
             width: calc(100% - 290px);
+            @include max-media($bk-d-1200){
+                width: calc(100% - 230px);
+            }
+            @include max-media($bk-d-992){
+                width: calc(100% - 200px);
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
         }
 
         .product-tx{
             width: 290px;
             padding-left: 10px;
             text-align: right;
+            @include max-media($bk-d-1200){
+                width: 230px;
+            }
+            @include max-media($bk-d-992){
+                width: 200px;
+            }
+            @include max-media($bk-576){
+                width: 100%;
+                padding: 10px 0 0;
+                text-align: center;
+            }
         }
 
         .product-img{
             width: 200px;
+            @include max-media($bk-d-1200){
+                width: 170px;
+            }
+            @include max-media($bk-d-992){
+                width: 110px;
+            }
             img{
                 width: 100%;
                 max-width: 100%;
@@ -249,6 +372,14 @@
         .product-text{
             width: calc(100% - 200px);
             padding-left: 40px;
+            @include max-media($bk-d-1200){
+                padding-left: 20px;
+                width: calc(100% - 170px);
+            }
+            @include max-media($bk-d-992){
+                width: calc(100% - 110px);
+                padding-left: 10px;
+            }
         }
         .product-t{
             margin-bottom: 16px;
@@ -258,12 +389,21 @@
             &:hover{
                 color: $main-cl;
             }
+            @include max-media($bk-d-1200){
+                margin-bottom: 10px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 5px;
+            }
         }
 
         .product-desc{
             line-height: 1.7;
             color: #4C4C4C;
             @include line-clamp(3);
+            @include max-media($bk-d-992){
+                line-height: 1.5;
+            }
         }
 
         .product-price{
@@ -273,6 +413,13 @@
         .product-p{
             color: #4C4C4C;
             margin-bottom: 24px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 20px;
+            }
+            @include max-media($bk-d-992){
+                margin-bottom: 10px;
+            }
+
         }
 
         .product-buy{
@@ -286,6 +433,12 @@
             align-items: center;
             transition: all .3s ease;
             border: 1px solid $main-cl;
+            @include max-media($bk-d-1200){
+                padding: 12px 20px;
+            }
+            @include max-media($bk-d-992){
+                padding: 10px 15px;
+            }
             &:hover{
                 color: $main-cl;
                 background-color: $w-cl;

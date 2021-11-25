@@ -1,12 +1,15 @@
 .project-view {
     padding: 88px 0 64px;
     overflow: hidden;
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         padding: 60px 0;
     }
-    @include max-media($bk-d-992){
+
+    @include max-media($bk-d-992) {
         padding: 40px 0;
     }
+
     .paint-head {
         text-align: center;
     }
@@ -22,6 +25,11 @@
     .project-tab {
         .tab-link {
             justify-content: center;
+
+            @include max-media($bk-576) {
+                background-color: rgba($color: $main-cl, $alpha: .1);
+            }
+
         }
 
         .tab-title {
@@ -30,8 +38,23 @@
             @include fz-18;
             padding: 0 32px;
 
+            @include max-media($bk-d-1200) {
+                padding: 0 20px;
+            }
+
+            @include max-media($bk-d-992) {
+                padding: 0 15px;
+            }
+
+            @include max-media($bk-576) {
+                padding: 5px 10px 
+            }
+
             &:first-child {
                 padding-left: 0;
+                @include max-media($bk-576) {
+                    padding: 5px 10px 
+                }
             }
 
             &:last-child {
@@ -41,12 +64,19 @@
             &.active {
                 color: $b-cl;
                 font-weight: bold;
+
+                @include max-media($bk-576) {
+                    background-color: $main-cl;
+                    color: $w-cl;
+                    font-weight: 600;
+                }
             }
         }
 
         .tab-content {
             margin-top: 56px;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-top: 30px;
             }
         }
@@ -54,10 +84,12 @@
 
     .columns {
         margin: -20px;
-        @include max-media($bk-d-1900){
+
+        @include max-media($bk-d-1900) {
             margin: -15px;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin: -7.5px;
         }
     }
@@ -66,22 +98,26 @@
         width: calc(100% / 4);
         padding: 20px;
         overflow: hidden;
-        @include max-media($bk-d-1900){
+
+        @include max-media($bk-d-1900) {
             padding: 15px;
         }
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             width: calc(100% / 3);
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             padding: 7.5px;
             width: calc(100% / 2);
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             width: 100%;
         }
-        
-        
-        
+
+
+
     }
 
     .project-inner {
@@ -415,7 +451,7 @@
     //     }
     // }
 
-    .project-link{
+    .project-link {
         @include flex-mid;
         width: 112px;
         height: 112px;
@@ -423,7 +459,8 @@
         border: 1px solid $b-cl;
         margin: 104px auto 0;
         transition: all .3s ease;
-        &:hover{
+
+        &:hover {
             color: $main-cl;
             border-color: $main-cl;
             width: 90px;
