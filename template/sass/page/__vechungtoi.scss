@@ -181,11 +181,16 @@
         left: 9px;
         right: 9px;
         bottom: 9px;
-        background-image: url('../img/bg-white-ten.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-
+        // background-image: url('../img/bg-white-ten.png');
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // background-color: $w-cl;
+        display: flex;
+        flex-direction: column;
+        // mix-blend-mode: lighten;
+        // mix-blend-mode: darken;
+        // z-index: -1;
     }
 
     .about-t {
@@ -196,10 +201,69 @@
     .about-bt {
         color: $g-7C7C-cl;
         line-height: 1.1;
-        position: absolute;
-        bottom: 60px;
-        right: 17px;
+        padding-left: 20px;
+        // position: absolute;
+        // bottom: 60px;
+        // right: 17px;
+    }
 
+    .about-exper{
+        display: flex;
+        align-items: center;
+        // padding: 0 17px 5px 24px;
+        margin-top: auto;
+        // margin-left: auto;
+        // justify-content: flex-end;
+        height: 150px;
+        padding-right: 17px;
+        padding-left: 170px;
+    }
+
+    // .exper-num{
+    //     font-size: 150px;
+    //     font-weight: 600;
+    //     line-height: 1;
+    //     letter-spacing: -5px;
+    //     // display: none;
+    //     // background-color: $w-cl;
+    //     mix-blend-mode: screen;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     background-color: $w-cl;
+    //     display: none;
+    // }
+
+    // .exper-t{
+    //     position: absolute;
+    //     bottom:0;
+    //     left: 24px;
+    // }
+
+    .abbout-ten{
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        top: 5px;
+        right: 5px;
+        // mix-blend-mode: lighten;
+        // z-index: 3;
+        // background-color: white;
+        background-color: $w-cl;
+        mix-blend-mode: screen;
+    }
+
+    .ten-num{
+        font-size: 150px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -5px;
+        position: absolute;
+        bottom: 0;
+        left: 24px;
+        
     }
 
 

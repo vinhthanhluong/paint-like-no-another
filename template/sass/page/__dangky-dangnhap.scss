@@ -1,0 +1,289 @@
+.box-signup-login {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    @include max-media($bk-d-1900){
+        height: 100%;
+        padding: 35px 0;
+    }
+
+    &.box-login{
+        height: calc(100vh - 80px);
+        @include max-media($bk-d-1200){
+            height: calc(100vh - 70px);
+        }
+    }
+
+    .act-wrapper{
+        overflow: hidden;
+    }
+
+    .columns{
+        // align-items: center;
+    }
+
+    .column {
+        width: 50%;
+    }
+
+    .act-logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .act-inner {
+        background-color: $w-cl;
+        padding: 48px;
+        border-radius: 8px;
+    }
+
+    .act-title {
+        margin-bottom: 16px;
+        color: $b-D1D1-cl;
+        line-height: 1.2;
+    }
+
+    .act-p {
+        display: flex;
+        color: $b-D1D1-cl;
+
+        .act-change {
+            color: #006DED;
+            margin-left: 8px;
+            transition: all .3s ease;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .act-form {
+        margin-top: 32px;
+
+        .act-group {
+            &:not(:first-child) {
+                margin-top: 20px;
+            }
+
+            &.act-line {
+                border-top: 1px solid rgba($color: $b-cl, $alpha: .2);
+                padding-top: 20px;
+
+                .act-int {
+                    margin-top: 16px;
+
+                }
+            }
+
+            &.act-df{
+                display: flex;
+                justify-content: space-between;
+                .act-f{
+                    width: calc(50% - 10px);
+                    
+                }
+            }
+        }
+
+        .act-f {
+            position: relative;
+
+            &.warning{
+                .f-control{
+                    padding-right: 50px;
+                }
+
+                .act-error{
+                    display: block;
+                }
+
+                .act-ic{
+                    display: block;
+                }
+            }
+
+            &.succes{
+                .f-control{
+                    padding-right: 50px;
+                }
+                .act-ic{
+                    display: block;
+                }
+            }
+        }
+
+        .act-int {
+            position: relative;
+        }
+
+        .label {
+            @include fz-16;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .f-control {
+            border-radius: 5px;
+            border-color: rgba($color: $b-cl, $alpha: .12);
+            transition: all .3s ease;
+            padding: 13px 16px 13px 16px;
+            height: 50px;
+
+            &:hover,
+            &:focus {
+                border-color: $main-cl;
+            }
+
+            &::placeholder{
+                color: $g-7C7C-cl;
+            }
+
+            &.password{
+                padding-right: 40px;
+            }
+        }
+
+        .act-ic {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            display: none;
+        }
+
+        .act-error {
+            color: #E41A28;
+            margin-top: 6px;
+            transition: all .3s ease;
+            display: none;
+
+            a {
+                color: #006DED;
+            }
+        }
+
+        .act-but {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            appearance: auto;
+
+            &.show {
+                .fa-eye {
+                    display: none;
+                }
+            }
+
+            &.hide {
+                .fa-eye-slash {
+                    display: none;
+                }
+            }
+        }
+
+        .act-check{
+            margin-top: 16px;
+
+            label{
+                .input-check{
+                    display: none;
+
+                    &:checked + .check-content{
+                        .checkmark{
+                            &::before{
+                                @include visible;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .check-content{
+                display: flex;
+                cursor: pointer;
+            }
+
+            .checkmark{
+                width: 14px;
+                height: 14px;
+                border-radius: 3px;
+                border: 1px solid $b-cl;
+                position: relative;
+                margin-top: 2px;
+                &::before{
+                    content: '\f00c ';
+                    font-family: 'Fontawesome';
+                    font-size: 10px;
+                    @include pos-mid;
+                    @include hidden;
+                    transition: all .3s ease;
+                }
+            }
+
+            .check-text{
+                width: calc(100% - 14px);
+                padding-left: 10px;
+            }
+        }
+
+        .act-forgot-pass{
+            font-weight: 500;
+            text-decoration: underline;
+            margin-top: 16px;
+            display: block;
+        }
+
+        .act-action{
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            
+            .act-btn{
+                width: 163px;
+                height: 47px;
+                background-color: $main-cl;
+                color: $w-cl;
+                font-weight: 500;
+                padding: 14px  0 16px;
+                border-radius: 50px;
+                cursor: pointer;
+                text-transform: none;
+            }
+
+            .act-social{
+                margin-left: 24px;
+                display: flex;
+                align-items: center;
+            }
+
+            span{
+                margin-left: 24px;
+            }
+
+            .social-item{
+                transition: all .3s ease;
+                &:not(:first-child){
+                    margin-left: 10px;
+                }
+
+                &:hover{
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+}

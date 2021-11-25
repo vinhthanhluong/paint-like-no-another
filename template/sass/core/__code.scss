@@ -14,6 +14,7 @@
     font-weight: 600;
 }
 
+//code
 .paint-head {
     margin-bottom: 48px;
     @include max-media($bk-d-1200){
@@ -301,7 +302,6 @@
     }
 }
 
-
 .inspi-inner {
     &:hover {
         .inspi-more {
@@ -414,3 +414,4 @@
 
     }
 }
+

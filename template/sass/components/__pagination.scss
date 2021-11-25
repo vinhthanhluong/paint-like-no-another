@@ -50,5 +50,23 @@
 				color: $main-cl;
 			}
 		}
+
+		.page-dots{
+			width: 40px;
+			height: 40px;
+			background-color: $w-cl;
+			@include fz-16;
+			// color: #C4C4C4;
+			transition: all .3 ease;
+			@include flex-mid;
+
+			.dots{
+				width: 5px;
+				height: 5px;
+				border-radius: 100px;
+				background-color: #C4C4C4;
+				margin: 0 2px;
+			}
+		}
 	}
 }
