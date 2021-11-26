@@ -2,8 +2,8 @@ export default function QtyCartModule() {
    
         var incrementQty;
         var decrementQty;
-        var plusBtn = $('.cart-qty-plus');
-        var minusBtn = $('.cart-qty-minus');
+        var plusBtn = $('.qty-plus');
+        var minusBtn = $('.qty-minus');
         var incrementQty = plusBtn.click(function () {
             var $n = $(this).parent(".cart-qty").find(".qty");
             $n.val(Number($n.val()) + 1); 

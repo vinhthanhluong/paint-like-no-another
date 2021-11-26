@@ -77,6 +77,16 @@ export default function FileActiveModule() {
         
     }
 
+    if ($('.f-color').length) {
+        $('.f-color').on('click', function () {
+            $('.color-popup').addClass('active');
+        });
+        $('.product-close').on('click', function () {
+            $('.color-popup').removeClass('active');
+        });
+        
+    }
+
 
 
 

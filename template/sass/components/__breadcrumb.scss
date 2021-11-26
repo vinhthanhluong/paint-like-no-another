@@ -1,13 +1,15 @@
 .breadcrumb {
     width: 100%;
-
+    background-color: $w-cl;
     &.bg-g-f2 {
         //background-color: $g-F2F0-cl;
     }
 
     .breadcrumb-menu {
+        justify-content: center;
         display: flex;
-        border-bottom: 1px solid $main-cl;
+        align-items: center;
+        // border-bottom: 1px solid $main-cl;
         padding: 10px 0;
 
         @include max-media($bk-576) {
@@ -21,8 +23,8 @@
                 &::before {
                     content: '\f111 ';
                     font-family: "Fontawesome";
-                    font-size: 8px;
-                    color:  red;
+                    font-size: 5px;
+                    color:  #C4C4C4;
                     padding-right: 8px;
                 }
 
@@ -34,10 +36,10 @@
             }
 
             a {
-                font-size: 15px;
-                font-weight: bold;
+                @include fz-16;
+                font-weight: 500;
                 transition: all .3s ease;
-
+                text-transform: capitalize;
                 @include max-media($bk-d-768) {
                     font-size: 13px;
                 }

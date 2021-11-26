@@ -1,0 +1,14 @@
+.box-notification{
+    text-align: center;
+    padding: 16px 0;
+    background-color: $g-F5F5-cl;
+    border-bottom: 1px solid rgba($color: $b-cl, $alpha: .12);
+    .text-notifi{
+        color: #E41A28;
+        font-weight: 500;
+        line-height: 1.7;
+    }
+}
+
+
+
