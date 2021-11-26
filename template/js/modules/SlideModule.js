@@ -224,7 +224,7 @@ export default function SlideModule() {
                 speed: 1000,
                 loop: false,
                 slidesPerView: 'auto',
-                 autoplay: {
+                autoplay: {
                     delay: 4000,
                 },
 
@@ -377,46 +377,24 @@ export default function SlideModule() {
 
 
     //slide fullpgae
-    new fullpage('#fullpage', {
-        autoScrolling:false,
-        navigation: false,
-        // responsiveWidth: 700,
-        // anchors: ['home', 'about-us', 'contact'],
-        parallax: true,
-        parallaxOptions: {
-            type: 'cover',
-        },
-        onLeave: function(origin, destination, direction){
-            console.log("Leaving section" + origin.index);
-        },
-    });
+    // new fullpage('#fullpage', {
+    //     navigation: false,
+    //     // responsiveWidth: 700,
+    //     // anchors: ['home', 'about-us', 'contact'],
+    //     parallax: true,
+    //     parallaxOptions: {
+    //         type: 'cover',
+    //         percentage: 62,
+    //         property: 'translate'
+    //     },
+	// 	slidesNavigation: true,
+	// 	scrollingSpeed: 1000,
+	// 	autoScrolling: true,
+	// 	fitToSection:false,
 
+    //     // onLeave: function (origin, destination, direction) {
+    //     //     console.log("Leaving section" + origin.index);
+    //     // },
+    // });
 
-
-    new fullpage('#scroll-one', {
-        // autoScrolling:false,
-        navigation: false,
-        // responsiveWidth: 700,
-        // anchors: ['home', 'about-us', 'contact'],
-        parallax: true,
-        parallaxOptions: {
-            type: 'cover',
-        },
-        onLeave: function(origin, destination, direction){
-            console.log("Leaving section" + origin.index);
-        },
-    });
-    new fullpage('#brands-one', {
-        autoScrolling:false,
-        navigation: false,
-        // responsiveWidth: 700,
-        // anchors: ['home', 'about-us', 'contact'],
-        parallax: true,
-        parallaxOptions: {
-            type: 'cover',
-        },
-        onLeave: function(origin, destination, direction){
-            console.log("Leaving section" + origin.index);
-        },
-    });
 }

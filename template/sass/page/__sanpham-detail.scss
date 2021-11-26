@@ -3,15 +3,37 @@
     padding: 84px 0 96px;
     position: relative;
     overflow: hidden;
-
+    @include max-media($bk-d-1200){
+        padding: 60px 0;
+    }
+    @include max-media($bk-d-992){
+        padding: 40px 0;
+    }
     .column {
         width: calc(100% / 12 * 6);
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
+    }
+
+    .container{
+        &.active{
+            @include max-media($bk-d-1200){
+                display: none;
+            }
+        }
     }
 
     .product-wrapper {
         background-color: $w-cl;
         padding: 64px;
         border-radius: 10px;
+        @include max-media($bk-d-1200){
+            padding: 30px;
+        }
+        @include  max-media($bk-576){
+            padding: 20px;
+        }
     }
 
     .product-slide {
@@ -19,6 +41,12 @@
         border-radius: 10px;
         padding: 52px;
         position: relative;
+        @include max-media($bk-d-992){
+            padding: 30px;
+        }
+        @include max-media($bk-d-768){
+            padding: 20px ;
+        }
 
         &:hover {
             .swiper-button-prev,
@@ -46,32 +74,50 @@
             height: 100%;
             max-width: 100%;
             object-fit: cover;
+            @include max-media($bk-d-768){
+                margin: 0 auto;
+            }
         }
     }
 
     .product-title {
         margin-bottom: 16px;
         line-height: 1.2;
+        @include max-media($bk-d-992){
+            margin-bottom:8px;
+        }
     }
 
     .product-logo {
         margin-bottom: 16px;
+        @include max-media($bk-d-992){
+            margin-bottom:8px;
+        }
     }
 
     .product-desc {
         color: #4C4C4C;
         line-height: 1.7;
-        margin-bottom: 32px;
+        // margin-bottom: 32px;
+        @include max-media($bk-d-992){
+            // margin-bottom: 15px;
+        }
     }
 
     .product-price {
         line-height: 1;
         margin-bottom: 32px;
+        @include max-media($bk-d-992){
+            margin-bottom: 15px;
+        }
     }
 
     .product-item {
         &:not(:first-child) {
             margin-top: 24px;
+            @include max-media($bk-d-992){
+                margin-top: 15px;
+            }
         }
     }
 
@@ -183,6 +229,9 @@
 
     .product-act {
         margin-top: 40px;
+        @include max-media($bk-d-992){
+            margin-top: 25px;
+        }
 
         .btn {
             font-weight: 500;
@@ -196,6 +245,9 @@
 
             &:hover {
                 box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
+            }
+            @include max-media($bk-d-992){
+                width: 100%;
             }
         }
 
@@ -214,6 +266,10 @@
             color: $main-cl;
             background-color: $w-cl;
             margin-left: 20px;
+            @include max-media($bk-d-992){
+                margin-left: 0px;
+                margin-top: 15px;
+            }
 
             &:hover {
                 background-color: $main-cl;
@@ -225,6 +281,9 @@
 
     .product-tab {
         margin-top: 56px;
+        @include max-media($bk-d-992){
+            margin-top: 30px;
+        }
 
         .tab-tt {
             position: relative;
@@ -238,11 +297,18 @@
                 left: 0;
                 background-color: rgba($color: $b-cl, $alpha: .3);
                 // border-bottom: 1px solid rgba($color: $b-cl, $alpha: .3);
+                @include max-media($bk-576){
+                    display: none;
+                }
             }
         }
 
         .tab-link {
-            justify-content: center
+            justify-content: center;
+            @include max-media($bk-576){
+                background-color: rgba($color: $main-cl, $alpha: .1)
+            }
+             
         }
 
         .tab-title {
@@ -254,6 +320,11 @@
             padding: 8px 10px;
             text-align: center;
             border-radius: 5px 5px 0 0;
+            @include max-media($bk-576){
+                width: 100%;
+                text-align: left;
+                border-radius: 0;
+            }
 
             &.active {
                 background-color: $main-cl;
@@ -264,6 +335,9 @@
 
         .tab-content {
             margin-top: 40px;
+            @include max-media($bk-d-992){
+                margin-top: 20px;
+            }
         }
 
         .product-wrap {
@@ -298,11 +372,17 @@
     width: 100%;
     z-index: 10;
     transition: all .4s ease;
+    @include max-media($bk-d-1200){
+        top: 60px;
+    }
+    
 
     // display: none;
     &.active {
         transform: translateY(0%);
-
+        @include max-media($bk-d-1200){
+            position: static;
+        }
     }
 
     .product-color {
@@ -310,6 +390,12 @@
         background-color: $w-cl;
         padding: 48px 41px 48px 32px;
         position: relative;
+        @include max-media($bk-d-1200){
+            padding: 30px;
+        }
+        @include max-media($bk-576){
+            padding: 20px;
+        }
     }
 
     .product-close {
@@ -317,16 +403,27 @@
         position: absolute;
         top: 16px;
         right: 16px;
+        @include max-media($bk-576){
+            top: 5px;
+            right: 5px;
+        }
     }
 
     .product-head {
         margin-bottom: 64px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 40px;
+        }
+        @include max-media($bk-d-768){
+            margin-bottom: 35px;
+        }
 
         .head-cols {
             display: flex;
             margin: -7.5px;
             justify-content: space-between;
             align-items: flex-end;
+            flex-wrap: wrap;
         }
 
         .head-col {
@@ -334,10 +431,19 @@
 
             &.head-tx {
                 width: calc(100% / 12 * 5);
+                @include max-media($bk-d-992){
+                    width: calc(100% / 12 * 6);
+                }
+                @include max-media($bk-d-768){
+                    width: 100%;
+                }
             }
 
             &.head-se {
                 width: calc(100% / 12 * 5.5);
+                @include max-media($bk-d-768){
+                    width: 100%;
+                }
             }
         }
 
@@ -390,6 +496,12 @@
 
         .product-title {
             margin-bottom: 24px;
+            @include max-media($bk-d-1200){
+                margin-bottom: 15px;
+            }
+            @include max-media($bk-d-768){
+                margin-bottom: 5px;
+            }
         }
 
         .product-desc {
@@ -401,10 +513,22 @@
     .column {
         &.pro-fil {
             width: calc(100% / 12 * 3 + 30px);
+            @include max-media($bk-d-992){
+                width: calc(100% / 12 * 4);
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
 
         &.pro-tx {
             width: calc(100% / 12 * 9 - 30px);
+            @include max-media($bk-d-992){
+                width: calc(100% / 12 * 8);
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
@@ -413,16 +537,28 @@
             padding-bottom: 16px;
             margin-bottom: 32px;
             border-bottom: 1px solid rgba($color: $b-cl, $alpha: .16);
+            @include max-media($bk-d-992){
+                margin-bottom: 20px;
+            }
         }
 
         .fil-box {
             &:not(:first-child) {
                 margin-top: 48px;
+                @include max-media($bk-d-1200){
+                    margin-top: 30px;
+                }
+                @include max-media($bk-d-768){
+                    margin-top: 20px;
+                }
             }
         }
 
         .fil-t {
             margin-bottom: 16px;
+            @include max-media($bk-d-768){
+                margin-bottom: 10px;
+            }
         }
 
         .fil-f {
@@ -465,6 +601,7 @@
                 border: 1px solid $b-D1D1-cl;
                 border-radius: 3px;
                 position: relative;
+                flex-shrink: 0;
 
                 &::before {
                     content: '';
@@ -514,11 +651,26 @@
         display: flex;
         flex-wrap: wrap;
         margin: -12px -10px;
+        @include max-media($bk-d-768){
+            margin: -7.5px;
+        }
     }
 
     .product-col {
         width: calc(100% / 6);
         padding: 12px 10px;
+        @include max-media($bk-d-1200){
+            width: calc(100% / 5);
+        }
+        @include max-media($bk-d-992){
+            width: calc(100% / 3);
+        }
+        @include max-media($bk-d-768){
+            padding: 7.5px;
+        }
+        @include max-media($bk-576){
+            width: calc(100% / 2);
+        }
     }
 
     .product-hd {
@@ -530,9 +682,36 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include max-media($bk-d-1200){
+            margin-top: 30px;
+        }
+        @include max-media($bk-d-992){
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
 
         .pagination {
             margin-top: 0;
+            @include max-media($bk-d-992){
+                margin: 20px auto 0;
+            }
+            li{
+                .page-numbers{
+                    @include max-media($bk-576){
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                .page-arrow{
+                    @include max-media($bk-576){
+                        width: 30px;
+                        height: 30px;
+                    } 
+                }
+            }
+            
         }
     }
 

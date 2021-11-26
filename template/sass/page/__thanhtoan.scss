@@ -18,12 +18,25 @@
         background-color: #FBFBFB;
         border-bottom: 1px solid rgba($color: $b-cl, $alpha: .12);
         padding: 28px 0 27px;
+        @include max-media($bk-d-1200){
+            padding: 20px 0;
+        }
     }
 
     .pay-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include max-media($bk-d-1200){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .pay-order{
+            @include max-media($bk-576){
+                margin-top: 10px;
+            }
+        }
     }
 
     .pay-order {
@@ -36,6 +49,9 @@
         position: relative;
         border: 1px solid $main-cl;
         background-color: $main-cl;
+        @include max-media($bk-d-1200){
+            padding: 10px 20px;
+        }
 
         &::after {
             content: '';
@@ -65,6 +81,9 @@
 
     .pay-wrapper {
         margin-top: 56px;
+        @include max-media($bk-d-1200){
+            margin-top: 30px;
+        }
     }
 
     .pay-table {
@@ -77,18 +96,40 @@
 
                 &:nth-child(1) {
                     width: 150px;
+                    @include max-media($bk-d-1200){
+                        width: 130px;
+                    }
+                    @include max-media($bk-d-992){
+                        width: 100px;
+                    }
                 }
 
                 &:nth-child(2) {
                     width: calc(60% - 150px);
+                    @include max-media($bk-d-1200){
+                        width: calc(60% - 130px);
+                    }
+                    @include max-media($bk-d-992){
+                        width: calc(60% - 100px);
+                    }
                 }
 
                 &:nth-child(3) {
                     text-align: right;
+                    @include max-media($bk-d-768){
+                        display: block;
+                        width: 100%;
+                        display: none;
+                    }
                 }
 
                 &:nth-child(4) {
                     text-align: right;
+                    @include max-media($bk-d-768){
+                        display: block;
+                        width: 100%;
+                        display: none;
+                    }
                 }
             }
         }
@@ -100,13 +141,50 @@
 
             td {
                 padding: 32px 0;
+                @include max-media($bk-d-1200){
+                    padding: 25px 0;
+                }
 
+                @include max-media($bk-d-992){
+                    // padding: 20px 0;
+                }
+                @include max-media($bk-d-768){
+                    // padding: 10px 0;
+
+                }
+
+                &:nth-child(1){
+                    position: relative;
+                    @include max-media($bk-d-768){
+                        // padding: 10px 0;
+                        
+                    }
+                }
+
+                &:nth-child(2) {
+                    @include max-media($bk-d-768){
+                        display: block;
+                        padding-bottom:10px;
+                    }
+                    
+                }
+                
                 &:nth-child(3) {
                     text-align: right;
+                    @include max-media($bk-d-768){
+                        display: inline-block;
+                        width: 50%;
+                        padding-top: 10px;
+                    }
                 }
 
                 &:nth-child(4) {
                     text-align: right;
+                    @include max-media($bk-d-768){
+                        display: inline-block;
+                        width: 50%;
+                        padding-top: 10px;
+                    }
                 }
             }
         }
@@ -116,6 +194,13 @@
             height: 88px;
             border-radius: 5px;
             position: relative;
+            @include max-media($bk-d-992){
+                width: 100px;
+            }
+            @include max-media($bk-d-768){
+                position: absolute;
+                top: 20px;
+            }
 
             .pay-cl-t {
                 color: #B8B8B8;
@@ -137,11 +222,22 @@
             display: flex;
 
             .pay-img {
-                max-width: 88px;
+                // max-width: 88px;
+                min-width: 88px;
             }
 
             .pay-text {
                 padding-left: 32px;
+                @include max-media($bk-d-1200){
+                    padding-left: 20px;
+                }
+                @include max-media($bk-d-992){
+                    padding-left: 10px;
+                }
+                @include max-media($bk-d-768){
+                    padding-left: 5px;
+                }
+
             }
 
             .pay-tt {
@@ -149,7 +245,9 @@
                 @include fz-18;
                 font-weight: 500;
                 transition: all .3s ease;
-
+                @include max-media($bk-d-992){
+                    margin-bottom: 5px;
+                }
                 &:hover {
                     color: $main-cl;
                 }
@@ -159,6 +257,9 @@
                 font-weight: 500;
                 color: $g-7C7C-cl;
                 margin-bottom: 8px;
+                @include max-media($bk-d-992){
+                    margin-bottom: 5px;
+                }
             }
 
             .pay-sll {
@@ -168,6 +269,9 @@
         }
 
         .pay-qty {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
             .cart-qty {
                 position: relative;
 
@@ -200,6 +304,9 @@
                 height: 40px;
                 font-weight: 600;
                 transition: all .3s ease;
+                @include max-media($bk-d-992){
+                    width: 100px;
+                }
 
                 &:hover,
                 &:focus {
@@ -214,7 +321,14 @@
             display: block;
             text-decoration: underline;
             transition: all .3s ease;
+            @include max-media($bk-d-992){
+                margin-top: 5px;
+            }
+            @include max-media($bk-d-768){
+                margin-top: 0;
+                margin-right: 10px;
 
+            }
             &:hover {
                 color: #E41A28
             }
@@ -229,14 +343,29 @@
 
     .pay-footer {
         margin-top: 32px;
+        @include max-media($bk-d-1200){
+            margin-top: 20px;
+        }
 
         .pay-item {
             &:not(:first-child) {
                 margin-top: 16px;
+                @include max-media($bk-d-1200){
+                    margin-top: 12px;
+                }
+                @include max-media($bk-d-992){
+                    margin-top: 10px;
+                }
             }
 
             &.pay-fot {
                 margin-top: 40px;
+                @include max-media($bk-d-1200){
+                    margin-top: 30px;
+                }
+                @include max-media($bk-d-992){
+                    margin-top: 20px;
+                }
             }
         }
 
@@ -266,6 +395,12 @@
         padding: 48px 92px;
         background-position: center;
         background-repeat: no-repeat;
+        @include max-media($bk-d-992){
+            padding: 40px 50px;
+        }
+        @include max-media($bk-d-768){
+            padding: 20px;
+        }
     }
 }
 
@@ -275,6 +410,9 @@
 
     .pay-icon {
         margin-bottom: 16px;
+        @include max-media($bk-d-768){
+            margin-bottom: 10px;
+        }
 
         img {
             margin: 0 auto;
@@ -284,6 +422,12 @@
     .pay-title {
         margin-bottom: 24px;
         line-height: 1.4;
+        @include max-media($bk-d-992){
+            margin-bottom: 15px;
+        }
+        @include max-media($bk-576){
+            margin-bottom: 10%;
+        }
     }
 
     .pay-desc {
@@ -291,6 +435,12 @@
         color: #4F4F4F;
         line-height: 1.7;
         margin-bottom: 40px;
+        @include max-media($bk-d-992){
+            margin-bottom: 30px;
+        }
+        @include max-media($bk-d-768){
+            margin-bottom: 20px;
+        }
     }
 
     .pay-cls {
@@ -298,11 +448,26 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 40px;
+        @include max-media($bk-d-768){
+            margin-bottom: 30px;
+            justify-content: space-between;
+        }
+        @include max-media($bk-576){
+            margin-bottom: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
-    .pay-imte {
+    .pay-item {
         &:nth-child(2) {
             padding-left: 84px;
+            @include max-media($bk-d-768){
+                padding-left: 0;
+            }
+            @include max-media($bk-576){
+                padding-top: 10px;
+            }
         }
     }
 
@@ -338,6 +503,9 @@
         border: 1px solid $main-cl;
         background-color: $main-cl;
         position: relative;
+        @include max-media($bk-576){
+            padding: 10px 20px;
+        }
 
         &::after {
             content: "";

@@ -15,6 +15,7 @@
         @include max-media($bk-576) {
             overflow-x: scroll;
             white-space: nowrap;
+            justify-content: flex-start;
         }
 
 
