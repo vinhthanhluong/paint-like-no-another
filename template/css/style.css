@@ -7,6 +7,7 @@
 @import url(../js/libs/popup/magnific-popup.css);
 @import url(../js/libs/lightgallery/lightgallery.css);
 @import url(../font/font-awesome-4.7.0/css/font-awesome.min.css);
+@import url(../js/libs/full-page/fullpage.css);
 /*width*/
 .mona-content strong,
 .mona-content b {
@@ -3562,9 +3563,6 @@ html .mfp-wrap {
   background: transparent;
 }
 
-.mfp-content {
-  max-width: 600px;
-}
 .mfp-content .mfp-close {
   color: #163F5E;
   transition: 0.3s;
@@ -10167,6 +10165,390 @@ html .mfp-wrap {
   color: #E41A28;
   font-weight: 500;
   line-height: 1.7;
+}
+
+.pays {
+  padding-bottom: 95px;
+}
+.pays .pay-wrap-head {
+  background-color: #FBFBFB;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 28px 0 27px;
+}
+.pays .pay-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pays .pay-order {
+  font-weight: 500;
+  color: #fff;
+  border-radius: 99px;
+  padding: 16px 32px;
+  height: auto;
+  width: auto;
+  position: relative;
+  border: 1px solid #163F5E;
+  background-color: #163F5E;
+}
+.pays .pay-order::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform-origin: center right;
+  transform: scaleX(0);
+  position: absolute;
+  transition: transform 0.3s linear;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.pays .pay-order:hover {
+  color: #163F5E;
+}
+.pays .pay-order:hover::after {
+  transform: scale(1);
+  transform-origin: center left;
+}
+.pays .pay-wrapper {
+  margin-top: 56px;
+}
+.pays .pay-table {
+  width: 100%;
+}
+.pays .pay-table thead td {
+  font-weight: 600;
+  width: 20%;
+}
+.pays .pay-table thead td:nth-child(1) {
+  width: 150px;
+}
+.pays .pay-table thead td:nth-child(2) {
+  width: calc(60% - 150px);
+}
+.pays .pay-table thead td:nth-child(3) {
+  text-align: right;
+}
+.pays .pay-table thead td:nth-child(4) {
+  text-align: right;
+}
+.pays .pay-table tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+.pays .pay-table tbody td {
+  padding: 32px 0;
+}
+.pays .pay-table tbody td:nth-child(3) {
+  text-align: right;
+}
+.pays .pay-table tbody td:nth-child(4) {
+  text-align: right;
+}
+.pays .pay-table .pay-color {
+  width: 110px;
+  height: 88px;
+  border-radius: 5px;
+  position: relative;
+}
+.pays .pay-table .pay-color .pay-cl-t {
+  color: #B8B8B8;
+  position: absolute;
+  bottom: 7px;
+  left: 7px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+.pays .pay-table .pay-color:hover .pay-cl-t {
+  color: #163F5E;
+}
+.pays .pay-table .pay-content {
+  display: flex;
+}
+.pays .pay-table .pay-content .pay-img {
+  max-width: 88px;
+}
+.pays .pay-table .pay-content .pay-text {
+  padding-left: 32px;
+}
+.pays .pay-table .pay-content .pay-tt {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 991px) {
+  .pays .pay-table .pay-content .pay-tt {
+    font-size: 16px;
+  }
+}
+.pays .pay-table .pay-content .pay-tt:hover {
+  color: #163F5E;
+}
+.pays .pay-table .pay-content .pay-classification {
+  font-weight: 500;
+  color: #7C7C7C;
+  margin-bottom: 8px;
+}
+.pays .pay-table .pay-content .pay-sll {
+  font-weight: 500;
+}
+.pays .pay-table .pay-qty .cart-qty {
+  position: relative;
+}
+.pays .pay-table .pay-qty .qty-plus,
+.pays .pay-table .pay-qty .qty-minus {
+  position: absolute;
+  right: 16px;
+  outline: none;
+  border: none;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.pays .pay-table .pay-qty .qty-plus {
+  top: 9px;
+}
+.pays .pay-table .pay-qty .qty-minus {
+  bottom: 10px;
+}
+.pays .pay-table .pay-qty .f-control {
+  border-radius: 99px;
+  border-color: rgba(0, 0, 0, 0.1);
+  width: 124px;
+  height: 40px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.pays .pay-table .pay-qty .f-control:hover, .pays .pay-table .pay-qty .f-control:focus {
+  border-color: #163F5E;
+}
+.pays .pay-table .pay-close {
+  color: #9A4892;
+  margin-top: 8px;
+  display: block;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+.pays .pay-table .pay-close:hover {
+  color: #E41A28;
+}
+.pays .pay-table .pay-price {
+  font-size: 18px;
+}
+@media screen and (max-width: 991px) {
+  .pays .pay-table .pay-price {
+    font-size: 16px;
+  }
+}
+.pays .pay-footer {
+  margin-top: 32px;
+}
+.pays .pay-footer .pay-item:not(:first-child) {
+  margin-top: 16px;
+}
+.pays .pay-footer .pay-item.pay-fot {
+  margin-top: 40px;
+}
+.pays .pay-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pays .pay-shoping {
+  color: #0FBF4B;
+  text-decoration: underline;
+}
+
+.white-popup-block.block-pay {
+  max-width: 830px;
+  border-radius: 10px;
+  padding: 48px 92px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.popup-pay {
+  text-align: center;
+}
+.popup-pay .pay-icon {
+  margin-bottom: 16px;
+}
+.popup-pay .pay-icon img {
+  margin: 0 auto;
+}
+.popup-pay .pay-title {
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.popup-pay .pay-desc {
+  font-weight: 500;
+  color: #4F4F4F;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+.popup-pay .pay-cls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.popup-pay .pay-imte:nth-child(2) {
+  padding-left: 84px;
+}
+.popup-pay .pay-bx {
+  display: flex;
+  text-align: left;
+}
+.popup-pay .pay-text {
+  padding-left: 12px;
+}
+.popup-pay .pay-t {
+  margin-bottom: 8px;
+  color: #163F5E;
+  font-size: 18px;
+}
+@media screen and (max-width: 991px) {
+  .popup-pay .pay-t {
+    font-size: 16px;
+  }
+}
+.popup-pay .pay-lk {
+  font-weight: 500;
+  font-size: 16px;
+}
+@media screen and (max-width: 991px) {
+  .popup-pay .pay-lk {
+    font-size: 14px;
+  }
+}
+.popup-pay .pay-contact {
+  display: inline-block;
+  margin-bottom: 24px;
+  width: auto;
+  height: auto;
+  padding: 16px 32px;
+  border-radius: 99px;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid #163F5E;
+  background-color: #163F5E;
+  position: relative;
+}
+.popup-pay .pay-contact::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform-origin: center right;
+  transform: scaleX(0);
+  position: absolute;
+  transition: transform 0.3s linear;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.popup-pay .pay-contact:hover {
+  color: #163F5E;
+}
+.popup-pay .pay-contact:hover::after {
+  transform: scale(1);
+  transform-origin: center left;
+}
+.popup-pay .pay-continu {
+  display: block;
+  color: #70B842;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+.popup-pay .pay-continu:hover {
+  color: #163F5E;
+}
+
+.brand-page {
+  padding-top: 88px;
+}
+.brand-page .paint-head {
+  margin-bottom: 88px;
+}
+.brand-page .paint-head .paint-label::after, .brand-page .paint-head .paint-label::before {
+  background-color: #163F5E !important;
+}
+.brand-page .paint-head .paint-title {
+  margin-bottom: 32px;
+  color: #1D1D1D;
+}
+.brand-page .paint-head .brand-desc {
+  line-height: 1.7;
+  max-width: 770px;
+  margin: 0 auto;
+}
+.brand-page .brand-slide {
+  background-color: wheat;
+  overflow: hidden;
+}
+.brand-page .brand-link {
+  height: calc(100vh - 80px);
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.brand-page .brand-link .brand-tx {
+  position: relative;
+  top: 50%;
+  left: unset;
+  transform: translate(0, -50%);
+  z-index: 1;
+  width: 50%;
+}
+.brand-page .brand-link .brand-tx .txt {
+  margin: 0 auto;
+  max-width: 475px;
+}
+.brand-page .brand-link .brand-tx .brand-desc {
+  margin-top: 32px;
+  line-height: 1.5;
+}
+.brand-page .brand-link .brand-tx .btn-txt {
+  margin-top: 32px;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+}
+.brand-page .brand-link .brand-tx .btn-txt::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-color: #000000;
+}
+.brand-page .brand-link .brand-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.brand-page .brand-link .img-clipper {
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+.brand-page .brand-link .img-clipper img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */

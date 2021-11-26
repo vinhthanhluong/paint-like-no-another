@@ -74,7 +74,6 @@ export default function FileActiveModule() {
             $(this).parent().toggleClass('active');
             $(this).next().slideToggle();
         });
-        
     }
 
     if ($('.f-color').length) {
@@ -86,6 +85,8 @@ export default function FileActiveModule() {
         });
         
     }
+
+    
 
 
 

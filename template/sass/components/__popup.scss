@@ -41,7 +41,7 @@ html {
 	@include custom-scrollbar(2px);
 }
 .mfp-content {
-	max-width: 600px;
+	// max-width: 600px;
 	.mfp-close {
 		color: $main-cl;
 		transition: 0.3s;

@@ -374,4 +374,49 @@ export default function SlideModule() {
             console.log(err)
         }
     }
+
+
+    //slide fullpgae
+    new fullpage('#fullpage', {
+        autoScrolling:false,
+        navigation: false,
+        // responsiveWidth: 700,
+        // anchors: ['home', 'about-us', 'contact'],
+        parallax: true,
+        parallaxOptions: {
+            type: 'cover',
+        },
+        onLeave: function(origin, destination, direction){
+            console.log("Leaving section" + origin.index);
+        },
+    });
+
+
+
+    new fullpage('#scroll-one', {
+        // autoScrolling:false,
+        navigation: false,
+        // responsiveWidth: 700,
+        // anchors: ['home', 'about-us', 'contact'],
+        parallax: true,
+        parallaxOptions: {
+            type: 'cover',
+        },
+        onLeave: function(origin, destination, direction){
+            console.log("Leaving section" + origin.index);
+        },
+    });
+    new fullpage('#brands-one', {
+        autoScrolling:false,
+        navigation: false,
+        // responsiveWidth: 700,
+        // anchors: ['home', 'about-us', 'contact'],
+        parallax: true,
+        parallaxOptions: {
+            type: 'cover',
+        },
+        onLeave: function(origin, destination, direction){
+            console.log("Leaving section" + origin.index);
+        },
+    });
 }

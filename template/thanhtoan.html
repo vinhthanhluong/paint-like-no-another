@@ -237,17 +237,21 @@
                 </div>
             </div>
 
-            <div class="pay">
-                <div class="container">
-                    <div class="pay-wrapper">
+            <div class="pays">
+                <div class="pay-wrap-head">
+                    <div class="container">
                         <div class="pay-head">
                             <h3 class="pay-title tt-32 f-medium">
                                 Giỏ hàng của bạn
                             </h3>
-                            <button type="submit" class="pay-order btn">
+                            <a href="#popup-pay" class="pay-order popup-title btn">
                                 tiến hành đặt hàng
-                            </button>
+                            </a>
                         </div>
+                    </div>
+                </div>
+                <div class="pay-wrapper">
+                    <div class="container">
                         <div class="pay-main">
                             <table class="pay-table">
                                 <thead>
@@ -269,8 +273,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <div class="pay-color">
-
+                                            <div class="pay-color" style="background-color: #F2E4BF;">
                                                 <a href="#" class="pay-cl-t">
                                                     Porter Ranch Cream
                                                 </a>
@@ -285,19 +288,89 @@
                                                 </div>
                                                 <div class="pay-text">
                                                     <a href="#" class="pay-tt tt-18 f-medium">
-                                                        Aura® Grand Entrance® 
+                                                        Aura® Grand Entrance®
                                                     </a>
-                                                    <p class="pay-a">
+                                                    <p class="pay-classification">
                                                         Phân loại hàng: Màu vàng, 1 gallon, độ bóng loại 2
+                                                    </p>
+                                                    <p class="pay-sll">
+                                                        x2
                                                     </p>
                                                 </div>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="pay-color"> </div>
+                                            <div class="pay-qty">
+                                                <div class="cart-qty">
+                                                    <button class="qty-plus" type="button">
+                                                        <img src="./img/svg/icon-up-small.svg" alt="icon-up-small.svg">
+                                                    </button>
+                                                    <input type="text" name="qty" min="0" class="qty f-control"
+                                                        value="1" />
+                                                    <button class="qty-minus" type="button">
+                                                        <img src="./img/svg/icon-down-small.svg" alt="icon-down-small">
+                                                    </button>
+                                                </div>
+                                                <a href="#" class="pay-close">
+                                                    Xóa
+                                                </a>
+                                            </div>
                                         </td>
                                         <td>
-                                            <div class="pay-color"> </div>
+                                            <div class="pay-price">
+                                                800,000 VNĐ
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="pay-color" style="background-color: #8F6BA4;">
+                                                <a href="#" class="pay-cl-t">
+                                                    Porter Ranch Cream
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="pay-content">
+                                                <div class="pay-img">
+                                                    <a href="#">
+                                                        <img src="./img/img-pay-2.png" alt="img-pay-2.png">
+                                                    </a>
+                                                </div>
+                                                <div class="pay-text">
+                                                    <a href="#" class="pay-tt tt-18 f-medium">
+                                                        Aura® Bath and Spa Spaint
+                                                    </a>
+                                                    <p class="pay-classification">
+                                                        Phân loại hàng: Màu vàng, 1 gallon, độ bóng loại 2
+                                                    </p>
+                                                    <p class="pay-sll">
+                                                        x1
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="pay-qty">
+                                                <div class="cart-qty">
+                                                    <button class="qty-plus" type="button">
+                                                        <img src="./img/svg/icon-up-small.svg" alt="icon-up-small.svg">
+                                                    </button>
+                                                    <input type="text" name="qty" min="0" class="qty f-control"
+                                                        value="1" />
+                                                    <button class="qty-minus" type="button">
+                                                        <img src="./img/svg/icon-down-small.svg" alt="icon-down-small">
+                                                    </button>
+                                                </div>
+                                                <a href="#" class="pay-close">
+                                                    Xóa
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="pay-price">
+                                                400,000 VNĐ
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -335,14 +408,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="pay-item">
+                                <div class="pay-item pay-fot">
                                     <div class="pay-b">
                                         <a href="#" class="pay-shoping">
                                             Tiếp tục mua hàng
                                         </a>
-                                        <button type="submit" class="pay-order btn">
+                                        <a href="#popup-pay" class="pay-order popup-title btn">
                                             tiến hành đặt hàng
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -350,8 +423,6 @@
                     </div>
                 </div>
             </div>
-
-
 
         </main>
         <footer class="footer">
@@ -478,6 +549,64 @@
                 </div>
             </div>
         </footer>
+
+        <!-- pay success -->
+        <div id="popup-pay" class="white-popup-block mfp-hide block-pay" style="background-image: url('./img/bg-pay.png');">
+            <div class="popup-pay" >
+                <div class="pay-icon">
+                    <img src="./img/svg/icon-check-bg.svg" alt="icon-check-bg.svg">
+                </div>
+                <h3 class="pay-title tt-40 f-semibold main-cl">
+                    Đặt hàng thành công
+                </h3>
+                <p class="pay-desc tt-18 f-medium">
+                    Cảm ơn bạn đã quan tâm và mua hàng tại Paint Like No Other. Đơn hàng của bạn đang được xác nhận,
+                    nhân viên tư vấn của chúng tôi sẽ gọi lại cho bạn trong vòng vài phút nữa để xác nhận đơn hàng hoặc
+                    nếu có thắc mắc vui lòng liên hệ chúng tôi với thông tin dưới đây:
+                </p>
+                <div class="pay-info">
+                    <div class="pay-cls">
+                        <div class="pay-item">
+                            <div class="pay-bx">
+                                <div class="pay-icn">
+                                    <img src="./img/svg/icon-email-main.svg" alt="icon-email-main.svg">
+                                </div>
+                                <div class="pay-text">
+                                    <p class="pay-t">
+                                        Email
+                                    </p>
+                                    <a href="mailto:phu.nd@international-ips.com" class="pay-lk">
+                                        phu.nd@international-ips.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pay-item">
+                            <div class="pay-bx">
+                                <div class="pay-icn">
+                                    <img src="./img/svg/icon-phone-main.svg" alt="icon-phone-main.svg">
+                                </div>
+                                <div class="pay-text">
+                                    <p class="pay-t">
+                                        Số điện thoại
+                                    </p>
+                                    <a href="tell:0909807258" class="pay-lk">
+                                        090 980 72 58
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="pay-contact btn">
+                    Liên hệ chúng tôi
+                </a>
+                <a href="#" class="pay-continu">
+                    Tiếp tục mua hàng
+                </a>
+
+            </div>
+        </div>
 
         <!-- fixed-social -->
         <div class="fixed-social">
