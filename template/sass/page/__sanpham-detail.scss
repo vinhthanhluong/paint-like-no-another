@@ -651,7 +651,7 @@
         display: flex;
         flex-wrap: wrap;
         margin: -12px -10px;
-        @include max-media($bk-d-768){
+        @include max-media($bk-d-992){
             margin: -7.5px;
         }
     }
@@ -663,10 +663,12 @@
             width: calc(100% / 5);
         }
         @include max-media($bk-d-992){
-            width: calc(100% / 3);
+            width: calc(100% / 4);
+            padding: 7.5px;
+
         }
         @include max-media($bk-d-768){
-            padding: 7.5px;
+            width: calc(100% / 3);
         }
         @include max-media($bk-576){
             width: calc(100% / 2);

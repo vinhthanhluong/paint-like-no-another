@@ -2,7 +2,7 @@
     color: $main-cl;
 }
 
-.b-cl{
+.b-cl {
     color: $b-cl;
 }
 
@@ -17,13 +17,16 @@
 //code
 .paint-head {
     margin-bottom: 48px;
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         margin-bottom: 30px;
     }
-    @include max-media($bk-d-992){
+
+    @include max-media($bk-d-992) {
         margin-bottom: 20px;
     }
-    @include max-media($bk-d-768){
+
+    @include max-media($bk-d-768) {
         margin-bottom: 15px;
     }
 
@@ -31,15 +34,19 @@
         margin-bottom: 24px;
         line-height: 1.1;
         letter-spacing: 3px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-bottom: 15px;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-bottom: 10px;
         }
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             margin-bottom: 5px;
         }
+
         &::before {
             content: '';
             width: 24px;
@@ -73,10 +80,12 @@
     right: 40px;
     bottom: 88px;
     z-index: 99;
-    @include max-media($bk-d-992){
+
+    @include max-media($bk-d-992) {
         right: 20px;
     }
-    @include max-media($bk-576){
+
+    @include max-media($bk-576) {
         right: 10px;
     }
 
@@ -239,7 +248,7 @@
     pointer-events: none;
     transition: all .3s ease;
     cursor: pointer;
-
+    width: 100%;
     .video-play {
         position: relative;
         width: 120px;
@@ -254,32 +263,41 @@
             // transform: translate(-50% , -50%) scale(-1 , -1);
             // width: 80px;
             // height: 80px;
-            width: 90px;
-            height: 90px;
-            width: 100px;
-            height: 100px;
+            // width: 90px;
+            // height: 90px;
+            // width: 100px;
+            // height: 100px;
+
+            &.video-text-b {
+                transform: scale(-1);
+            }
 
             .letter {
                 text-transform: uppercase;
                 line-height: 1.1;
-                font-weight: 700;
+                font-weight: 600;
                 font-size: 12px;
+                text-transform: uppercase;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 // padding-top: 55px;
-                padding-bottom: 45px;
+                padding-bottom: 55px;
                 position: absolute;
                 transform-origin: bottom center;
                 // transform-origin: top center;
-                top: 0;
+                top: -55px;
                 left: 0;
                 right: 0;
                 bottom: 0;
                 bottom: 80px;
                 transition: 0.5s ease;
                 // animation: letterBlink 5s linear infinite;
-                color: red;
+                color: $w-cl;
+                @include max-media($bk-d-768){
+                    padding-bottom: 48px;
+                    top: -48px;
+                }
             }
         }
 
@@ -310,15 +328,15 @@
                 @include visible;
             }
 
-            .inspi-line{
-                &::before{
+            .inspi-line {
+                &::before {
                     width: 100%;
                 }
             }
         }
 
-        .inspi-img{
-            img{
+        .inspi-img {
+            img {
                 transform: scale(1.1);
             }
         }
@@ -326,14 +344,16 @@
 
     .inspi-img {
         overflow: hidden;
-        img{
+
+        img {
             transition: all .3s ease;
         }
     }
 
     .inspi-content {
         padding-top: 16px;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             padding-top: 10px;
         }
     }
@@ -343,10 +363,12 @@
         margin-bottom: 8px;
         color: $b-D1D1-cl;
         @include line-clamp(1);
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-bottom: 5px;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             margin-bottom: 2px;
         }
     }
@@ -356,11 +378,13 @@
         color: $b-D1D1-cl;
         margin-bottom: 16px;
         @include line-clamp(4);
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-bottom: 10px;
         }
-        @include max-media($bk-d-768){
-            @include  line-clamp(2);
+
+        @include max-media($bk-d-768) {
+            @include line-clamp(2);
         }
     }
 
@@ -414,4 +438,3 @@
 
     }
 }
-

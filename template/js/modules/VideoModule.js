@@ -5,18 +5,21 @@ export default function VideoModule() {
         for (let video of videos) {
             video.onplay = () => {
                 video.parentElement.classList.add("playing");
+                video.closest('.swiper-banner').nextElementSibling.classList.add("active");
+                // console.log(video.closest('.swiper-banner'))
+
             }
             video.onpause = () => {
                 video.parentElement.classList.remove("playing");
+                video.closest('.swiper-banner').nextElementSibling.classList.remove("active");
             }
         }
     }
 
      
-    $('.bx-video').on('click', function () {
-        $(this).find('.video-title').addClass('active');
-        $(this).find('.banner-wrap-form').addClass('active');
-    });
+    // $('.bx-video').on('click', function () {
+    //     $(this).find('.video-title').addClass('active');
+    // });
 
 
     //contact-video

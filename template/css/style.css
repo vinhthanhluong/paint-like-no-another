@@ -927,6 +927,7 @@ sup {
   pointer-events: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  width: 100%;
 }
 .video-box .video-play {
   position: relative;
@@ -942,29 +943,35 @@ sup {
   pointer-events: none;
   transition: 1s ease;
   z-index: 1;
-  width: 90px;
-  height: 90px;
-  width: 100px;
-  height: 100px;
+}
+.video-box .video-play .video-text-t.video-text-b {
+  transform: scale(-1);
 }
 .video-box .video-play .video-text-t .letter {
   text-transform: uppercase;
   line-height: 1.1;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 12px;
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 45px;
+  padding-bottom: 55px;
   position: absolute;
   transform-origin: bottom center;
-  top: 0;
+  top: -55px;
   left: 0;
   right: 0;
   bottom: 0;
   bottom: 80px;
   transition: 0.5s ease;
-  color: red;
+  color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .video-box .video-play .video-text-t .letter {
+    padding-bottom: 48px;
+    top: -48px;
+  }
 }
 .video-box .video-play .play-box {
   border-radius: 100%;
@@ -1121,6 +1128,11 @@ sup {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   animation: fixedMenu 0.6s;
 }
+@media screen and (max-width: 1199px) {
+  .header.--fix {
+    animation: none;
+  }
+}
 .header .container {
   width: auto;
   padding: 0;
@@ -1131,6 +1143,7 @@ sup {
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
+  transition: all 0.3s ease;
 }
 @media screen and (max-width: 1199px) {
   .header.header-home {
@@ -1260,6 +1273,7 @@ sup {
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
+  transition: all 0.3s ease;
 }
 
 .header-act {
@@ -3155,15 +3169,65 @@ sup {
   max-height: 890px;
 }
 .banners .banners-inner .video {
-  max-height: 890px;
+  height: 890px;
   width: 100%;
   object-fit: cover;
+}
+@media screen and (max-width: 1899px) {
+  .banners .banners-inner .video {
+    height: 800px;
+  }
+}
+@media screen and (max-width: 1439px) {
+  .banners .banners-inner .video {
+    height: 750px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .banners .banners-inner .video {
+    height: 700px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .banners .banners-inner .video {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banners .banners-inner .video {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banners .banners-inner .video {
+    height: 450px;
+  }
+}
+.banners .banners-inner.playing .video-box {
+  opacity: 0;
+  visibility: hidden;
 }
 .banners .banners-inner .video-title {
   color: #fff;
   text-align: center;
   line-height: 1.1;
   margin-bottom: 30px;
+  padding: 0 15px;
+}
+@media screen and (max-width: 991px) {
+  .banners .banners-inner .video-title {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banners .banners-inner .video-title {
+    font-size: 34px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .banners .banners-inner .video-title br {
+    display: none;
+  }
 }
 .banners .banners-inner .video-title.active {
   display: none;
@@ -3180,6 +3244,16 @@ sup {
 }
 .banners .banner-wrap-form.active {
   bottom: -1000px;
+}
+@media screen and (max-width: 1199px) {
+  .banners .banner-wrap-form {
+    bottom: 84px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banners .banner-wrap-form {
+    display: none;
+  }
 }
 .banners .banner-form .column {
   width: calc(100% / 3);
@@ -10330,7 +10404,7 @@ html .mfp-wrap {
   flex-wrap: wrap;
   margin: -12px -10px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .color-popup .product-cols {
     margin: -7.5px;
   }
@@ -10346,12 +10420,13 @@ html .mfp-wrap {
 }
 @media screen and (max-width: 991px) {
   .color-popup .product-col {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
+    padding: 7.5px;
   }
 }
 @media screen and (max-width: 767px) {
   .color-popup .product-col {
-    padding: 7.5px;
+    width: calc(100% / 3);
   }
 }
 @media screen and (max-width: 576px) {

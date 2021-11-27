@@ -15,6 +15,9 @@
         // box-shadow: 10px 10px 20px rgba($color: $b-cl, $alpha: 0.16);
         box-shadow: 0 8px 32px rgba($color: $b-cl, $alpha: 0.1);
         animation: fixedMenu 0.6s;
+        @include max-media($bk-d-1200){
+            animation: none;
+        }
     }
 
     .container {
@@ -28,6 +31,7 @@
         color: $w-cl;
         border-bottom: 1px solid rgba($color: $w-cl, $alpha: .1);
         position: fixed;
+        transition: all .3s ease;
 
         @include max-media($bk-d-1200) {
             color: $b-cl;
@@ -198,6 +202,7 @@
         height: auto;
         -o-object-fit: cover;
         object-fit: cover;
+        transition: all .3s ease;
     }
 }
 
