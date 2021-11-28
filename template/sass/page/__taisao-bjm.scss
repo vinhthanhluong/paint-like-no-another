@@ -438,7 +438,7 @@
 .color-technology {
     background-color: $g-F5F5-cl;
     padding: 94px 0 88px;
-
+    overflow: hidden;
     @include max-media($bk-d-1200) {
         padding: 60px 0;
     }

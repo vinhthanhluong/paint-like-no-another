@@ -6995,6 +6995,7 @@ html .mfp-wrap {
 
 .related-post {
   padding: 0 0 96px;
+  overflow: hidden;
 }
 @media screen and (max-width: 1199px) {
   .related-post {
@@ -7742,6 +7743,7 @@ html .mfp-wrap {
 
 .other-project {
   padding-bottom: 96px;
+  overflow: hidden;
 }
 @media screen and (max-width: 1199px) {
   .other-project {
@@ -9451,6 +9453,12 @@ html .mfp-wrap {
 }
 .product .paint-head .paint-title {
   color: #1D1D1D;
+}
+.product .paint-head .paint-label {
+  color: #163F5E;
+}
+.product .paint-head .paint-label::after, .product .paint-head .paint-label::before {
+  background-color: #163F5E !important;
 }
 @media screen and (max-width: 767px) {
   .product .product-tab .tab-link-mobi {
@@ -11708,6 +11716,7 @@ html .mfp-wrap {
 .color-technology {
   background-color: #F5F5F5;
   padding: 94px 0 88px;
+  overflow: hidden;
 }
 @media screen and (max-width: 1199px) {
   .color-technology {

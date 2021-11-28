@@ -279,6 +279,7 @@
 
 .other-project {
     padding-bottom: 96px;
+    overflow: hidden;
     @include max-media($bk-d-1200){
         padding-bottom: 60px;
     }

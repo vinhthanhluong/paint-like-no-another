@@ -361,6 +361,7 @@
 
 .related-post {
     padding: 0 0 96px;
+    overflow: hidden;
 
     @include max-media($bk-d-1200) {
         padding-bottom: 60px;

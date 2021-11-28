@@ -24,6 +24,13 @@
         .paint-title{
             color: $b-D1D1-cl;
         }
+
+        .paint-label{
+            color: $main-cl;
+            &::after , &::before{
+                background-color: $main-cl !important;
+            }
+        }
     }
 
     .product-tab{

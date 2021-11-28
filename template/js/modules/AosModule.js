@@ -8,7 +8,7 @@ export default function AosModule() {
 		once: true,
 		mirror: true,
 		disable: function(){
-            return $(window).width() <= 768;
+            return $(window).width() < 768;
         },
 	});
 }
