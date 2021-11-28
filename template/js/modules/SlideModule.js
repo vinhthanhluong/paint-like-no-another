@@ -277,6 +277,54 @@ export default function SlideModule() {
         }
     }
 
+    if (document.querySelector('.swiper-card')) {
+        const swiper = document.querySelector('.swiper-card');
+        const sliderContainer = swiper.querySelector('.swiper');
+        const SliderPagination = swiper.querySelector('.swiper-pagination');
+        const sliderPrevBtn = swiper.querySelector('.swiper-button-prev');
+        const sliderNextBtn = swiper.querySelector('.swiper-button-next');
+        try {
+            const swiper = new Swiper(sliderContainer, {
+                speed: 1000,
+                loop: true,
+                // spaceBetween: 20,
+                slidesPerView: 2,
+                direction: "vertical",
+                // autoplay: {
+                //     delay: 4000,
+                // },
+                pagination: {
+                    el: SliderPagination,
+                    clickable: true,
+                },
+
+                navigation: {
+                    nextEl: sliderNextBtn,
+                    prevEl: sliderPrevBtn,
+                },
+
+                breakpoints: {
+                    // 320: {
+                    //     spaceBetween: 50
+                    // },
+                    // 480: {
+                    //     spaceBetween: 30
+                    // },
+                    // 576: {
+                    //     spaceBetween: 0,
+
+                    // }
+                }
+                // observeParents:true,
+                // observeSlideChildren: true,
+                // observer: true,
+            })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     if (document.querySelector('.swiper-demo')) {
         const swiper = document.querySelector('.swiper-demo');
         const sliderContainer = swiper.querySelector('.swiper');

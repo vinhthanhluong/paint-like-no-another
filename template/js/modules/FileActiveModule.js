@@ -64,7 +64,11 @@ export default function FileActiveModule() {
         $('.contact-tt-main').on('click', function () {
             $('.contact-form').addClass('active');
         });
+        $('.contact-tt-fr').on('click', function () {
+            $('.contact-wrapper').addClass('active');
+        });
         $('.contact-close').on('click', function () {
+            $('.contact-wrapper').removeClass('active');
             $('.contact-form').removeClass('active');
         });
     }
@@ -85,9 +89,18 @@ export default function FileActiveModule() {
             $('.color-popup').removeClass('active');
             $('.product-detail > .container').removeClass('active');
         });
-        
     }
 
+    if ($('.meu-item').length) {
+        const width = $(window).width();
+        if (width < 992) {
+            $('.meu-item').on('click', function () {
+                $(this).toggleClass('active');
+                $(this).siblings().removeClass('active');
+            });
+        }
+       
+    }
     
 
 

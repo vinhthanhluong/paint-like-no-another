@@ -439,3 +439,27 @@
 
     }
 }
+
+.breadcrumb-one{
+    padding: 10px;
+    position: relative;
+    .bread-inner{
+        text-align: center
+    }
+    .bread-tt{
+        @include fz-16;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: all .3s ease;
+        &:hover{
+            color: $main-cl;
+        }
+    }
+
+    .bread-close{
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+    }
+}
