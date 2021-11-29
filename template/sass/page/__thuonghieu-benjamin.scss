@@ -392,7 +392,7 @@
     background-color: $b-D1D1-cl;
     color: $w-cl;
     padding: 128px 0;
-
+    overflow: hidden;
     @include max-media($bk-d-1200) {
         padding: 80px 0;
     }
@@ -753,6 +753,7 @@
 }
 
 .color-brochure {
+    overflow: hidden;
     .container-full {
         padding: 0;
     }

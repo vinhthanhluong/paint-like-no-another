@@ -13,6 +13,14 @@
 
 .pays {
     padding-bottom: 95px;
+    overflow: hidden;
+    @include max-media($bk-d-1200){
+        padding-bottom: 60px;
+    }
+
+    @include max-media($bk-d-992){
+        padding-bottom: 40px;
+    }
 
     .pay-wrap-head {
         background-color: #FBFBFB;
@@ -51,6 +59,9 @@
         background-color: $main-cl;
         @include max-media($bk-d-1200){
             padding: 10px 20px;
+        }
+        @include max-media($bk-576){
+            padding: 10px 15px;
         }
 
         &::after {
@@ -269,9 +280,11 @@
         }
 
         .pay-qty {
+           @include max-media($bk-d-768){
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
+           }
             .cart-qty {
                 position: relative;
 
