@@ -99,12 +99,31 @@ export default function FileActiveModule() {
                 $(this).siblings().removeClass('active');
             });
         }
-
     }
 
+    if ($('.palette-inner').length) {
 
+        $('.color-inner').on('click', function () {
+            $(this).parent().toggleClass('active');
+            // $(this).siblings().removeClass('active');
+        });
+    }
 
-   
+    if ($('.color-heart').length) {
+
+        $('.color-heart').on('click', function() {
+            if ($(this).hasClass('show')) {
+                $(this).removeClass('show');
+                $(this).addClass('hide');
+                return;
+            }
+            if ($(this).hasClass('hide')) {
+                $(this).removeClass('hide');
+                $(this).addClass('show');
+            }
+        });
+    }
+
 
 
 

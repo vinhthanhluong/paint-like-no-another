@@ -1,0 +1,38 @@
+.breadcrumb-menu{
+    position: relative;
+    padding: 10px 0;
+    .bread-inner{
+        &.active{
+            .bread-content{
+                display: block;
+            }
+        }
+    }
+
+    .bread-close{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    
+
+    .bread-tt{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include fz-16;
+        font-weight: 500;
+        text-transform: uppercase;
+        img{
+            transform: rotate(-90deg);
+            margin-left: 10px;
+        }
+    }
+    .bread-content{
+        display: none;
+        
+    }
+}
