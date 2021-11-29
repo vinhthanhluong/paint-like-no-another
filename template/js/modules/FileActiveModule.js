@@ -124,6 +124,12 @@ export default function FileActiveModule() {
         });
     }
 
+    if ($('.breadcrumb-menu')) {
+        $('.bread-t').on('click', function () {
+            $(this).parent().toggleClass('active'); 
+        });
+
+    }
 
 
 
