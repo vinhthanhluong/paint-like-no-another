@@ -45,6 +45,23 @@
         background: $track;
     }
 }
+@mixin custom-horizontal-scrollbar($height: $h-scroll,
+    $thumb: $main-cl,
+    $track: $w-cl) {
+    &::-webkit-scrollbar {
+        height: $height;
+        border-radius: 9px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb;
+        border-radius: 990px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track;
+    }
+}
 
 @mixin pos-mid() {
     position: absolute;

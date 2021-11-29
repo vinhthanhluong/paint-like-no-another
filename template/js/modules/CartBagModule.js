@@ -11,19 +11,18 @@ export default function CartBagModule() {
     });
 
     //popup-small
-    // if ($('.header-heart')) {
+    if ($('.header-heart')) {
+        const $cart = $('.header-cart');
 
-    //     const $cart = $('.header-heart');
-    //     $(document).mouseup(function (e) { 
-    //         // nếu click vàp mục tiêu k phải là vùng chứa và cũng k phải là con của vùng chứa
-    //         if (!$cart.is(e.target) &&  $cart.has(e.target).length === 0) {
-    //             $cart.removeClass('active');
-    //         }
-    //     });
+        $(document).mouseup(function (e) { 
+            if(!$cart.is(e.target) && $cart.has(e.target).length === 0){
+                $cart.removeClass('active');
+            }
+        });
 
-    //     $('.cart-btn').on('click', function () {
-    //        $cart.toggleClass('active');
-    //     });
-    // }
+        $('.cart-btn').on('click', function () {
+            $cart.toggleClass('active');
+        });
+    }
 
 }

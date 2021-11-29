@@ -90,19 +90,19 @@ export default function SlideModule() {
                 // observeSlideChildren: true,
                 // observer: true,
             });
-            swiper.on('slideChangeTransitionStart', function () {
-                if (swiper.el.querySelector('.swiper-slide-active video')) {
-                    swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
-                }
-            });
+            // swiper.on('slideChangeTransitionStart', function () {
+            //     if (swiper.el.querySelector('.swiper-slide-active video')) {
+            //         swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
+            //     }
+            // });
 
-            const muteVideoWhenOverScroll = () => {
-                const pinStopVideo = document.querySelector('.banners').offsetHeight;
-                if (window.scrollY >= pinStopVideo) {
-                    swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
-                }
-            }
-            window.addEventListener('scroll', muteVideoWhenOverScroll);
+            // const muteVideoWhenOverScroll = () => {
+            //     const pinStopVideo = document.querySelector('.banners').offsetHeight;
+            //     if (window.scrollY >= pinStopVideo) {
+            //         swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
+            //     }
+            // }
+            // window.addEventListener('scroll', muteVideoWhenOverScroll);
 
 
             $('.banners-inner .video').on('click', function () {
@@ -127,7 +127,7 @@ export default function SlideModule() {
                 slidesPerView: 'auto',
                 autoHeight: true,
                 // mousewheel: true,
-                allowTouchMove: false,
+                // allowTouchMove: false,
                 autoplay: {
                     delay: 5000,
                 },
@@ -325,6 +325,65 @@ export default function SlideModule() {
         }
     }
 
+    if (document.querySelector('.swiper-palette')) {
+        const swiper = document.querySelector('.swiper-palette');
+        const sliderContainer = swiper.querySelector('.swiper');
+        const SliderPagination = swiper.querySelector('.swiper-pagination');
+        const sliderPrevBtn = swiper.querySelector('.swiper-button-prev');
+        const sliderNextBtn = swiper.querySelector('.swiper-button-next');
+        const sliderScrollbar = swiper.querySelector('.swiper-scrollbar');
+        try {
+            const swiper = new Swiper(sliderContainer, {
+                speed: 1000,
+                loop: false,
+                slidesPerView: 'auto',
+                // autoplay: {
+                //     delay: 4000,
+                // },
+                pagination: {
+                    el: SliderPagination,
+                    clickable: true,
+                },
+
+                navigation: {
+                    nextEl: sliderNextBtn,
+                    prevEl: sliderPrevBtn,
+                },
+
+                scrollbar: {
+                    el: sliderScrollbar,
+                    draggable: true,
+                },
+
+                breakpoints: {
+                    // 320: {
+                    //     spaceBetween: 50
+                    // },
+                    // 480: {
+                    //     spaceBetween: 30
+                    // },
+                    // 576: {
+                    //     spaceBetween: 0,
+
+                    // }
+                }
+                // observeParents:true,
+                // observeSlideChildren: true,
+                // observer: true,
+            });
+            if ($('.palette-main').length) {
+                $('.swiper-slide').on('click', function () {
+                    $(this).children().addClass('active');
+                    $(this).siblings().children().removeClass('active');
+                    console.log(  $(this).siblings().removeClass('active'))
+                });
+            }
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
     if (document.querySelector('.swiper-demo')) {
         const swiper = document.querySelector('.swiper-demo');
         const sliderContainer = swiper.querySelector('.swiper');
@@ -371,6 +430,7 @@ export default function SlideModule() {
             console.log(err)
         }
     }
+
 
 
     //slide fullpgae

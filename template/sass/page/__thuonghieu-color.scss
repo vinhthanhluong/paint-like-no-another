@@ -1,0 +1,126 @@
+.color-palette {
+    background-color: $g-F5F5-cl;
+    padding: 84px 0 56px;
+
+    .palette-head {
+        margin-bottom: 32px;
+        text-align: center;
+
+        .palette-title {
+            margin-bottom: 32px;
+            line-height: 1.2;
+            color: $b-D1D1-cl;
+        }
+    }
+
+    .palette-main {
+        background-color: $w-cl;
+        border-radius: 10px;
+        margin: 0 80px;
+
+
+    }
+
+    .palette-cl {
+        padding: 56px 0;
+
+        .swiper {
+            padding-bottom: 25px;
+
+        }
+
+        .swiper-slide {
+            width: calc(100% / 12);
+
+            &.active{
+                .palette-b {
+                    border: 3px solid $w-cl;
+                    box-shadow: 0px 0px 24px rgba($color: $b-cl, $alpha: .2);
+    
+                    .palette-tri {
+                        @include visible;
+                    }
+                }
+            }
+        }
+
+        .swiper-scrollbar{
+            height: 3px;
+            width: 100%;
+            left: 0;
+            &-drag{
+                background-color: $main-cl;
+            }
+        }
+
+        .palette-b {
+            height: 97px;
+            transition: all .3s ease;
+            position: relative;
+            z-index: 1;
+
+            &.active {
+                border: 3px solid $w-cl;
+                box-shadow: 0px 0px 24px rgba($color: $b-cl, $alpha: .2);
+
+                .palette-tri {
+                    @include visible;
+                }
+            }
+        }
+
+        .palette-tri {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 70%);
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 16px 12px 0 12px;
+            // border-color: #F4DE11 transparent transparent transparent; 
+            @include hidden;
+        }
+    }
+
+    .palette-range {
+        background-color: #B2B2B2;
+        box-shadow: inset 0 0 20px rgba($color: $b-cl, $alpha: .32);
+        padding: 40px 0;
+
+        .range-bar {
+            margin: 0 auto;
+            width: 568px;
+            height: 60px;
+        }
+
+        .f-range {
+            background-image: url('../img/img-range-color.png');
+            outline: none;
+            height: 100%;
+            width: 100%;
+            transition: all .3s ease;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                border: 5px solid $w-cl;
+                height: 60px;
+                width: 142px;
+            }
+
+        }
+
+        .range-title {
+            @include fz-24;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $w-cl;
+            text-align: center;
+            margin-top: 16px;
+        }
+    }
+
+
+
+
+}

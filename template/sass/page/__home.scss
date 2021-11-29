@@ -184,7 +184,7 @@
             top: 0;
             right: 0;
             background-color: rgba($color: $b-cl, $alpha: .5);
-            transition: all .3s ease;
+            transition: all .5s ease;
         }
 
     }
@@ -197,6 +197,7 @@
         position: relative;
         height: 100%;
         padding-top: 306px;
+        transition: all .3s ease;
 
         @include max-media($bk-d-1440) {
             padding-top: 200px;
@@ -1010,10 +1011,43 @@
     display: flex;
     flex-wrap: wrap;
 
+    .contact-email{
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        background-color: $main-cl;
+        @include flex-mid;
+        position: absolute;
+        top: 73px;
+        left: 0;
+        transform: translateX(-50%);
+        @include max-media($bk-d-1200){
+            width: 50px;
+            height: 50px;
+            top: 40px;
+        }
+        @include max-media($bk-d-992){
+            left: auto;
+            right: 15px;
+            top: 0;
+            transform: translateY(-50%);
+        }
+        @include max-media($bk-576){
+            top: 0;
+            transform: translateY(-50%);
+        }
+        img{
+            @include max-media($bk-d-1200){
+                width: 20px;
+            }
+        }
+    }
+
     .container {
         width: auto;
         margin-right: calc((100% - 1200px) / 2);
         max-width: 600px;
+        position: relative;
         @include max-media($bk-d-1200){
             margin-right: 0;
             max-width: 50%;
@@ -1137,6 +1171,7 @@
     .contact-cont {
         line-height: 1.7;
         transition: all .3s ease;
+       
 
         &:hover {
             color: $main-cl;

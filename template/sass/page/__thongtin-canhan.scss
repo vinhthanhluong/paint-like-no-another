@@ -331,9 +331,9 @@
 
             .heart-close {
                 position: absolute;
-                top: 0;
-                right: 0;
-                transform: translate(-50%, -50%);
+                top: 5px;
+                right: 5px;
+                transform: translate(0%, 0%);
                 z-index: 1;
                 @include hidden;
                 transition: all .3s ease;

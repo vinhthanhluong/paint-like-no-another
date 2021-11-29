@@ -27,7 +27,7 @@ export default function FileActiveModule() {
     } else {
         $('.box-lang').appendTo('.header-lang');
     }
-  
+
 
     if ($('.box-chat').length) {
         $($('.social-chat')).on('click', function () {
@@ -40,7 +40,7 @@ export default function FileActiveModule() {
         });
     }
 
-    
+
 
     // if ($('.line-eff').length) {
     //     // $('.line-eff').on('hover', function () {
@@ -99,9 +99,13 @@ export default function FileActiveModule() {
                 $(this).siblings().removeClass('active');
             });
         }
-       
+
     }
-    
+
+
+
+   
+
 
 
 
