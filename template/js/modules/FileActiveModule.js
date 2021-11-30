@@ -101,11 +101,15 @@ export default function FileActiveModule() {
         }
     }
 
-    if ($('.palette-inner').length) {
+    if ($('.palette-choose').length) {
 
-        $('.color-inner').on('click', function () {
-            $(this).parent().toggleClass('active');
-            // $(this).siblings().removeClass('active');
+        $('.palette-choose .column').on('click', function () {
+            $(this).closest('.palette-choose').find('.palette-column').addClass('show');
+        });
+
+        $('.palette-choose .color-close').on('click', function () {
+            $(this).closest('.palette-choose').find('.palette-column').removeClass('show');
+            // $(this).closest('.palette-choose').siblings().find('.palette-column').removeClass('show');
         });
     }
 
@@ -128,12 +132,22 @@ export default function FileActiveModule() {
         $('.bread-t').on('click', function () {
             $(this).parent().toggleClass('active'); 
         });
-
     }
 
 
 
-
+    $(".tab-wrapper").each(function () {
+        let tab = $(this);
+        tab.find(".tab-link").first().addClass("current");
+        let tabID = tab.find(".tab-link.current").attr("data-tab");
+        tab.find(tabID).fadeIn().siblings().hide();
+        $(tab).on("click", ".tab-link", function (e) {
+            e.preventDefault();
+            let tabID = $(this).attr("data-tab");
+            $(this).addClass("current").siblings().removeClass("current");
+            tab.find(tabID).fadeIn().siblings().hide();
+        });
+    });
 
 
 }
