@@ -6,8 +6,8 @@
     color: $b-cl;
 }
 
-.w-cl{
-    color: $w-cl ;
+.w-cl {
+    color: $w-cl;
 }
 
 .f-medium {
@@ -254,6 +254,7 @@
     transition: all .3s ease;
     cursor: pointer;
     width: 100%;
+
     .video-play {
         position: relative;
         width: 120px;
@@ -299,7 +300,8 @@
                 transition: 0.5s ease;
                 // animation: letterBlink 5s linear infinite;
                 color: $w-cl;
-                @include max-media($bk-d-768){
+
+                @include max-media($bk-d-768) {
                     padding-bottom: 48px;
                     top: -48px;
                 }
@@ -444,26 +446,83 @@
     }
 }
 
-.breadcrumb-one{
+.breadcrumb-one {
     padding: 10px;
     position: relative;
-    .bread-inner{
+
+    .bread-inner {
         text-align: center
     }
-    .bread-tt{
+
+    .bread-tt {
         @include fz-16;
         font-weight: 500;
         text-transform: uppercase;
         transition: all .3s ease;
-        &:hover{
+
+        &:hover {
             color: $main-cl;
         }
     }
 
-    .bread-close{
+    .bread-close {
         position: absolute;
         top: 50%;
         left: 16px;
         transform: translateY(-50%);
+    }
+}
+
+.not-login {
+    position: fixed;
+    top: 0%;
+    z-index: 9999;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1170px;
+    transition: all .3s ease;
+    .login-t {
+        display: flex;
+        align-items: center;
+        background-color: #FFC225;
+        color: $w-cl;
+        padding: 16px 40px 16px 24px;
+        @include max-media($bk-576){
+            padding: 10px 30px 10px 20px;
+        }
+        img{
+            margin-right: 16px;
+            @include max-media($bk-576){
+                margin-right: 10px;
+            }
+        }
+
+        .txt{
+            text-decoration: underline;
+            transition: all .3s ease;
+            &:hover{
+                color: $main-cl;
+            }
+        }
+    }
+
+    .not-close {
+        position: absolute;
+        top: 50%;
+        right: 24px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        @include max-media($bk-d-992){
+            right: 15px;
+            // top: 0;
+            // transform: translateY(5px);
+        }
+        @include max-media($bk-576){
+            right: 10px;
+        }
+        img{
+            filter: brightness(0) invert(1);
+        }
     }
 }

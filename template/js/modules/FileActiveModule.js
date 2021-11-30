@@ -149,7 +149,11 @@ export default function FileActiveModule() {
         });
     });
 
-
+    if ($('.not-login')) {
+        $('.not-close').on('click', function () {
+            $('.not-login').hide(); 
+        });
+    }
 }
 
 
