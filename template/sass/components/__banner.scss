@@ -29,6 +29,10 @@
 		padding: 0;
 	}
 
+	.slide-banner{
+		position: relative;
+	}
+
 	.banners-inner{
 		position: relative;
 		max-height: 890px;
@@ -86,51 +90,68 @@
 			}
 		}
 
+		.video-play{
+			pointer-events: auto;
+		}
+
+		.video-bx-txt{
+			@include pos-full;
+			animation: rotate-in 10s linear infinite;
+
+		}
+
 		
 	}
 	
-	.banner-wrap-form{
+	.banners-sm{
 		position: absolute;
 		bottom: 112px;
-		left: 0;
-		z-index: 2;
-		width: 100%;
-		transition: all .3s ease;
-		&.active{
-			bottom: -1000px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+		max-width: 1200px;
+		margin: 0 auto;
+		@include max-media($bk-d-1440){
+			bottom: 80px;	
 		}
 		@include max-media($bk-d-1200){
-			bottom: 84px;
+			bottom: 60px;
+			left: 15px;
+			right: 15px;
+			transform: none;
 		}
-		@include max-media($bk-d-768){
-			display: none;
-		}
-	}
 
-	.banner-form{
+		@include max-media($bk-d-992){
+			bottom: 40px;
+		}
+		@include max-media($bk-576){
+			bottom: 25px;
+		}
+
+		.swiper-slide-thumb-active{
+			.banners-box{
+				opacity: 1;
+			}
+		}
+
+		.container{
+			@include  max-media($bk-d-1200){
+				width: auto;
+				max-width: 1200px;
+			}
+		}
 		
-		.column{
-			width: calc(100% / 3);
-		}
-
-		.f-control{
-			border: none;
-			border-bottom: 1px solid rgba($color: $w-cl, $alpha: .5);
-			padding: 0 0 8px 0;
-			background-color: transparent;
-			border-radius: 0;
-			@include fz-16;
+		.banners-box{
+			padding-bottom: 8px;
 			color: $w-cl;
+			border-bottom: 1px solid $w-cl;
+			opacity: .5;
+			cursor: pointer;
 			transition: all .3s ease;
-			&:hover , &:focus{
-				border-color: $w-cl;
-			}
-
-			&::placeholder{
-				font-weight: 600;
-				text-transform: uppercase;
-				color: rgba($color: $w-cl, $alpha: .5);
+			@include max-media($bk-d-576){
+				padding-bottom: 5px;
 			}
 		}
+
 	}
 }

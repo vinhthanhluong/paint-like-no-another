@@ -260,6 +260,7 @@
         width: 120px;
         height: 120px;
         margin: 0 auto;
+        display: block;
 
         .video-text-t {
             @include pos-mid;

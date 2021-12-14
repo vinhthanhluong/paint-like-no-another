@@ -14,11 +14,12 @@
 .pays {
     padding-bottom: 95px;
     overflow: hidden;
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         padding-bottom: 60px;
     }
 
-    @include max-media($bk-d-992){
+    @include max-media($bk-d-992) {
         padding-bottom: 40px;
     }
 
@@ -26,7 +27,8 @@
         background-color: #FBFBFB;
         border-bottom: 1px solid rgba($color: $b-cl, $alpha: .12);
         padding: 28px 0 27px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 20px 0;
         }
     }
@@ -35,13 +37,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             flex-direction: column;
             align-items: flex-start;
         }
 
-        .pay-order{
-            @include max-media($bk-576){
+        .pay-order {
+            @include max-media($bk-576) {
                 margin-top: 10px;
             }
         }
@@ -57,10 +60,12 @@
         position: relative;
         border: 1px solid $main-cl;
         background-color: $main-cl;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 10px 20px;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             padding: 10px 15px;
         }
 
@@ -92,7 +97,8 @@
 
     .pay-wrapper {
         margin-top: 56px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-top: 30px;
         }
     }
@@ -107,27 +113,32 @@
 
                 &:nth-child(1) {
                     width: 150px;
-                    @include max-media($bk-d-1200){
+
+                    @include max-media($bk-d-1200) {
                         width: 130px;
                     }
-                    @include max-media($bk-d-992){
+
+                    @include max-media($bk-d-992) {
                         width: 100px;
                     }
                 }
 
                 &:nth-child(2) {
                     width: calc(60% - 150px);
-                    @include max-media($bk-d-1200){
+
+                    @include max-media($bk-d-1200) {
                         width: calc(60% - 130px);
                     }
-                    @include max-media($bk-d-992){
+
+                    @include max-media($bk-d-992) {
                         width: calc(60% - 100px);
                     }
                 }
 
                 &:nth-child(3) {
                     text-align: right;
-                    @include max-media($bk-d-768){
+
+                    @include max-media($bk-d-768) {
                         display: block;
                         width: 100%;
                         display: none;
@@ -136,7 +147,8 @@
 
                 &:nth-child(4) {
                     text-align: right;
-                    @include max-media($bk-d-768){
+
+                    @include max-media($bk-d-768) {
                         display: block;
                         width: 100%;
                         display: none;
@@ -152,37 +164,41 @@
 
             td {
                 padding: 32px 0;
-                @include max-media($bk-d-1200){
+
+                @include max-media($bk-d-1200) {
                     padding: 25px 0;
                 }
 
-                @include max-media($bk-d-992){
+                @include max-media($bk-d-992) {
                     // padding: 20px 0;
                 }
-                @include max-media($bk-d-768){
+
+                @include max-media($bk-d-768) {
                     // padding: 10px 0;
 
                 }
 
-                &:nth-child(1){
+                &:nth-child(1) {
                     position: relative;
-                    @include max-media($bk-d-768){
+
+                    @include max-media($bk-d-768) {
                         // padding: 10px 0;
-                        
+
                     }
                 }
 
                 &:nth-child(2) {
-                    @include max-media($bk-d-768){
+                    @include max-media($bk-d-768) {
                         display: block;
-                        padding-bottom:10px;
+                        padding-bottom: 10px;
                     }
-                    
+
                 }
-                
+
                 &:nth-child(3) {
                     text-align: right;
-                    @include max-media($bk-d-768){
+
+                    @include max-media($bk-d-768) {
                         display: inline-block;
                         width: 50%;
                         padding-top: 10px;
@@ -191,7 +207,8 @@
 
                 &:nth-child(4) {
                     text-align: right;
-                    @include max-media($bk-d-768){
+
+                    @include max-media($bk-d-768) {
                         display: inline-block;
                         width: 50%;
                         padding-top: 10px;
@@ -205,10 +222,12 @@
             height: 88px;
             border-radius: 5px;
             position: relative;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 width: 100px;
             }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 position: absolute;
                 top: 20px;
             }
@@ -239,13 +258,16 @@
 
             .pay-text {
                 padding-left: 32px;
-                @include max-media($bk-d-1200){
+
+                @include max-media($bk-d-1200) {
                     padding-left: 20px;
                 }
-                @include max-media($bk-d-992){
+
+                @include max-media($bk-d-992) {
                     padding-left: 10px;
                 }
-                @include max-media($bk-d-768){
+
+                @include max-media($bk-d-768) {
                     padding-left: 5px;
                 }
 
@@ -256,9 +278,11 @@
                 @include fz-18;
                 font-weight: 500;
                 transition: all .3s ease;
-                @include max-media($bk-d-992){
+
+                @include max-media($bk-d-992) {
                     margin-bottom: 5px;
                 }
+
                 &:hover {
                     color: $main-cl;
                 }
@@ -268,7 +292,8 @@
                 font-weight: 500;
                 color: $g-7C7C-cl;
                 margin-bottom: 8px;
-                @include max-media($bk-d-992){
+
+                @include max-media($bk-d-992) {
                     margin-bottom: 5px;
                 }
             }
@@ -280,11 +305,12 @@
         }
 
         .pay-qty {
-           @include max-media($bk-d-768){
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: center;
-           }
+            @include max-media($bk-d-768) {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+
             .cart-qty {
                 position: relative;
 
@@ -317,7 +343,8 @@
                 height: 40px;
                 font-weight: 600;
                 transition: all .3s ease;
-                @include max-media($bk-d-992){
+
+                @include max-media($bk-d-992) {
                     width: 100px;
                 }
 
@@ -334,14 +361,17 @@
             display: block;
             text-decoration: underline;
             transition: all .3s ease;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 margin-top: 5px;
             }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 margin-top: 0;
                 margin-right: 10px;
 
             }
+
             &:hover {
                 color: #E41A28
             }
@@ -356,33 +386,132 @@
 
     .pay-footer {
         margin-top: 32px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-top: 20px;
+        }
+
+        .pay-list{
+            margin-top: 30px;
+            @include max-media($bk-d-768){
+                margin-top: 20px;
+            }
         }
 
         .pay-item {
             &:not(:first-child) {
                 margin-top: 16px;
-                @include max-media($bk-d-1200){
+
+                @include max-media($bk-d-1200) {
                     margin-top: 12px;
                 }
-                @include max-media($bk-d-992){
+
+                @include max-media($bk-d-992) {
                     margin-top: 10px;
                 }
             }
 
             &.pay-fot {
                 margin-top: 40px;
-                @include max-media($bk-d-1200){
+
+                @include max-media($bk-d-1200) {
                     margin-top: 30px;
                 }
-                @include max-media($bk-d-992){
+
+                @include max-media($bk-d-992) {
                     margin-top: 20px;
                 }
             }
         }
 
+        h3 {
+            margin-bottom: 20px;
+            @include max-media($bk-d-768){
+                margin-bottom: 10px;
+            }
+        }
 
+
+        .form-row {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            &:not(:last-child){
+                margin: 0 0 20px;
+            }
+
+            label {
+                line-height: 1.4;
+                margin-bottom: 5px;
+            }
+
+            .input-text {
+                border: none;
+                border-bottom: 1px solid rgba($color: $b-cl, $alpha: .16);
+                padding: 0;
+                height: 36px;
+                &:hover,
+                &:focus {
+                    border-color: $main-cl;
+                }
+            }
+        }
+
+        .pay-customer{
+            flex-wrap: wrap;
+            border-radius: 12px;
+            overflow: hidden;
+            .woocommerce-billing-fields{
+                @include max-media($bk-d-768){
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+        }
+
+        #payment{
+            padding-left: 15px;
+            @include max-media($bk-d-768){
+                width: 100%;
+                padding-left: 0;
+                padding-top: 15px;
+            }
+            .payment_methods{
+                border: none;
+                padding: 0;
+            }
+
+            .wc_payment_method {
+                label{
+                    cursor: pointer;
+                }
+            }
+
+            .input-radio{
+                appearance: auto;
+                margin:0 10px 0 0;
+                cursor: pointer;
+            }
+
+            .payment_box{
+                display: none !important;
+            }
+        }
+
+       
+    }
+
+    .select2-container {
+        .select2-selection {
+            padding: 5px 0;
+            height: auto;
+
+            .select2-selection__arrow {
+                height: 20px;
+                top: 55%;
+                transform: translateY(-50%);
+            }
+        }
     }
 
     .pay-b {
@@ -408,22 +537,34 @@
         padding: 48px 92px;
         background-position: center;
         background-repeat: no-repeat;
-        @include max-media($bk-d-992){
+        box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .16);
+        margin: 0 auto;
+        @include max-media($bk-d-992) {
             padding: 40px 50px;
         }
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             padding: 20px;
         }
     }
 }
 
+.woocommerce{
+    background-color: #f2f2f2;
+
+    .woocommerce-order{
+        padding: 40px 0;
+    }
+}
+
 .popup-pay {
     text-align: center;
-   
+
 
     .pay-icon {
         margin-bottom: 16px;
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             margin-bottom: 10px;
         }
 
@@ -435,10 +576,12 @@
     .pay-title {
         margin-bottom: 24px;
         line-height: 1.4;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-bottom: 15px;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             margin-bottom: 10%;
         }
     }
@@ -448,10 +591,12 @@
         color: #4F4F4F;
         line-height: 1.7;
         margin-bottom: 40px;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-bottom: 30px;
         }
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             margin-bottom: 20px;
         }
     }
@@ -461,11 +606,13 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 40px;
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             margin-bottom: 30px;
             justify-content: space-between;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             margin-bottom: 20px;
             flex-direction: column;
             align-items: flex-start;
@@ -475,10 +622,12 @@
     .pay-item {
         &:nth-child(2) {
             padding-left: 84px;
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 padding-left: 0;
             }
-            @include max-media($bk-576){
+
+            @include max-media($bk-576) {
                 padding-top: 10px;
             }
         }
@@ -516,7 +665,8 @@
         border: 1px solid $main-cl;
         background-color: $main-cl;
         position: relative;
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             padding: 10px 20px;
         }
 
@@ -537,6 +687,7 @@
 
         &:hover {
             color: $main-cl;
+
             &::after {
                 transform: scale(1);
                 transform-origin: center left;
@@ -551,7 +702,8 @@
         text-transform: uppercase;
         text-decoration: underline;
         transition: all .3s ease;
-        &:hover{
+
+        &:hover {
             color: $main-cl;
         }
     }

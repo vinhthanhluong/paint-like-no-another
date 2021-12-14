@@ -219,15 +219,15 @@
             }
 
             .qty-plus {
-                border-right: 1px solid rgba($color: $main-cl, $alpha: .3);
-                border-radius: 99px 0 0 99px;
-                left: 0;
-            }
-
-            .qty-minus {
                 border-left: 1px solid rgba($color: $main-cl, $alpha: .3);
                 border-radius: 0 99px 99px 0;
                 right: 0;
+            }
+
+            .qty-minus {
+                border-right: 1px solid rgba($color: $main-cl, $alpha: .3);
+                border-radius: 99px 0 0 99px;
+                left: 0;
             }
         }
 
@@ -287,7 +287,7 @@
 
             @include max-media($bk-d-992) {
                 margin-left: 0px;
-                margin-top: 15px;
+                margin-bottom: 15px;
             }
 
             &:hover {
@@ -392,7 +392,7 @@
     // top: 50%;
     // transform: translateY(-50%);
     top: 84px;
-    transform: translateY(120%);
+    transform: translateY(150%);
     width: 100%;
     z-index: 10;
     transition: all .4s ease;

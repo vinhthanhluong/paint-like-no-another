@@ -156,7 +156,11 @@
 
         .fm-content{
             margin-top: 16px;
-            display: none;
+            position: absolute;
+            transform: scaleY(0);
+            @include hidden;
+            transition: transform .6s ease;
+            transform-origin: top;
         }
 
         .fm-item{
@@ -167,6 +171,8 @@
         }
 
         .product-f-box{
+            position: relative;
+            overflow: hidden;
             &:not(:first-child){
                 margin-top: 16px;
                 padding-top: 16px;
@@ -182,6 +188,12 @@
                     img{
                         transform: rotate(0);
                     }
+                }
+                .fm-content{
+                    position: relative;
+                    // height: 100%;
+                    @include visible;
+                    transform: scaleY(1);
                 }
             }
         }

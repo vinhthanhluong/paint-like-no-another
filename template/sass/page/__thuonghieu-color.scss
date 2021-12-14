@@ -1,10 +1,12 @@
 .color-palette {
     background-color: $g-F5F5-cl;
     padding: 84px 0 56px;
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         padding: 60px 0;
     }
-    @include max-media($bk-d-992){
+
+    @include max-media($bk-d-992) {
         padding: 40px 0;
     }
 
@@ -37,6 +39,7 @@
             @include max-media($bk-d-1200) {
                 margin-bottom: 20px;
             }
+
             @include max-media($bk-d-992) {
                 margin-bottom: 10px;
             }
@@ -65,73 +68,47 @@
         @include max-media($bk-d-1200) {
             padding: 30px 0;
         }
-        @include  max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             padding-bottom: 20px;
         }
 
-
-        .swiper {
-            padding-bottom: 15px;
-
+        .cols {
+            display: flex;
         }
 
-        .swiper-slide {
-            width: calc(100% / 12);
-
-            @include max-media($bk-d-1200) {
-                width: calc(100% / 10);
-            }
-
-            @include max-media($bk-d-1024) {
-                width: calc(100% / 8);
-            }
-            @include max-media($bk-d-768){
-                width: calc(100% / 6);
-            }
-            @include max-media($bk-576){
-                width: calc(100% / 4);
-            }
-
-            &.active {
-                .palette-b {
-                    border: 3px solid $w-cl;
-                    box-shadow: 0px 0px 24px rgba($color: $b-cl, $alpha: .2);
-
-                    .palette-tri {
-                        @include visible;
-                    }
-                }
-            }
-        }
-
-        .swiper-scrollbar {
-            height: 4px;
+        .col {
+            // width: calc(100% / 12);
             width: 100%;
-            left: 0;
-            top: 0;
+            max-width: 100px;
+            position: relative;
 
-            &-drag {
-                background-color: $main-cl;
+            &::before {
+                content: '';
+                display: block;
+                padding-top: 100%;
             }
+
         }
 
         .palette-b {
             height: 97px;
             transition: all .3s ease;
-            position: relative;
+            // position: relative;
             z-index: 1;
+            @include pos-full;
 
-            @include max-media($bk-d-1200) {
-                height: 90px;
-            }
+            // @include max-media($bk-d-1200) {
+            //     height: 90px;
+            // }
 
-            @include max-media($bk-d-992) {
-                height: 80px;
-            }
+            // @include max-media($bk-d-992) {
+            //     height: 80px;
+            // }
 
-            @include max-media($bk-576){
-                height: 70px;
-            }
+            // @include max-media($bk-576){
+            //     height: 70px;
+            // }
 
             &.active {
                 border: 3px solid $w-cl;
@@ -140,6 +117,10 @@
                 .palette-tri {
                     @include visible;
                 }
+            }
+
+            &:hover {
+                border: 3px solid $w-cl;
             }
         }
 
@@ -161,21 +142,26 @@
         background-color: #B2B2B2;
         box-shadow: inset 0 0 20px rgba($color: $b-cl, $alpha: .32);
         padding: 40px 0;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 30px 0;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             padding-bottom: 20px;
         }
+
         .range-bar {
             margin: 0 auto;
             height: 60px;
             max-width: 658px;
             padding: 0 20px;
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 height: 50px;
             }
-            @include max-media($bk-576){
+
+            @include max-media($bk-576) {
                 height: 40px;
             }
         }
@@ -193,10 +179,12 @@
                 height: 60px;
                 width: 142px;
                 width: calc(100% / 4);
-                @include max-media($bk-d-768){
+
+                @include max-media($bk-d-768) {
                     height: 50px;
                 }
-                @include max-media($bk-576){
+
+                @include max-media($bk-576) {
                     height: 40px;
                 }
             }
@@ -210,7 +198,8 @@
             color: $w-cl;
             text-align: center;
             margin-top: 16px;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 margin-top: 10px;
             }
         }
@@ -218,25 +207,44 @@
 
     .palette-choose {
         padding: 56px 0;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 40px 0;
         }
-        @include  max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             padding: 30px 0;
         }
 
-        .column {}
+
+
     }
 
     .columns {
         margin: 0;
+        margin: -1px;
     }
 
     .column {
         width: calc(100% / 6);
         padding: 0;
-        @include max-media($bk-576){
+        padding: 1px;
+
+        @include max-media($bk-576) {
             width: calc(100% / 4);
+        }
+
+        &.active {
+
+            // height: 768px;
+            .color-content {
+                @include visible;
+                animation: showTab 1s;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                display: block;
+            }
         }
 
         // &.w-100{
@@ -295,7 +303,8 @@
             border: 1px solid $w-cl;
             // width: calc(100% / 6);
             flex-shrink: 0;
-            @include max-media($bk-576){
+
+            @include max-media($bk-576) {
                 height: 70px;
             }
         }
@@ -314,12 +323,14 @@
     }
 
     .palette-bg {
-        .swiper{
+        .swiper {
             padding: 72px 0;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 padding: 50px 0;
             }
-            @include  max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 padding: 30px 0;
             }
         }
@@ -327,23 +338,27 @@
 
     .palette-inner {
         position: relative;
+        transition: all .3s ease;
+        display: block;
 
-        // &.active {
-        //     .color-inner {
-        //         margin-bottom: 711px;
-        //     }
+        &:hover {
+            box-shadow: 0px 0px 30px rgba($color: $b-cl, $alpha: .2);
+            transform: scale(1.05);
+            z-index: 1;
 
-        //     .color-content {
-        //         display: block;
-        //     }
-        // }
+        }
+
+        &::before {}
+
     }
 
     .color-inner {
         height: 96px;
         position: relative;
-        border: 1px solid $w-cl;
-        @include max-media($bk-576){
+        // border: 1px solid $w-cl;
+        transition: all .3s ease;
+
+        @include max-media($bk-576) {
             height: 70px;
         }
 
@@ -363,7 +378,7 @@
 
     .color-content {
         position: relative;
-        transition: all .3s ease;
+        // transition: all .3s ease;
         // display: none;
         // padding: 72px 0;
         // width: 1170px;
@@ -373,11 +388,25 @@
         // top: 0;
         // padding-top: 70%;
         // overflow: hidden;
+        // width: calc(600% + 12px);
+        width: 100%;
+        overflow: hidden;
+        padding: 70px 0;
+        // position: absolute;
+        // height: 768px;
+        // height: auto;
+        // left: 0;
+        // @include hidden;
+        @include hidden;
+        display: none;
 
         .color-wrapper {
             width: 100%;
-
         }
+
+        // &.dn{
+        //     display: none;
+        // }
     }
 
     .color-cols {
@@ -389,7 +418,7 @@
         @include max-media($bk-d-992) {
             margin: -7.5px;
         }
-      
+
     }
 
     .color-col {
@@ -401,17 +430,20 @@
 
         &.color-cl {
             width: calc(100% / 12 * 6);
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 width: 100%;
             }
         }
 
         &.color-tx {
             width: calc(100% / 12 * 5 + 30px);
-            @include  max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 width: calc(100% / 12 * 6);
             }
-            @include max-media($bk-d-768){
+
+            @include max-media($bk-d-768) {
                 width: 100%;
             }
         }
@@ -422,13 +454,16 @@
         height: 568px;
         border-radius: 40px;
         overflow: hidden;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             height: 500px;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             height: 340px;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             height: 300px;
         }
 
@@ -455,11 +490,12 @@
         padding: 40px;
         position: relative;
         height: 100%;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 30px;
         }
 
-        @include max-media($bk-d-992){
+        @include max-media($bk-d-992) {
             padding: 20px;
         }
     }
@@ -478,12 +514,13 @@
         top: 40px;
         right: 40px;
         @include fz-20;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             right: 30px;
             top: 30px;
         }
 
-        @include max-media($bk-d-992){
+        @include max-media($bk-d-992) {
             right: 20px;
             top: 20px;
         }
@@ -503,10 +540,12 @@
 
     .color-box {
         margin-top: 48px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-top: 30px;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-top: 15px;
         }
 
@@ -514,10 +553,12 @@
             text-align: center;
             margin-bottom: 48px;
             line-height: 1.2;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-bottom: 30px;
             }
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 margin-bottom: 15px;
             }
         }
@@ -526,7 +567,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 flex-direction: column;
             }
         }
@@ -577,16 +619,18 @@
 
         span {
             @include fz-16;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 margin-top: 10px;
             }
-           
+
         }
 
         .color-more {
             text-decoration: underline;
             @include fz-16;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 margin-top: 10px;
             }
         }
@@ -595,11 +639,13 @@
             margin-top: 32px;
             padding-top: 32px;
             border-top: 1px solid rgba($color: $b-cl, $alpha: .12);
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-top: 25px;
                 padding-top: 25px;
             }
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 margin-top: 15px;
                 padding-top: 15px;
             }
@@ -683,17 +729,19 @@
             text-align: center;
             padding: 8px 0;
             cursor: pointer;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 padding: 5px 0;
             }
 
             img {
                 margin: 0 auto;
-                @include max-media($bk-d-992){
+
+                @include max-media($bk-d-992) {
                     width: 30px;
                     height: 30px;
                 }
-            }  
+            }
         }
     }
 
@@ -702,21 +750,23 @@
         margin-left: auto;
         width: max-content;
         cursor: pointer;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-bottom: 15px;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             margin-bottom: 10px;
             margin-bottom: 0;
             position: absolute;
             top: 0;
             right: 0;
             transform: translateY(-25px);
-            
+
         }
 
-        img{
-            @include max-media($bk-d-992){
+        img {
+            @include max-media($bk-d-992) {
                 width: 25px;
                 height: 25px;
             }

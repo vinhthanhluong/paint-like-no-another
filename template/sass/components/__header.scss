@@ -172,6 +172,9 @@
     // background: $w-cl;
     background: transparent;
     padding-right: 80px;
+    @include max-media($bk-d-1900){
+        padding-right: 15px;
+    }
 
     @include max-media($bk-d-1440) {
         padding-right: 15px;
@@ -710,8 +713,11 @@
         text-transform: uppercase;
         @include trans(.3s);
         //color: $t-b-cl;
-        @include max-media($bk-d-1440){
+        @include max-media($bk-d-1900){
             padding: 30px 15px;
+        }
+        @include max-media($bk-d-1440){
+            padding: 30px 10px;
         }
 
         //font-size: 12px;
@@ -725,6 +731,7 @@
     >li {
         >a {
             @include min-media($bk-1200) {
+                white-space: nowrap;
                 &::before {
                     content: "";
                     position: absolute;
@@ -743,6 +750,13 @@
                     &::before {
                         width: calc(100% - 50px);
                         height: 2px;
+                        @include max-media($bk-d-1900){
+                            width: calc(100% - 30px);
+                        }
+
+                        @include max-media($bk-d-1440){
+                            width: calc(100% - 20px);
+                        }
                     }
                 }
             }
@@ -762,6 +776,13 @@
             &::before {
                 width: calc(100% - 50px);
                 height: 2px;
+                @include max-media($bk-d-1900){
+                    width: calc(100% - 30px);
+                }
+
+                @include max-media($bk-d-1440){
+                    width: calc(100% - 20px);
+                }
             }
         }
 
