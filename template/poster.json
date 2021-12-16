@@ -1,0 +1,17 @@
+[
+    {   
+        "id": 1,
+        "imgs": "./img/img-range-color.png",
+        "title": "yellow"
+    },
+    {
+        "id": 2,
+        "imgs": "./img/img-bjm.png",
+        "title": "orange"
+    },
+    {
+        "id": 3,
+        "imgs": "./img/img-bjm.png",
+        "title": "red"
+    }
+]

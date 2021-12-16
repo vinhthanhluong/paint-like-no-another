@@ -14207,10 +14207,22 @@ html .mfp-wrap {
 .color-palette .palette-cl .cols {
   display: flex;
 }
+@media screen and (max-width: 767px) {
+  .color-palette .palette-cl .cols {
+    flex-wrap: wrap;
+  }
+}
 .color-palette .palette-cl .col {
   width: 100%;
   max-width: 100px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .color-palette .palette-cl .col {
+    width: calc(100% / 6);
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
 }
 .color-palette .palette-cl .col::before {
   content: "";
@@ -14282,7 +14294,6 @@ html .mfp-wrap {
   }
 }
 .color-palette .palette-range .f-range {
-  background-image: url("../img/img-range-color.png");
   outline: none;
   height: 100%;
   width: 100%;
@@ -14349,6 +14360,7 @@ html .mfp-wrap {
   width: calc(100% / 6);
   padding: 0;
   padding: 1px;
+  transition: all 0.3s ease;
 }
 @media screen and (max-width: 576px) {
   .color-palette .column {
@@ -14356,13 +14368,11 @@ html .mfp-wrap {
   }
 }
 .color-palette .column.active .color-content {
-  opacity: 1;
-  visibility: visible;
   animation: showTab 1s;
+  animation: OutIn 1s;
   position: absolute;
   left: 0;
   width: 100%;
-  display: block;
 }
 .color-palette .palette-column {
   width: 100%;
@@ -14461,9 +14471,17 @@ html .mfp-wrap {
   width: 100%;
   overflow: hidden;
   padding: 70px 0;
-  opacity: 0;
-  visibility: hidden;
   display: none;
+}
+@media screen and (max-width: 1199px) {
+  .color-palette .color-content {
+    padding: 40px 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .color-palette .color-content {
+    padding: 30px 0;
+  }
 }
 .color-palette .color-content .color-wrapper {
   width: 100%;
@@ -14477,6 +14495,7 @@ html .mfp-wrap {
 @media screen and (max-width: 991px) {
   .color-palette .color-cols {
     margin: -7.5px;
+    align-items: center;
   }
 }
 .color-palette .color-col {
@@ -14515,7 +14534,7 @@ html .mfp-wrap {
 }
 @media screen and (max-width: 1199px) {
   .color-palette .color-bx {
-    height: 500px;
+    height: 460px;
   }
 }
 @media screen and (max-width: 991px) {
@@ -14616,6 +14635,16 @@ html .mfp-wrap {
 @media screen and (max-width: 991px) {
   .color-palette .color-box .color-tt {
     margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .color-palette .color-box .color-tt {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .color-palette .color-box .color-tt br {
+    display: none;
   }
 }
 .color-palette .color-box .color-act {

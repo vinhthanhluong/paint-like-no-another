@@ -113,6 +113,17 @@ export default function FileActiveModule() {
     //     });
     // }
 
+    if ($('.palette-cl').length) {
+        $('.palette-cl .palette-b').on('click', function () {
+            $(this).addClass('active');
+            $(this).closest('.col').siblings().find('.palette-b').removeClass('active');
+
+        });
+
+    }
+
+
+
     if ($('.color-heart').length) {
 
         $('.color-heart').on('click', function () {
@@ -155,83 +166,87 @@ export default function FileActiveModule() {
         });
     }
 
-    //  if ($('.palette-choose').length) {
-
-    //    var heights=  $('.color-content').innerHeight();
-
-    //     var className =  document.querySelector('.column.active');
-    //     // className.style.height =  heights + "px";
-
-    //     $('.palette-choose .palette-inner').on('click', function () {
-    //         $(this).parent().toggleClass('active').siblings().removeClass('active');
-
-
-    //         // $(this).closest('.columns').find('.color-content').slideToggle();
-
-    //         // var total = $('.palette-choose .column').length;
-    //         // var index  = $('.palette-choose .column').index(this) + 1;
-
-    //         // console.log(index);
-    //         // var to = index / 6;
-    //         // if (to <= 1) {
-    //         //     // $(this).after($('.color-content'));
-    //         //     $('.palette-choose .column').eq(5).after($('.color-content'));
-    //         // }
-
-    //         // $(this).after($('.color-content'));
-    //         // $('.color-content').appendTo(this);
-
-    //     });
-
-    //     $('.color-close').on('click', function () {
-    //         // $('.color-content').slideUp('');
-    //         // $('.palette-choose .columns').after($('.color-content'));
-
-    //         // $(this).closest('.palette-choose .columns').find('.column.active').removeClass('active');
-    //         $('.column.active').removeClass('active');
-    //     });
-
-    // }
-
-    // if ($('.palette-choose').length) {
-
-    //     var heights = $('.color-content').innerHeight();
-
-    //     var className = document.querySelector('.column.active');
-    //     // className.style.height =  heights + "px";
-
-    //     $('.palette-choose .palette-inner').on('click', function () {
-    //         $(this).parent().toggleClass('active').siblings().removeClass('active');
-    //     });
-
-    //     $('.color-close').on('click', function () {
-    //         // $('.color-content').slideUp('');
-    //         // $('.palette-choose .columns').after($('.color-content'));
-
-    //         // $(this).closest('.palette-choose .columns').find('.column.active').removeClass('active');
-    //         // $('.column.active').removeClass('active');
-    //     });
-
-    // }
-
-    if ($('.palette-choose').length) {
+    function showcolor() {
         const _h = $('.palette-choose .column').outerHeight() + $('.color-content').outerHeight();
-        // console.log(_h)
         $('.palette-choose .palette-inner').on('click', function () {
-          $(this).parent().addClass('active').siblings().removeClass('active');
-          $(this).parent().css('height', _h).siblings().css('height', 'auto');
-          $(this).parent().append($('.color-content')).slideDown();
+            $(this).parent().addClass('active').siblings().removeClass('active');
+            $(this).parent().css('height', _h).siblings().css('height', 'auto');
+            $(this).parent().append($('.color-content'));
+            $(this).next('.color-content').slideDown();
         });
-    
+
         $('.color-close').on('click', function () {
-        //   $('.color-content').slideUp();
-            $('.palette-choose').find('.column').removeClass('active');
-            $('.palette-choose').find('.column').css('height', 'auto');
-            
-            $('.palette-choose').append($('.color-content')).slideDown();
-        //   console.log(2123)
+            $('.color-content').slideUp('1000');
+
+            setTimeout(function () {
+                $('.palette-choose').find('.column').removeClass('active');
+                $('.palette-choose').append($('.color-content'));
+                $('.palette-choose').find('.column').css('height', 'auto');
+
+            }, 400);
+
         });
-      }
+    }
+    showcolor();
+
+
+
+    $('.palette-cl .col').on('click', function () {
+        const index = $(this).children('.palette-b').data('color');
+        const row = color.find((el) => el.id === index);
+        $('.range-title').html(row["title"]);
+        $('#rang-f').css('background-image', 'url(' + row["imgs"] + ')');
+
+    });
+
+    function chooseColor() {
+        const indexs = $('.f-range').val();
+        const num = Number(indexs);
+        const rows = colors.find((el) => el.id === num);
+        $('.palette-choose').append($('.color-content').css('display', 'none'));
+        // const div = document.getElementById('palette-clr');
+        $("#palette-clr").not('.color-content').empty();
+        $.each(rows.col, function (i, f) {
+            const AllColor =
+                "<div class='column'>" +
+                "<div class='palette-inner'>" +
+                "<div class='color-inner' style='background-color:" + f.clr + "'>" + "</div>" +
+                "</div>" +
+                "</div>";
+
+            $(AllColor).appendTo("#palette-clr");
+        });
+    }
+
+    $('.palette-range .f-range').on('click', function () {
+        chooseColor();
+        showcolor();
+        
+    });
+
+    // $('.palette-range .f-range').on('click', function () {
+
+    //     $('.palette-choose').append($('.color-content').css('display', 'none'));
+    //     $("#palette-clr").not('.color-content').empty();
+    //     $.getJSON("./color.json", function (data) {
+    //         var color = [];
+    //         const indexs = $('.f-range').val();
+    //         const num = Number(indexs);
+    //         const rows = data.find((el) => el.id === num);
+    //         $.each(rows.colors, function (i, f) {
+    //             var AllColor =
+    //                 "<div class='column'>" +
+    //                 "<div class='palette-inner'>" +
+    //                 "<div class='color-inner' style='background-color:" + f.clr + "'>" + "</div>" +
+    //                 "</div>" +
+    //                 "</div>";
+    //             $(AllColor).appendTo("#palette-clr");
+    //         });
+
+    //         showcolor();
+    //     });
+        
+    // });
 
 }
 

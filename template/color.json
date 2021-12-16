@@ -1,0 +1,107 @@
+[
+    {   
+        "id": 1,
+        "colors": [
+            {
+                "clr": "blueviolet"
+            },
+            {
+                "clr": "yellow"
+            },
+            {
+                "clr": "blue"
+            },
+            {
+                "clr": "black"
+            },
+            {
+                "clr": "wheat"
+            },
+            {
+                "clr": "red"
+            },
+            {
+                "clr": "black"
+            }
+        ]
+    },
+    {   
+        "id": 2,
+        "colors": [
+            {
+                "clr": "red"
+            },
+            {
+                "clr": "red"
+            },
+            {
+                "clr": "red"
+            },
+            {
+                "clr": "red"
+            },
+            {
+                "clr": "red"
+            },
+            {
+                "clr": "red"
+            },
+            {
+                "clr": "red"
+            }
+        ]
+    },
+    {   
+        "id": 3,
+        "colors": [
+            {
+                "clr": "blue"
+            },
+            {
+                "clr": "blue"
+            },
+            {
+                "clr": "blue"
+            },
+            {
+                "clr": "blue"
+            },
+            {
+                "clr": "blue"
+            },
+            {
+                "clr": "blue"
+            },
+            {
+                "clr": "blue"
+            }
+        ]
+    },
+    {   
+        "id": 4,
+        "colors": [
+            {
+                "clr": "yellow"
+            },
+            {
+                "clr": "yellow"
+            },
+            {
+                "clr": "yellow"
+            },
+            {
+                "clr": "yellow"
+            },
+            {
+                "clr": "yellow"
+            },
+            {
+                "clr": "yellow"
+            },
+            {
+                "clr": "yellow"
+            }
+        ]
+    }
+  
+]
